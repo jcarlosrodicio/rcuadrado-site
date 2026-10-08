@@ -3,38 +3,162 @@
   "projects": {
     "tally": {
       "now": {
-        "es": "Mejoras tras la 2.6.0",
-        "en": "Improvements after 2.6.0"
+        "es": "2.7.0 en beta con categorías y paywall; ficha de tienda renovada",
+        "en": "2.7.0 in beta with categories and paywall; renewed store listing"
       },
       "done": {
         "es": [
           "Publicada en App Store y Google Play",
+          "Multimoneda: cada cuenta con su divisa y totales convertidos en el dispositivo",
           "Multi-cuenta, 45 divisas, metas y estadísticas",
           "Importación de extractos y Norma 43 (PRO)",
-          "Cuentas compartidas cifradas vía Supabase (PRO)",
-          "Captura de pagos desde Apple Pay y Google Wallet (PRO)"
+          "Cuentas compartidas cifradas y captura de pagos (PRO)",
+          "Ficha de tienda renovada: capturas, icono azul y gráfico destacado"
         ],
         "en": [
           "Live on the App Store and Google Play",
+          "Multi-currency: each account with its own currency, totals converted on device",
           "Multiple accounts, 45 currencies, goals and statistics",
           "Bank statement and Norma 43 import (PRO)",
-          "Encrypted shared accounts through Supabase (PRO)",
-          "Payment capture from Apple Pay and Google Wallet (PRO)"
+          "Encrypted shared accounts and payment capture (PRO)",
+          "Renewed store listing: screenshots, blue icon and feature graphic"
         ]
       },
       "doing": {
         "es": [
-          "Siguiente versión, sin fecha fijada"
+          "Publicación de la 2.7.0 en App Store y Google Play",
+          "Próxima versión sin fecha fijada"
         ],
         "en": [
+          "Releasing 2.7.0 to the App Store and Google Play",
           "Next version, no date set"
         ]
       },
       "next": {
-        "es": [],
-        "en": []
+        "es": [
+          "Notificaciones locales de recordatorio",
+          "Presupuestos con límite mensual y por categoría"
+        ],
+        "en": [
+          "Local reminder notifications",
+          "Monthly and per-category budgets"
+        ]
       },
-      "changelog": []
+      "changelog": [
+        {
+          "date": "2026-10-06",
+          "prs": [
+            114,
+            115,
+            117,
+            118
+          ],
+          "es": "Ficha de tienda renovada: capturas nuevas, icono azul y gráfico destacado",
+          "en": "Renewed store listing: new screenshots, deep blue icon and feature graphic"
+        },
+        {
+          "date": "2026-10-06",
+          "prs": [
+            113,
+            116
+          ],
+          "es": "2.7.0 en pruebas: categorías, formulario y ajustes de la fila de categoría",
+          "en": "2.7.0 in testing: categories, form and category row fixes"
+        },
+        {
+          "date": "2026-10-01",
+          "prs": [
+            102,
+            106
+          ],
+          "es": "Los tickets se ven de nuevo tras actualizar iOS y el símbolo de moneda ya no se parte.",
+          "en": "Receipts are visible again after iOS updates and currency symbols no longer wrap."
+        },
+        {
+          "date": "2026-10-02",
+          "prs": [
+            108,
+            109
+          ],
+          "es": "La web redirige al visitante a su idioma y añade la insignia de LaunchNest.",
+          "en": "The site sends visitors to their language and adds the LaunchNest badge."
+        },
+        {
+          "date": "2026-10-04",
+          "prs": [
+            110
+          ],
+          "es": "Categorías con iconos, 2 propias gratis y paywall PRO con contexto (fase 34).",
+          "en": "Categories with icons, 2 free custom ones and a contextual PRO paywall (phase 34)."
+        },
+        {
+          "date": "2026-10-02",
+          "prs": [
+            99,
+            100,
+            101,
+            103,
+            104,
+            105,
+            107
+          ],
+          "es": "Multimoneda: cada cuenta con su divisa y totales convertidos en el dispositivo (2.6.0).",
+          "en": "Multi-currency: each account keeps its currency, totals converted on device (2.6.0)."
+        },
+        {
+          "date": "2026-09-28",
+          "prs": [
+            90,
+            95,
+            92
+          ],
+          "es": "Primer gasto sin fricción, acceso rediseñado y contraseña con código de 6 dígitos.",
+          "en": "Frictionless first expense, redesigned sign-up and password reset with a 6-digit code."
+        },
+        {
+          "date": "2026-09-25",
+          "prs": [
+            87
+          ],
+          "es": "La app pide la valoración en momentos de valor, con reintentos limitados",
+          "en": "The app asks for a rating at value moments, with limited retries"
+        },
+        {
+          "date": "2026-09-24",
+          "prs": [
+            83,
+            84
+          ],
+          "es": "Fichas de App Store y Google Play adaptadas al español de Latinoamérica",
+          "en": "App Store and Google Play listings localized for Latin America"
+        },
+        {
+          "date": "2026-09-10",
+          "prs": [
+            67
+          ],
+          "es": "La web declara que puede usarse como contexto en IA, pero no para entrenar",
+          "en": "The site declares it may be used as AI context, but not for training"
+        },
+        {
+          "date": "2026-09-24",
+          "prs": [
+            81
+          ],
+          "es": "Web en español neutro para llegar a España y a Latinoamérica",
+          "en": "Site in neutral Spanish to reach Spain and Latin America"
+        },
+        {
+          "date": "2026-09-09",
+          "prs": [
+            64,
+            65
+          ],
+          "es": "La web explica que sin conectar el banco no hace falta apuntarlo todo a mano: la revisión es el diferencial",
+          "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
+        }
+      ],
+      "checkedUntil": "2026-10-08T13:20:07Z"
     },
     "grapit": {
       "now": {
@@ -46,13 +170,17 @@
           "Motor PDF probado con documentos grandes",
           "Abrir y compartir desde otras apps en iOS y Android",
           "Firmar, unir y bóveda de firmas",
-          "Límites de Pro (aún sin compras)"
+          "Límites de Pro (aún sin compras)",
+          "Pantalla de inicio con documentos recientes",
+          "Builds internas en TestFlight y Play"
         ],
         "en": [
           "PDF engine proven on large documents",
           "Open in and share from other apps on iOS and Android",
           "Sign, merge and a signature vault",
-          "Pro limits (no purchases yet)"
+          "Pro limits (no purchases yet)",
+          "Home screen with recent documents",
+          "Internal builds on TestFlight and Play"
         ]
       },
       "doing": {
@@ -75,7 +203,33 @@
           "Launch on both stores"
         ]
       },
-      "changelog": []
+      "changelog": [
+        {
+          "date": "2026-10-07",
+          "prs": [
+            11
+          ],
+          "es": "Icono propio y pantalla de arranque en claro y oscuro",
+          "en": "Own icon and launch screen in light and dark"
+        },
+        {
+          "date": "2026-10-07",
+          "prs": [
+            10
+          ],
+          "es": "Primeras builds internas en TestFlight y Play instaladas en el móvil",
+          "en": "First internal builds on TestFlight and Play installed on phones"
+        },
+        {
+          "date": "2026-10-05",
+          "prs": [
+            6
+          ],
+          "es": "Pantalla de inicio con documentos recientes y barra de herramientas",
+          "en": "Home screen with recent documents and a tools bar"
+        }
+      ],
+      "checkedUntil": "2026-10-08T13:20:07Z"
     },
     "intriga": {
       "now": {
@@ -118,54 +272,203 @@
           "Launch on both stores"
         ]
       },
-      "changelog": []
+      "changelog": [],
+      "checkedUntil": "2026-10-08T13:20:07Z"
     },
     "aqorin": {
       "now": {
-        "es": "Thesis Validation Track tras cerrar la fase 23",
-        "en": "Thesis Validation Track after closing phase 23"
+        "es": "Tramo Terminal Alpha en curso tras el veredicto de tesis",
+        "en": "Terminal Alpha track in progress after the thesis verdict"
       },
       "done": {
         "es": [
-          "@aqorin/cli 0.1.0 publicado en npm (macOS arm64 verificado)",
-          "23 fases de producto cerradas con evidencia de salida",
-          "TV0 cerrada"
+          "Thesis Validation Track completo: TV0–TV7 cerrados con evidencia",
+          "Revisión de tesis: veredicto PARTIALLY VALIDATED",
+          "@aqorin/cli 0.2.0 publicado en npm con licencia MIT",
+          "Fases P16–P23 cerradas con evidencia de salida",
+          "Ejecución verificada en Codex y Claude Code (skills y MCP)",
+          "Terminal Alpha (ADR-0049) aceptado como hoja de ruta"
         ],
         "en": [
-          "@aqorin/cli 0.1.0 published on npm (macOS arm64 verified)",
-          "23 product phases closed with recorded exit evidence",
-          "TV0 closed"
+          "Full Thesis Validation Track: TV0–TV7 closed with evidence",
+          "Thesis review: PARTIALLY VALIDATED verdict",
+          "@aqorin/cli 0.2.0 published on npm under MIT",
+          "Phases P16–P23 closed with recorded exit evidence",
+          "Execution verified on Codex and Claude Code (skills and MCP)",
+          "Terminal Alpha (ADR-0049) accepted as roadmap"
         ]
       },
       "doing": {
         "es": [
-          "Thesis Validation Track"
+          "Tramo Terminal Alpha (TA1a)"
         ],
         "en": [
-          "Thesis Validation Track"
+          "Terminal Alpha track (TA1a)"
         ]
       },
       "next": {
         "es": [],
         "en": []
       },
-      "changelog": []
+      "changelog": [
+        {
+          "date": "2026-10-05",
+          "prs": [
+            76
+          ],
+          "es": "Revisión de tesis: veredicto PARTIALLY VALIDATED (decisión del propietario)",
+          "en": "Thesis review: PARTIALLY VALIDATED verdict (owner decision)"
+        },
+        {
+          "date": "2026-10-05",
+          "prs": [
+            74,
+            75
+          ],
+          "es": "TV6 y TV7 cerrados: recuperación con replanificación y benchmark de tesis 10/10",
+          "en": "TV6 and TV7 closed: recovery with explicit replanning and 10/10 thesis benchmark"
+        },
+        {
+          "date": "2026-10-02",
+          "prs": [
+            68,
+            69,
+            70,
+            71,
+            72,
+            73
+          ],
+          "es": "TV5 cerrado: asignación por rol de runtime y modelo con evidencia multi-runtime en vivo",
+          "en": "TV5 closed: per-role runtime and model assignment with live multi-runtime evidence"
+        },
+        {
+          "date": "2026-10-07",
+          "prs": [
+            77,
+            78,
+            79,
+            80
+          ],
+          "es": "Protocolo de remediación y revalidación de tesis aceptado (ADR-0048)",
+          "en": "Thesis remediation and revalidation protocol accepted (ADR-0048)"
+        },
+        {
+          "date": "2026-10-01",
+          "prs": [
+            64,
+            66
+          ],
+          "es": "Workflows definidos por el usuario y roles abiertos por clase de acceso, con prueba de independencia",
+          "en": "User-defined workflows and open roles by access class, with the independence proof"
+        },
+        {
+          "date": "2026-09-28",
+          "prs": [
+            56
+          ],
+          "es": "Chat de dos turnos con el runtime Pi.",
+          "en": "Two-turn chat on the Pi runtime."
+        },
+        {
+          "date": "2026-09-27",
+          "prs": [
+            53,
+            54,
+            55
+          ],
+          "es": "Chat en vivo con OpenCode: mensajes, preguntas, permisos e interrupción.",
+          "en": "Live chat on OpenCode: messages, questions, permissions and interruption."
+        },
+        {
+          "date": "2026-09-24",
+          "prs": [
+            47,
+            49,
+            51
+          ],
+          "es": "Conversaciones Aqorin: identidad, segundo turno y cierre con revisión.",
+          "en": "Aqorin conversations: identity, second turn and finish with review."
+        },
+        {
+          "date": "2026-09-21",
+          "prs": [
+            42,
+            45,
+            46
+          ],
+          "es": "@aqorin/cli 0.2.0 publicado en npm bajo licencia MIT.",
+          "en": "@aqorin/cli 0.2.0 published on npm under the MIT licence."
+        },
+        {
+          "date": "2026-09-18",
+          "prs": [
+            39
+          ],
+          "es": "Recuperación de ejecuciones interrumpidas en Claude Code con evidencia de recursos.",
+          "en": "Recovery of interrupted runs on Claude Code with attested resource evidence."
+        },
+        {
+          "date": "2026-09-15",
+          "prs": [
+            34,
+            35
+          ],
+          "es": "P14–P15: proyección de skills/instrucciones y MCP en Claude Code",
+          "en": "P14–P15: skills/instructions projection and MCP on Claude Code"
+        },
+        {
+          "date": "2026-09-11",
+          "prs": [
+            24
+          ],
+          "es": "P13: cancelación en curso y apertura nativa de Claude Code",
+          "en": "P13: in-flight cancellation and native open for Claude Code"
+        },
+        {
+          "date": "2026-09-11",
+          "prs": [
+            19,
+            20,
+            21
+          ],
+          "es": "P11–P12: inspección y ejecución autenticada sobre Claude Code",
+          "en": "P11–P12: inspection and authenticated execution on Claude Code"
+        },
+        {
+          "date": "2026-09-09",
+          "prs": [
+            14,
+            15,
+            16,
+            17
+          ],
+          "es": "P07–P09: adapter Codex con ejecución autenticada, skills y MCP",
+          "en": "P07–P09: Codex adapter with authenticated execution, skills and MCP"
+        }
+      ],
+      "checkedUntil": "2026-10-08T13:20:07Z"
     },
     "norma": {
       "now": {
-        "es": "Afinando la v0.20.0 en mis repos",
-        "en": "Tuning v0.20.0 across my repos"
+        "es": "v0.20.0: el gate detecta tests rebajados",
+        "en": "v0.20.0: the gate detects weakened tests"
       },
       "done": {
         "es": [
           "16 perfiles de stack (Flutter, Swift, Go, Rust, Next, Django...)",
           "install, upgrade, doctor y start",
-          "Instalado en mis otros repos"
+          "auto-run-task: fases completas sin supervisión",
+          "Verificación en runtime con evidencia",
+          "La revisión adversarial deja informe",
+          "El gate avisa si un cambio rebaja los tests"
         ],
         "en": [
           "16 stack profiles (Flutter, Swift, Go, Rust, Next, Django...)",
           "install, upgrade, doctor and start",
-          "Installed in my other repos"
+          "auto-run-task: whole phases unsupervised",
+          "Runtime verification with evidence",
+          "The adversarial review leaves a report",
+          "The gate warns on weakened tests"
         ]
       },
       "doing": {
@@ -176,23 +479,76 @@
         "es": [],
         "en": []
       },
-      "changelog": []
+      "changelog": [
+        {
+          "date": "2026-09-16",
+          "prs": [
+            12
+          ],
+          "es": "Identidad de tarea que sobrevive a la sesión: los eventos de un run se registran juntos",
+          "en": "A task identity that outlives the session: a run's events recorded together"
+        },
+        {
+          "date": "2026-10-07",
+          "prs": [
+            8,
+            16,
+            20
+          ],
+          "es": "La revisión adversarial cubre todo el diff, deja informe legible y ataca tests debilitados",
+          "en": "The adversarial review covers the whole diff, leaves a readable report and attacks weakened tests"
+        },
+        {
+          "date": "2026-09-14",
+          "prs": [
+            3,
+            10
+          ],
+          "es": "Cada fallo se clasifica antes de reaccionar: código, chequeo, harness o falta",
+          "en": "Failures are classified before reacting: code, check, harness or something missing"
+        },
+        {
+          "date": "2026-09-12",
+          "prs": [
+            2,
+            5
+          ],
+          "es": "Verificación en runtime con procedimiento propio y evidencia adaptada a cada superficie",
+          "en": "Runtime verification with its own procedure and evidence shaped per surface"
+        },
+        {
+          "date": "2026-09-13",
+          "prs": [
+            1,
+            7
+          ],
+          "es": "auto-run-task: una fase completa sin supervisión, decisiones registradas y PR abierta al final",
+          "en": "auto-run-task: a whole phase unsupervised, decisions logged, ending in an open PR"
+        }
+      ],
+      "checkedUntil": "2026-10-08T13:20:07Z"
     },
     "oak": {
       "now": {
-        "es": "Estable en v1.1.1",
-        "en": "Stable at v1.1.1"
+        "es": "Soporte experimental en OpenCode 2",
+        "en": "Experimental OpenCode 2 support"
       },
       "done": {
         "es": [
           "Release v1.1.1",
           "Modelo asignable por rol, agnóstico de proveedor",
-          "Reanudación segura tras fallos"
+          "Reanudación segura tras fallos",
+          "OpenCode 1 y 2 (experimental)",
+          "Harness de proceso propio sin plugins externos",
+          "Compatibilidad con Windows"
         ],
         "en": [
           "Release v1.1.1",
           "Per-role model assignment, provider-agnostic",
-          "Crash-safe resume"
+          "Crash-safe resume",
+          "OpenCode 1 and 2 (experimental)",
+          "First-party process harness, no external plugins",
+          "Windows compatibility"
         ]
       },
       "doing": {
@@ -203,48 +559,208 @@
         "es": [],
         "en": []
       },
-      "changelog": []
+      "changelog": [
+        {
+          "date": "2026-09-18",
+          "prs": [
+            21,
+            24,
+            25
+          ],
+          "url": "https://github.com/jcarlosrodicio/opencode-agent-orchestration-kit/pull/21",
+          "es": "Mejoras de compatibilidad con Windows en instalación y comprobaciones",
+          "en": "Windows compatibility improvements in installation and checks"
+        },
+        {
+          "date": "2026-09-28",
+          "prs": [
+            32
+          ],
+          "url": "https://github.com/jcarlosrodicio/opencode-agent-orchestration-kit/pull/32",
+          "es": "Compatibilidad experimental con OpenCode 2 junto a OpenCode 1",
+          "en": "Experimental OpenCode 2 support alongside OpenCode 1"
+        },
+        {
+          "date": "2026-09-27",
+          "prs": [
+            31
+          ],
+          "url": "https://github.com/jcarlosrodicio/opencode-agent-orchestration-kit/pull/31",
+          "es": "Proceso propio sin plugins de terceros; /autonomous llega hasta abrir la PR",
+          "en": "First-party process skills, no third-party plugins; /autonomous opens the PR"
+        }
+      ],
+      "checkedUntil": "2026-10-08T13:20:07Z"
     },
     "grodar": {
       "now": {
-        "es": "Fase 4: secretos y conexiones",
-        "en": "Phase 4: secrets and connections"
+        "es": "Fase 33 en producción",
+        "en": "Phase 33 in production"
       },
       "done": {
         "es": [
-          "Monorepo y value objects",
-          "Aggregate Project",
-          "PostgreSQL y Drizzle, con el mismo contract test en memoria, PGlite y Postgres 17",
-          "CLI grodar y proyectos en YAML"
+          "Despliegue v1 en producción",
+          "CLI, API REST y dashboard con login",
+          "Señales, oportunidades y recolección automática",
+          "Experimentos y learnings de extremo a extremo",
+          "IA en servidor y MCP con escritura acotada",
+          "Fases 30-33: fichas, ASO, competidores web y SERP"
         ],
         "en": [
-          "Monorepo and value objects",
-          "Project aggregate",
-          "PostgreSQL and Drizzle, one contract test suite on in-memory, PGlite and Postgres 17",
-          "grodar CLI and YAML project definitions"
+          "v1 deployment to production",
+          "CLI, REST API and web dashboard with login",
+          "Signals, opportunities and automated collection",
+          "End-to-end experiments and learnings",
+          "Server-side AI and MCP with bounded writes",
+          "Phases 30-33: listings, ASO, web competitors and SERP"
         ]
       },
       "doing": {
         "es": [
-          "Secretos y conexiones"
+          "Aceptación final con datos reales de las fases 30 a 32"
         ],
         "en": [
-          "Secrets and connections"
+          "Final acceptance with real data for phases 30 to 32"
         ]
       },
       "next": {
-        "es": [
-          "Conectores de fuentes",
-          "Señales y oportunidades",
-          "Dashboard y Grodar MCP"
-        ],
-        "en": [
-          "Source connectors",
-          "Signals and opportunities",
-          "Dashboard and Grodar MCP"
-        ]
+        "es": [],
+        "en": []
       },
-      "changelog": []
+      "changelog": [
+        {
+          "date": "2026-10-03",
+          "prs": [
+            59
+          ],
+          "es": "Ajustes de proyecto editables desde la web: detección, mercados e IA.",
+          "en": "Project settings editable from the web: detection, markets and AI."
+        },
+        {
+          "date": "2026-10-03",
+          "prs": [
+            56,
+            59
+          ],
+          "es": "Fase 27: evaluación de oportunidades con IA en servidor, con presupuesto diario.",
+          "en": "Phase 27: server-side AI assessment of opportunities with a daily budget."
+        },
+        {
+          "date": "2026-09-30",
+          "prs": [
+            55
+          ],
+          "es": "Fase 26: herramientas de escritura en MCP con permisos y gestión de claves de API.",
+          "en": "Phase 26: MCP write tools with scopes and API key management."
+        },
+        {
+          "date": "2026-09-29",
+          "prs": [
+            52,
+            53,
+            54
+          ],
+          "es": "Fases 24-25: experimentos con mediciones, ciclo completo en web y MCP, e learnings.",
+          "en": "Phases 24-25: experiments with measurements, full cycle in web and MCP, and learnings."
+        },
+        {
+          "date": "2026-09-27",
+          "prs": [
+            51
+          ],
+          "es": "Fase 23: señales de demanda y oportunidades a partir de datos de búsqueda.",
+          "en": "Phase 23: demand signals and opportunities from search data."
+        },
+        {
+          "date": "2026-09-22",
+          "prs": [
+            43
+          ],
+          "es": "Fase 20: lectura normalizada de Stores con API, cockpit web y señales ASO.",
+          "en": "Phase 20: normalized Stores read with API, web cockpit and ASO signals."
+        },
+        {
+          "date": "2026-09-21",
+          "prs": [
+            40,
+            41,
+            42
+          ],
+          "es": "App Store Connect Analytics en vivo: descubrimiento y descargas verificados.",
+          "en": "Live App Store Connect Analytics: discovery and downloads verified."
+        },
+        {
+          "date": "2026-09-17",
+          "prs": [
+            35,
+            37
+          ],
+          "es": "Google Play Console: instalaciones, valoraciones y rendimiento de tienda en métricas.",
+          "en": "Google Play Console: installs, ratings and store performance as metrics."
+        },
+        {
+          "date": "2026-09-15",
+          "prs": [
+            28,
+            33
+          ],
+          "es": "Bing Webmaster como segundo buscador, con backlinks verificados en producción.",
+          "en": "Bing Webmaster as a second search engine, with backlinks verified in production."
+        },
+        {
+          "date": "2026-09-25",
+          "prs": [
+            26,
+            50
+          ],
+          "es": "Fase 16 cerrada: despliegue v1 verificado en producción y roadmap alineado (0–22 hechos).",
+          "en": "Phase 16 closed: v1 deployment verified in production and roadmap aligned (0–22 done)."
+        },
+        {
+          "date": "2026-09-11",
+          "prs": [
+            7,
+            8,
+            9
+          ],
+          "es": "Fase 9-11: 9 detectores de señales y motor de oportunidades en CLI, API y web.",
+          "en": "Phases 9-11: 9 signal detectors and an opportunity engine in CLI, API and web."
+        },
+        {
+          "date": "2026-09-09",
+          "prs": [
+            6
+          ],
+          "es": "Fase 8: dashboard web con login, proyectos y métricas de búsqueda.",
+          "en": "Phase 8: web dashboard with login, projects and search metrics."
+        },
+        {
+          "date": "2026-09-09",
+          "prs": [
+            4
+          ],
+          "es": "Fase 7: API REST v1 con 12 rutas y claves de API con scopes.",
+          "en": "Phase 7: REST API v1 with 12 routes and scoped API keys."
+        },
+        {
+          "date": "2026-09-09",
+          "prs": [
+            2,
+            3
+          ],
+          "es": "Fase 5-6: collectors con Google Search Console, backfill de 478 días y consultas por ventanas (hito H1).",
+          "en": "Phases 5-6: Google Search Console collectors, 478-day backfill and window queries (milestone H1)."
+        },
+        {
+          "date": "2026-09-08",
+          "prs": [
+            1
+          ],
+          "es": "Fase 4: credenciales cifradas en reposo y conexiones de fuentes con CLI.",
+          "en": "Phase 4: credentials encrypted at rest and source connections with CLI."
+        }
+      ],
+      "checkedUntil": "2026-10-08T13:20:07Z"
     },
     "obs": {
       "now": {
@@ -255,14 +771,18 @@
         "es": [
           "Trazas OTel, Collector, métricas y dashboards",
           "Convenciones GenAI, router, retry y subagentes",
-          "Despliegue en NAS con agentes reales",
-          "Primera campaña real de benchmark: 12 observaciones verificadas"
+          "Fases 8 a 11: MCP y jobs asíncronos, sesiones en Langfuse, privacidad y depuración de fallos",
+          "Despliegue en NAS con agentes reales y los cuatro runtimes por su gateway",
+          "SLI/SLO con panel y alertas a Telegram",
+          "Suite de benchmark coding-v1: 10 tareas con resultados cruzados con telemetría"
         ],
         "en": [
           "OTel traces, Collector, metrics and dashboards",
           "GenAI conventions, routing, retries and subagents",
-          "NAS deployment with real agents",
-          "First real benchmark campaign: 12 verified observations"
+          "Phases 8–11: MCP and async jobs, Langfuse sessions, privacy and failure debugging",
+          "NAS deployment with real agents and all four runtimes through its gateway",
+          "SLI/SLO with dashboard and alerts to Telegram",
+          "coding-v1 benchmark suite: 10 tasks with results joined against telemetry"
         ]
       },
       "doing": {
@@ -277,7 +797,78 @@
         "es": [],
         "en": []
       },
-      "changelog": []
+      "changelog": [
+        {
+          "date": "2026-09-17",
+          "prs": [
+            41,
+            42,
+            43
+          ],
+          "es": "Avisos de la cadena de telemetría entregados en Telegram, con latido diario",
+          "en": "Telemetry-chain alerts delivered to Telegram, with a daily heartbeat"
+        },
+        {
+          "date": "2026-09-17",
+          "prs": [
+            37,
+            50,
+            51
+          ],
+          "es": "Suite de benchmark coding-v1: 10 tareas con resultados puntuados cruzando la telemetría",
+          "en": "coding-v1 benchmark suite: 10 tasks scored by joining telemetry into the results"
+        },
+        {
+          "date": "2026-09-16",
+          "prs": [
+            35,
+            36
+          ],
+          "es": "La telemetría de cada sesión se atribuye a la tarea que la produjo y cada runtime se identifica",
+          "en": "Session telemetry is attributed to its task run, and every runtime is identified"
+        },
+        {
+          "date": "2026-09-16",
+          "prs": [
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "es": "Los cuatro runtimes envían su telemetría por el gateway del NAS; se retira la ingesta directa",
+          "en": "All four runtimes send telemetry through the NAS gateway; direct ingestion retired"
+        },
+        {
+          "date": "2026-09-13",
+          "prs": [
+            27
+          ],
+          "es": "SLI/SLO de producción: cuatro métricas, panel de Grafana y guía multi-inquilino",
+          "en": "Production SLI/SLO: four metrics, Grafana dashboard and multi-tenant guide"
+        },
+        {
+          "date": "2026-09-13",
+          "prs": [
+            23,
+            26
+          ],
+          "es": "Fase 11: inyección de fallos y depuración guiada por señales, verificada en el NAS",
+          "en": "Phase 11: failure injection and signal-driven debugging, verified on the NAS"
+        },
+        {
+          "date": "2026-09-13",
+          "prs": [
+            19,
+            20,
+            21,
+            22
+          ],
+          "es": "Fases 8 a 10: jobs asíncronos y MCP, sesiones evaluadas en Langfuse, muestreo y privacidad",
+          "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
+        }
+      ],
+      "checkedUntil": "2026-09-17T16:31:18Z"
     },
     "cinepedia": {
       "done": {
