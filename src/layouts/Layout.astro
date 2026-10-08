@@ -1,4 +1,8 @@
 ---
+// Fuentes servidas desde la propia web: sin peticiones a Google (RGPD).
+import '@fontsource-variable/bricolage-grotesque/opsz.css';
+import '@fontsource-variable/geist';
+import '@fontsource-variable/geist-mono';
 import '../styles/global.css';
 import type { Lang } from '../data/projects';
 import { UI, home } from '../i18n';
@@ -22,6 +26,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 const altUrl = new URL(alt, Astro.site);
 const spanish = lang === 'es' ? canonical : altUrl; // versión por defecto
 const ogImage = new URL(`/og-${lang}.png`, Astro.site);
+// JSON.stringify no escapa "<": sin esto, un texto con "</script>" cerraría la etiqueta.
+const ld = jsonLd && JSON.stringify(jsonLd).replace(/</g, '\\u003c');
 ---
 <!doctype html>
 <html lang={lang}>
@@ -48,10 +54,7 @@ const ogImage = new URL(`/og-${lang}.png`, Astro.site);
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  {ld && <script type="application/ld+json" set:html={ld} />}
 </head>
 <body>
   <header class="top">
@@ -75,11 +78,12 @@ const ogImage = new URL(`/og-${lang}.png`, Astro.site);
 
   <footer class="foot"><div class="wrap"><span>{t.footer}</span><span><slot name="foot" /></span></div></footer>
 
-  <script is:inline define:vars={{ lang }}>
+  <script>
     // Recalcula "hace X días" con la fecha real del visitante, no la del build.
+    const lang = document.documentElement.lang;
     const DAY = 86400000;
     document.querySelectorAll('time[data-ago]').forEach((el) => {
-      const d = Math.max(0, Math.round((Date.now() - new Date(el.getAttribute('datetime')).getTime()) / DAY));
+      const d = Math.max(0, Math.round((Date.now() - new Date(el.getAttribute('datetime')!).getTime()) / DAY));
       el.textContent = lang === 'es'
         ? d === 0 ? 'hoy' : d === 1 ? 'ayer' : d < 14 ? `hace ${d} días` : `hace ${Math.round(d / 7)} semanas`
         : d === 0 ? 'today' : d === 1 ? 'yesterday' : d < 14 ? `${d} days ago` : `${Math.round(d / 7)} weeks ago`;

@@ -28,10 +28,10 @@ jobs:
   status:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24
 
@@ -62,21 +62,25 @@ jobs:
           SINCE: ${{ inputs.since }}
 
       - name: Guardar
+        env:
+          CHANGED: ${{ steps.ai.outputs.changed }}
+          PROJECTS: ${{ steps.ai.outputs.projects }}
+          OPEN_PR: ${{ steps.base.outputs.pr }}
         run: |
           git diff --quiet src/data/status.json && { echo "Sin cambios."; exit 0; }
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/data/status.json
-          if [ "${{ steps.ai.outputs.changed }}" != "true" ] && [ -z "${{ steps.base.outputs.pr }}" ]; then
+          if [ "$CHANGED" != "true" ] && [ -z "$OPEN_PR" ]; then
             # Solo ha avanzado la fecha de revisión: no merece una PR.
             git commit -m "chore: revisión diaria de PRs sin cambios de contenido"
             git pull --rebase origin main
             git push origin HEAD:main
             exit 0
           fi
-          git commit -m "content: estado de proyectos propuesto por IA (${{ steps.ai.outputs.projects || 'sin cambios nuevos' }})"
+          git commit -m "content: estado de proyectos propuesto por IA (${PROJECTS:-sin cambios nuevos})"
           git push origin "HEAD:$BRANCH"
-          if [ -z "${{ steps.base.outputs.pr }}" ]; then
+          if [ -z "$OPEN_PR" ]; then
             gh pr create --base main --head "$BRANCH" \
               --title "Estado de proyectos propuesto por IA" \
               --body "Cambios de estado y changelog que la IA propone a partir de las PRs mergeadas en los repos de los proyectos. Revisa el diff de \`src/data/status.json\`: si algo no es exacto o no debe ser público, edítalo en esta rama o cierra la PR. Al mergear se publica en rcuadrado.es."

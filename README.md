@@ -38,7 +38,7 @@ las 05:17 UTC, guarda el JSON en el repo y publica en GitHub Pages.
    `ACTIVITY_TOKEN` del repo. Caduca como mucho al año: si caduca, la web sigue
    publicándose con los últimos datos.
 3. Settings → Pages → Source: **GitHub Actions**. Dominio propio: `rcuadrado.es`.
-4. DNS de `rcuadrado.es` (hoy apunta a IONOS, 217.160.0.85): registros A de GitHub Pages
+4. DNS de `rcuadrado.es`: registros A de GitHub Pages
    (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) y
    `www` como CNAME a `jcarlosrodicio.github.io`. Activar HTTPS cuando haya certificado.
 
@@ -73,3 +73,12 @@ Configuración (Settings → Secrets and variables → Actions):
 | `ACTIVITY_TOKEN` | secreto | el mismo token de la actividad, con **Pull requests: read-only** además de Contents |
 
 Para revisar un periodo pasado: Actions → Estado con IA → Run workflow → `since: YYYY-MM-DD`.
+
+## Seguridad
+
+- Web estática, sin servidor ni formularios: no hay nada que atacar en el lado servidor.
+- CSP en `<meta>` generada por Astro (`security.csp` en `astro.config.mjs`) con los hashes de
+  sus scripts; no se carga nada de terceros (las fuentes se sirven desde la propia web).
+- Workflows: actions fijadas por SHA, `npm ci --ignore-scripts` y solo `push`, `schedule` y
+  `workflow_dispatch` como disparadores, así que una PR desde un fork no ve los secretos.
+- GitHub Pages no permite cabeceras propias: no hay HSTS ni `frame-ancestors`.

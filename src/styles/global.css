@@ -10,9 +10,9 @@
   --accent: oklch(0.64 0.2 37);
   --ok: oklch(0.58 0.14 150);
   --warn: oklch(0.7 0.14 75);
-  --display: "Bricolage Grotesque", system-ui, sans-serif;
-  --body: "Geist", system-ui, sans-serif;
-  --mono: "Geist Mono", ui-monospace, monospace;
+  --display: "Bricolage Grotesque Variable", system-ui, sans-serif;
+  --body: "Geist Variable", system-ui, sans-serif;
+  --mono: "Geist Mono Variable", ui-monospace, monospace;
   --wrap: 1200px;
   --gut: clamp(16px, 4vw, 40px);
   --r: 14px;
