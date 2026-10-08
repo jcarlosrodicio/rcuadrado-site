@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Mark from './Mark.astro';
+import Spark from './Spark.astro';
+import { GENERATED_AT, PROJECTS, type Lang, type Project } from '../data/projects';
+import { KIND, STATUS, UI, home, projectUrl } from '../i18n';
+import { ago } from '../lib/time';
+
+interface Props { lang: Lang; p: Project }
+const { lang, p } = Astro.props;
+const t = UI[lang];
+const ref = new Date(GENERATED_AT);
+const i = PROJECTS.findIndex((x) => x.id === p.id);
+const prev = PROJECTS[(i - 1 + PROJECTS.length) % PROJECTS.length];
+const next = PROJECTS[(i + 1) % PROJECTS.length];
+const locale = lang === 'es' ? 'es-ES' : 'en-GB';
+const blocked = (s: string) => /^(Bloqueado|Blocked)/.test(s);
+const states = [
+  ['done', t.done, p.done[lang], t.emptyDone],
+  ['doing', t.doing, p.doing[lang], t.emptyDoing],
+  ['next', t.later, p.next[lang], t.emptyLater],
+] as const;
+---
+<Layout lang={lang} title={`${p.name} · ${p.tagline[lang]} · Rcuadrado`} description={p.about[lang]} alt={projectUrl(lang === 'es' ? 'en' : 'es', p.id)} section="work">
+  <main class="wrap" style={`--c:${p.color}`}>
+    <div class="crumbs">
+      <span><a href={`${home(lang)}#trabajo`}>{t.crumbs}</a> / {p.name}</span>
+      <nav aria-label={`${t.prev} / ${t.next}`}>
+        <a href={projectUrl(lang, prev.id)}>← {prev.name}</a>
+        <a href={projectUrl(lang, next.id)}>{next.name} →</a>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <Mark p={p} size={88} />
+      <div>
+        <h1>{p.name}</h1>
+        <p>{p.tagline[lang]}</p>
+        <div class="meta">
+          <span class={`pill ${p.status}`}>{STATUS[lang][p.status]}</span>
+          {p.version && <span>{p.version[lang]}</span>}
+          <span>{KIND[lang][p.kind]}</span>
+        </div>
+      </div>
+      {p.links.length > 0 && (
+        <div class="links">
+          {p.links.map((l, k) => <a class:list={['btn', { primary: k === 0 }]} href={l.url}>{l.label[lang]} ↗</a>)}
+        </div>
+      )}
+    </div>
+    <div class="band"></div>
+
+    {p.gallery && (
+      <div class="gallery" tabindex="0" aria-label={`${t.screenshots} ${p.name}`}>
+        {p.gallery.map((src) => <img src={src} alt={`${t.screenshots} ${p.name}`} loading="lazy" />)}
+      </div>
+    )}
+
+    <div class="pbody">
+      <div>
+        <section><h2>{t.whatIs}</h2><p class="about">{p.about[lang]}</p></section>
+        <section>
+          <h2>{t.state}</h2>
+          <div class="state">
+            {states.map(([cls, title, items, empty]) => (
+              <div class={cls}>
+                <h3>{title}</h3>
+                {items.length
+                  ? <ul>{items.map((s) => <li class:list={{ blocked: blocked(s) }}>{s}</li>)}</ul>
+                  : <p class="empty">{empty}</p>}
+              </div>
+            ))}
+          </div>
+        </section>
+        {p.cli && <section><h2>{t.tryIt}</h2><code class="cli-lg">{p.cli}</code></section>}
+      </div>
+      <aside class="facts">
+        <dl>
+          <dt>{t.myRole}</dt><dd>{p.role[lang]}</dd>
+          {p.activity && <>
+            <dt>{t.started}</dt><dd>{new Date(p.activity.since).toLocaleDateString(locale, { month: 'long', year: 'numeric' })}</dd>
+            <dt>{t.lastChange}</dt><dd><time data-ago datetime={p.activity.last}>{ago(p.activity.last, lang, ref)}</time></dd>
+            <dt>{t.commits}</dt><dd>{p.activity.commits.toLocaleString(locale)}</dd>
+          </>}
+          <dt>{t.stack}</dt><dd class="tags">{p.stack.map((s) => <span>{s}</span>)}</dd>
+        </dl>
+        {p.activity && (
+          <div class="act">
+            <h3>{t.activity}</h3>
+            <Spark p={p} height={64} label={t.activity} />
+            <div class="axis"><span>{t.weeksAgo}</span><span>{t.today}</span></div>
+          </div>
+        )}
+      </aside>
+    </div>
+
+    <div class="pager">
+      <a href={projectUrl(lang, prev.id)} style={`--c:${prev.color}`}><Mark p={prev} size={40} /><span><small>{t.prev}</small><b>{prev.name}</b></span></a>
+      <a href={projectUrl(lang, next.id)} style={`--c:${next.color}`}><span><small>{t.next}</small><b>{next.name}</b></span><Mark p={next} size={40} /></a>
+    </div>
+  </main>
+</Layout>

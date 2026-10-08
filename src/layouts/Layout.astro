@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+import type { Lang } from '../data/projects';
+import { UI, home } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  /** Ruta equivalente en el otro idioma. */
+  alt: string;
+  section?: 'work';
+}
+const { lang, title, description, alt, section } = Astro.props;
+const t = UI[lang];
+const h = home(lang);
+const other: Lang = lang === 'es' ? 'en' : 'es';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
+  <link rel="alternate" hreflang={lang} href={canonical}>
+  <link rel="alternate" hreflang={other} href={new URL(alt, Astro.site)}>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="logo" href={h}><span class="sq">R<sup>2</sup></span>rcuadrado</a>
+      <ul class="menu">
+        <li><a href={`${h}#trabajo`} aria-current={section === 'work' ? 'page' : undefined}>{t.nav.work}</a></li>
+        <li><a href={`${h}#trayectoria`}>{t.nav.career}</a></li>
+        <li><a href={`${h}#que-hago`}>{t.nav.what}</a></li>
+        <li><a href={`${h}#contacto`}>{t.nav.contact}</a></li>
+      </ul>
+      <a class="lang" href={alt} hreflang={other} lang={other}>
+        {lang === 'es' ? <><b>ES</b> / EN</> : <>ES / <b>EN</b></>}
+        <span class="sr-only">{t.otherLang}</span>
+      </a>
+      <a class="btn primary" href={`${h}#contacto`}>{t.write}</a>
+    </div>
+  </header>
+
+  <slot />
+
+  <footer class="foot"><div class="wrap"><span>{t.footer}</span><span><slot name="foot" /></span></div></footer>
+
+  <script is:inline define:vars={{ lang }}>
+    // Recalcula "hace X días" con la fecha real del visitante, no la del build.
+    const DAY = 86400000;
+    document.querySelectorAll('time[data-ago]').forEach((el) => {
+      const d = Math.max(0, Math.round((Date.now() - new Date(el.getAttribute('datetime')).getTime()) / DAY));
+      el.textContent = lang === 'es'
+        ? d === 0 ? 'hoy' : d === 1 ? 'ayer' : d < 14 ? `hace ${d} días` : `hace ${Math.round(d / 7)} semanas`
+        : d === 0 ? 'today' : d === 1 ? 'yesterday' : d < 14 ? `${d} days ago` : `${Math.round(d / 7)} weeks ago`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+---
+import type { Project } from '../data/projects';
+interface Props { p: Project; height?: number; label: string }
+const { p, height = 28, label } = Astro.props;
+const weeks = p.activity?.weeks ?? Array(26).fill(0);
+const max = Math.max(...weeks, 1);
+---
+<span class="spark" style={`height:${height}px`} role="img" aria-label={label}>
+  {weeks.map((v) => <i style={v ? `height:${Math.max(8, (v / max) * 100)}%;background:${p.color}` : 'height:4%'} title={String(v)} />)}
+</span>

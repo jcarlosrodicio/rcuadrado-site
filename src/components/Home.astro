@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Mark from './Mark.astro';
+import Spark from './Spark.astro';
+import { GENERATED_AT, PROJECTS, type Kind, type Lang } from '../data/projects';
+import { CAREER, CONTACT, EDUCATION, KIND, NOT_MY_THING, STATUS, UI, WHAT_I_DO, home, projectUrl } from '../i18n';
+import { ago, daysSince } from '../lib/time';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = UI[lang];
+const ref = new Date(GENERATED_AT);
+
+// Ahora mismo: proyectos con commits en los 7 días anteriores a la generación de datos
+const recent = PROJECTS.filter((p) => daysSince(p.activity?.last, ref) <= 7);
+
+// Gráfico apilado de commits por semana y proyecto
+const tracked = PROJECTS.filter((p) => p.activity);
+const totals = Array.from({ length: 26 }, (_, i) => tracked.reduce((s, p) => s + p.activity!.weeks[i], 0));
+const max = Math.max(...totals, 1);
+
+const kinds: ('all' | Kind)[] = ['all', 'app', 'agents', 'data'];
+const count = (k: 'all' | Kind) => (k === 'all' ? PROJECTS.length : PROJECTS.filter((p) => p.kind === k).length);
+const date = new Date(GENERATED_AT).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+---
+<Layout lang={lang} title={t.title} description={t.description} alt={home(lang === 'es' ? 'en' : 'es')}>
+  <main class="wrap">
+    <section class="intro">
+      <div>
+        <p class="eyebrow"><span class="dot"></span>{t.eyebrow}</p>
+        <h1>{t.hello}<br><span>{t.role}</span></h1>
+        <p class="lede">{t.lede}</p>
+        <div class="ctas">
+          <a class="btn primary" href="#trabajo">{t.seeWork}</a>
+          <a class="btn" href={CONTACT.cv} download>{t.downloadCv}</a>
+        </div>
+        <dl class="seek">
+          {t.facts.map(([k, v]) => <><dt>{k}</dt><dd>{v}</dd></>)}
+        </dl>
+      </div>
+
+      <aside class="now" aria-labelledby="now-title">
+        <header><h2 id="now-title">{t.now}</h2><span>{t.nowSpan}</span></header>
+        <ul>
+          {recent.map((p) => (
+            <li><a href={projectUrl(lang, p.id)}>
+              <Mark p={p} size={30} />
+              <span><b>{p.name}</b><small>{p.now?.[lang]}</small></span>
+              <time data-ago datetime={p.activity!.last}>{ago(p.activity!.last, lang, ref)}</time>
+            </a></li>
+          ))}
+        </ul>
+        <div class="chart">
+          <div class="bars" role="img" aria-label={t.chartLabel}>
+            {totals.map((total, i) => (
+              <span class="col" title={`${total} commits`}>
+                {tracked.filter((p) => p.activity!.weeks[i]).map((p) => (
+                  <i style={`height:${(p.activity!.weeks[i] / max) * 100}%;background:${p.color}`} title={`${p.name}: ${p.activity!.weeks[i]}`} />
+                ))}
+              </span>
+            ))}
+          </div>
+          <div class="axis"><span>{t.weeksAgo}</span><span>{t.chartAxis}</span><span>{t.today}</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="sec" id="trabajo">
+      <div class="sec-head">
+        <h2 class="title">{t.work}<small data-count>{PROJECTS.length} {t.projects}</small></h2>
+        <p>{t.workIntro}</p>
+      </div>
+      <div class="filters" role="group" aria-label={t.filterLabel} data-filters>
+        {kinds.map((k) => <button type="button" data-k={k} aria-pressed={k === 'all' ? 'true' : 'false'}>{t.filters[k]}<span>{count(k)}</span></button>)}
+      </div>
+      <div class="grid" data-grid>
+        {PROJECTS.map((p) => (
+          <a class:list={['card', { wide: p.gallery }]} href={projectUrl(lang, p.id)} data-kind={p.kind} style={`--c:${p.color}`}>
+            <div class="body">
+              <div class="head">
+                <Mark p={p} size={44} />
+                <div><h3>{p.name}</h3><div class="kind">{KIND[lang][p.kind]}</div></div>
+                <span class={`pill ${p.status}`}>{STATUS[lang][p.status]}</span>
+              </div>
+              <p>{p.tagline[lang]}</p>
+              {p.cli && <code class="cli">{p.cli}</code>}
+              {p.now && <div class="doing" data-prefix={t.nowPrefix}>{p.now[lang]}</div>}
+              <footer>
+                <Spark p={p} label={t.activity} />
+                {p.activity ? <time data-ago datetime={p.activity.last}>{ago(p.activity.last, lang, ref)}</time> : <span>{t.noActivity}</span>}
+              </footer>
+            </div>
+            {p.gallery && <div class="shots"><img src={p.gallery[0]} alt="" loading="lazy" /><img src={p.gallery[2]} alt="" loading="lazy" /></div>}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="sec" id="trayectoria">
+      <div class="sec-head">
+        <h2 class="title">{t.career}</h2>
+        <p>{t.careerIntro}</p>
+      </div>
+      <div class="career">
+        <ol class="jobs">
+          {CAREER.map((j) => (
+            <li class:list={{ current: !j.to }}>
+              <time>{j.from} – {j.to ?? (lang === 'es' ? 'hoy' : 'present')}</time>
+              <div><h3>{j.company}<span>{j.place[lang]}</span></h3><div class="role">{j.role}</div></div>
+              <p>{j.text[lang]}</p>
+            </li>
+          ))}
+        </ol>
+        <aside class="edu">
+          <h3>{t.education}</h3>
+          {EDUCATION[lang].map(([when, what, where]) => <div><time>{when}</time><b>{what}</b><small>{where}</small></div>)}
+          <a class="btn cvlink" href={CONTACT.cv} download>{t.downloadCv} ↓</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="sec" id="que-hago">
+      <div class="sec-head">
+        <h2 class="title">{t.what}</h2>
+        <p>{t.whatIntro}</p>
+      </div>
+      <div class="dodont">
+        <div class="box yes">
+          <h3><span class="ic" aria-hidden="true">✓</span>{t.yes}</h3>
+          <ul>{WHAT_I_DO[lang].map((w) => <li><b>{w.title}</b><span>{w.text}</span><em>{t.proof} {w.proof}</em></li>)}</ul>
+        </div>
+        <div class="box no">
+          <h3><span class="ic" aria-hidden="true">✕</span>{t.no}</h3>
+          <ul>{NOT_MY_THING[lang].map((w) => <li><b>{w.title}</b><span>{w.text}</span></li>)}</ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="contacto">
+      <div class="contact">
+        <div class="mailbox">
+          <h2>{t.contactTitle}</h2>
+          <p>{t.contactText}</p>
+          <div class="mailrow">
+            <a href={`mailto:${CONTACT.email}`} data-mail>{CONTACT.email}</a>
+            <button type="button" data-copy data-done={t.copied}>{t.copy}</button>
+          </div>
+        </div>
+        <div class="elsewhere">
+          <a href={CONTACT.linkedin}>LinkedIn <span>/in/jcarlosrodicio ↗</span></a>
+          <a href={CONTACT.github}>GitHub <span>jcarlosrodicio ↗</span></a>
+          <a href={CONTACT.cv} download>CV <span>PDF · English ↓</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Fragment slot="foot">{t.dataNote} {date}</Fragment>
+</Layout>
+
+<script>
+  const filters = document.querySelector<HTMLElement>('[data-filters]')!;
+  const cards = document.querySelectorAll<HTMLElement>('[data-grid] .card');
+  const counter = document.querySelector<HTMLElement>('[data-count]')!;
+  const word = counter.textContent!.replace(/^\d+\s*/, '');
+  filters.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest('button');
+    if (!b) return;
+    filters.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    let n = 0;
+    cards.forEach((c) => { const show = b.dataset.k === 'all' || c.dataset.kind === b.dataset.k; c.hidden = !show; if (show) n++; });
+    counter.textContent = `${n} ${word}`;
+  });
+
+  const copy = document.querySelector<HTMLButtonElement>('[data-copy]')!;
+  copy.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(document.querySelector('[data-mail]')!.textContent!);
+      copy.textContent = copy.dataset.done!;
+    } catch { /* sin permiso de portapapeles: el enlace mailto sigue funcionando */ }
+  });
+</script>

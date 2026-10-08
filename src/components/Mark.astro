@@ -1,0 +1,8 @@
+---
+import type { Project } from '../data/projects';
+interface Props { p: Project; size?: number }
+const { p, size = 48 } = Astro.props;
+---
+{p.icon
+  ? <img class="pmark" src={p.icon} width={size} height={size} alt="" loading="lazy" />
+  : <span class="pmark glyph" style={`--c:${p.color};width:${size}px;height:${size}px;font-size:${Math.round(size * 0.36)}px`} aria-hidden="true">{p.glyph}</span>}

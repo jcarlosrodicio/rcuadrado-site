@@ -1,0 +1,58 @@
+# Publica la web en GitHub Pages: en cada push a main y una vez al día,
+# para que la actividad de los proyectos se actualice sola.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 5 * * *' # todos los días a las 05:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write # guardar activity.json en el repo
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # Token de solo lectura sobre los repos de los proyectos (ver README).
+      # Si falta o caduca, el script conserva los datos anteriores y la web se publica igual.
+      - run: npm run activity
+        env:
+          ACTIVITY_TOKEN: ${{ secrets.ACTIVITY_TOKEN }}
+      # Guardar el JSON deja historial y mantiene el repo activo (GitHub desactiva los
+      # cron de repos públicos tras 60 días sin actividad). Este push no relanza el workflow.
+      - name: Commit activity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/activity.json
+          git diff --cached --quiet || (git commit -m "chore: actualizar actividad de proyectos" && git push)
+      - run: npx astro build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
