@@ -1,0 +1,46 @@
+<!doctype html>
+<!-- Tarjeta para redes (1200x630). Se renderiza con tools/og.sh -->
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Geist:wght@400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { background: oklch(0.975 0.005 85); color: oklch(0.21 0.01 85); font-family: Geist, sans-serif; padding: 72px 80px; display: flex; flex-direction: column; }
+  .top { display: flex; align-items: center; gap: 16px; font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 34px; letter-spacing: -0.02em; }
+  .sq { width: 56px; height: 56px; border-radius: 14px; background: oklch(0.21 0.01 85); color: oklch(0.975 0.005 85); display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 800; }
+  .sq sup { font-size: 15px; color: oklch(0.64 0.2 37); margin: -14px 0 0 2px; }
+  h1 { font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 84px; line-height: 1; letter-spacing: -0.04em; margin-top: 64px; }
+  h2 { font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 44px; letter-spacing: -0.03em; color: oklch(0.56 0.01 85); margin-top: 14px; }
+  .bottom { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; }
+  .bottom p { font-family: 'Geist Mono'; font-size: 24px; color: oklch(0.42 0.01 85); }
+  .bars { display: flex; gap: 8px; align-items: flex-end; height: 110px; }
+  .bars i { width: 22px; border-radius: 4px; }
+</style>
+</head>
+<body>
+  <div class="top"><span class="sq">R<sup>2</sup></span>rcuadrado</div>
+  <h1>Juan Carlos Rodicio</h1>
+  <h2 id="role">AI Engineer · Senior Software Engineer</h2>
+  <div class="bottom">
+    <p id="line">Agentes de IA · Backend Java · Apps móviles</p>
+    <div class="bars">
+      <i style="height:92%;background:oklch(0.56 0.2 262)"></i>
+      <i style="height:64%;background:oklch(0.55 0.09 185)"></i>
+      <i style="height:56%;background:oklch(0.72 0.15 70)"></i>
+      <i style="height:100%;background:oklch(0.64 0.2 37)"></i>
+      <i style="height:72%;background:oklch(0.58 0.13 145)"></i>
+      <i style="height:48%;background:oklch(0.42 0.02 85)"></i>
+      <i style="height:84%;background:oklch(0.58 0.18 350)"></i>
+      <i style="height:60%;background:oklch(0.52 0.15 295)"></i>
+      <i style="height:36%;background:oklch(0.58 0.15 25)"></i>
+    </div>
+  </div>
+  <script>
+    if (new URLSearchParams(location.search).get('lang') === 'en') {
+      document.getElementById('line').textContent = 'AI agents · Java backends · Mobile apps';
+    }
+  </script>
+</body>
+</html>

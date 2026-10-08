@@ -12,6 +12,19 @@ export const CONTACT = {
   cv: '/cv/juan-carlos-rodicio-cv-en.pdf',
 };
 
+/** Persona en schema.org, compartida por la portada y las fichas. */
+export const PERSON = {
+  '@type': 'Person',
+  '@id': 'https://rcuadrado.es/#person',
+  name: 'Juan Carlos Rodicio',
+  jobTitle: 'AI Engineer',
+  url: 'https://rcuadrado.es/',
+  email: `mailto:${CONTACT.email}`,
+  address: { '@type': 'PostalAddress', addressLocality: 'Sevilla', addressCountry: 'ES' },
+  sameAs: [CONTACT.github, CONTACT.linkedin],
+  knowsAbout: ['AI agents', 'Agent orchestration', 'LLM observability', 'Java', 'Spring Boot', 'Microservices', 'Hexagonal architecture', 'Flutter', 'TypeScript'],
+};
+
 export const UI = {
   es: {
     title: 'Juan Carlos Rodicio · AI Engineer · Rcuadrado',

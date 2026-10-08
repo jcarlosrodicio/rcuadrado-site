@@ -280,3 +280,7 @@ aside.facts { position: sticky; top: 88px; background: var(--surface); border: 1
 .changes a { text-decoration-color: var(--line-2); text-underline-offset: 3px; }
 .changes a:hover { text-decoration-color: currentColor; }
 @media (max-width: 560px) { .changes li { grid-template-columns: 1fr; gap: 2px; } }
+
+/* ---------- 404 ---------- */
+.notfound { padding: clamp(64px, 12vw, 160px) var(--gut); }
+.notfound .ctas { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }

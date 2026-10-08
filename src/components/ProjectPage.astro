@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Mark from './Mark.astro';
 import Spark from './Spark.astro';
 import { GENERATED_AT, PROJECTS, type Lang, type Project } from '../data/projects';
-import { KIND, STATUS, UI, home, projectUrl } from '../i18n';
+import { KIND, PERSON, STATUS, UI, home, projectUrl } from '../i18n';
 import { ago } from '../lib/time';
 
 interface Props { lang: Lang; p: Project }
@@ -14,6 +14,19 @@ const i = PROJECTS.findIndex((x) => x.id === p.id);
 const prev = PROJECTS[(i - 1 + PROJECTS.length) % PROJECTS.length];
 const next = PROJECTS[(i + 1) % PROJECTS.length];
 const locale = lang === 'es' ? 'es-ES' : 'en-GB';
+// Las apps publicadas se describen como MobileApplication para los resultados de Google.
+const jsonLd = p.kind === 'app' && p.status === 'published' ? {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: p.name,
+  description: p.tagline[lang],
+  operatingSystem: 'iOS, Android',
+  applicationCategory: p.id === 'tally' ? 'FinanceApplication' : 'EntertainmentApplication',
+  url: new URL(projectUrl(lang, p.id), Astro.site).href,
+  sameAs: p.links.map((l) => l.url),
+  ...(p.gallery && { screenshot: p.gallery.map((src) => new URL(src, Astro.site).href) }),
+  author: { '@type': 'Person', '@id': PERSON['@id'], name: PERSON.name },
+} : undefined;
 const blocked = (s: string) => /^(Bloqueado|Blocked)/.test(s);
 const states = [
   ['done', t.done, p.done[lang], t.emptyDone],
@@ -21,7 +34,7 @@ const states = [
   ['next', t.later, p.next[lang], t.emptyLater],
 ] as const;
 ---
-<Layout lang={lang} title={`${p.name} · ${p.tagline[lang]} · Rcuadrado`} description={p.about[lang]} alt={projectUrl(lang === 'es' ? 'en' : 'es', p.id)} section="work">
+<Layout lang={lang} title={`${p.name} · ${p.tagline[lang]} · Rcuadrado`} description={p.about[lang]} alt={projectUrl(lang === 'es' ? 'en' : 'es', p.id)} section="work" jsonLd={jsonLd}>
   <main class="wrap" style={`--c:${p.color}`}>
     <div class="crumbs">
       <span><a href={`${home(lang)}#trabajo`}>{t.crumbs}</a> / {p.name}</span>

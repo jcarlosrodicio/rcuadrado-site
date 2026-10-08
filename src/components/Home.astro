@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Mark from './Mark.astro';
 import Spark from './Spark.astro';
 import { GENERATED_AT, PROJECTS, type Kind, type Lang } from '../data/projects';
-import { CAREER, CONTACT, EDUCATION, KIND, NOT_MY_THING, STATUS, UI, WHAT_I_DO, home, projectUrl } from '../i18n';
+import { CAREER, CONTACT, EDUCATION, KIND, NOT_MY_THING, PERSON, STATUS, UI, WHAT_I_DO, home, projectUrl } from '../i18n';
 import { ago, daysSince } from '../lib/time';
 
 interface Props { lang: Lang }
@@ -21,9 +21,16 @@ const max = Math.max(...totals, 1);
 
 const kinds: ('all' | Kind)[] = ['all', 'app', 'agents', 'data'];
 const count = (k: 'all' | Kind) => (k === 'all' ? PROJECTS.length : PROJECTS.filter((p) => p.kind === k).length);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { ...PERSON, description: t.description },
+    { '@type': 'WebSite', '@id': 'https://rcuadrado.es/#website', url: 'https://rcuadrado.es/', name: 'Rcuadrado', inLanguage: ['es', 'en'], publisher: { '@id': PERSON['@id'] } },
+  ],
+};
 const date = new Date(GENERATED_AT).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 ---
-<Layout lang={lang} title={t.title} description={t.description} alt={home(lang === 'es' ? 'en' : 'es')}>
+<Layout lang={lang} title={t.title} description={t.description} alt={home(lang === 'es' ? 'en' : 'es')} jsonLd={jsonLd}>
   <main class="wrap">
     <section class="intro">
       <div>
