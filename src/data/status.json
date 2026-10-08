@@ -26,12 +26,10 @@
       },
       "doing": {
         "es": [
-          "Publicación de la 2.7.0 en App Store y Google Play",
-          "Próxima versión sin fecha fijada"
+          "Publicación de la 2.7.0 en App Store y Google Play"
         ],
         "en": [
-          "Releasing 2.7.0 to the App Store and Google Play",
-          "Next version, no date set"
+          "Releasing 2.7.0 on the App Store and Google Play"
         ]
       },
       "next": {
@@ -66,13 +64,12 @@
           "en": "2.7.0 in testing: categories, form and category row fixes"
         },
         {
-          "date": "2026-10-01",
+          "date": "2026-10-04",
           "prs": [
-            102,
-            106
+            110
           ],
-          "es": "Los tickets se ven de nuevo tras actualizar iOS y el símbolo de moneda ya no se parte.",
-          "en": "Receipts are visible again after iOS updates and currency symbols no longer wrap."
+          "es": "Categorías con iconos, 2 propias gratis y paywall PRO con contexto (fase 34).",
+          "en": "Categories with icons, 2 free custom ones and a contextual PRO paywall (phase 34)."
         },
         {
           "date": "2026-10-02",
@@ -82,14 +79,6 @@
           ],
           "es": "La web redirige al visitante a su idioma y añade la insignia de LaunchNest.",
           "en": "The site sends visitors to their language and adds the LaunchNest badge."
-        },
-        {
-          "date": "2026-10-04",
-          "prs": [
-            110
-          ],
-          "es": "Categorías con iconos, 2 propias gratis y paywall PRO con contexto (fase 34).",
-          "en": "Categories with icons, 2 free custom ones and a contextual PRO paywall (phase 34)."
         },
         {
           "date": "2026-10-02",
@@ -104,6 +93,15 @@
           ],
           "es": "Multimoneda: cada cuenta con su divisa y totales convertidos en el dispositivo (2.6.0).",
           "en": "Multi-currency: each account keeps its currency, totals converted on device (2.6.0)."
+        },
+        {
+          "date": "2026-10-01",
+          "prs": [
+            102,
+            106
+          ],
+          "es": "Los tickets se ven de nuevo tras actualizar iOS y el símbolo de moneda ya no se parte.",
+          "en": "Receipts are visible again after iOS updates and currency symbols no longer wrap."
         },
         {
           "date": "2026-09-28",
@@ -133,20 +131,20 @@
           "en": "App Store and Google Play listings localized for Latin America"
         },
         {
-          "date": "2026-09-10",
-          "prs": [
-            67
-          ],
-          "es": "La web declara que puede usarse como contexto en IA, pero no para entrenar",
-          "en": "The site declares it may be used as AI context, but not for training"
-        },
-        {
           "date": "2026-09-24",
           "prs": [
             81
           ],
           "es": "Web en español neutro para llegar a España y a Latinoamérica",
           "en": "Site in neutral Spanish to reach Spain and Latin America"
+        },
+        {
+          "date": "2026-09-10",
+          "prs": [
+            67
+          ],
+          "es": "La web declara que puede usarse como contexto en IA, pero no para entrenar",
+          "en": "The site declares it may be used as AI context, but not for training"
         },
         {
           "date": "2026-09-09",
@@ -262,62 +260,123 @@
       },
       "next": {
         "es": [
-          "Catálogo remoto, pistas y compras",
+          "Primer arranque, estados vacíos y ajustes",
           "Tres casos de pago",
+          "Bloqueado: catálogo remoto, pistas, compras y analítica (cuentas externas pendientes)",
           "Lanzamiento en las dos tiendas"
         ],
         "en": [
-          "Remote catalogue, hints and purchases",
+          "First run, empty states and settings",
           "Three paid cases",
+          "Blocked: remote catalogue, hints, purchases and analytics (pending external accounts)",
           "Launch on both stores"
         ]
       },
-      "changelog": [],
+      "changelog": [
+        {
+          "date": "2026-10-04",
+          "prs": [
+            19
+          ],
+          "es": "Playtest del hito 1 con personas que no conocían la solución",
+          "en": "Milestone 1 playtest with people who did not know the solution"
+        },
+        {
+          "date": "2026-10-03",
+          "prs": [
+            14,
+            17,
+            18
+          ],
+          "es": "Primer caso gratuito, identidad de la app y dirección visual del juego",
+          "en": "First free case, app identity and the game’s visual direction"
+        },
+        {
+          "date": "2026-10-02",
+          "prs": [
+            7,
+            10,
+            15
+          ],
+          "es": "El móvil del caso: mensajes, galería, notas, calendario, red social y llamadas",
+          "en": "The case phone: messages, gallery, notes, calendar, social feed and calls"
+        },
+        {
+          "date": "2026-10-02",
+          "prs": [
+            3,
+            11
+          ],
+          "es": "Formato de caso con validador y autoría asistida por agentes Solver y Critic",
+          "en": "Case format with a validator and authoring checked by Solver and Critic agents"
+        }
+      ],
       "checkedUntil": "2026-10-08T13:20:07Z"
     },
     "aqorin": {
       "now": {
-        "es": "Tramo Terminal Alpha en curso tras el veredicto de tesis",
-        "en": "Terminal Alpha track in progress after the thesis verdict"
+        "es": "Camino a la primera versión usable desde la terminal",
+        "en": "Working towards the first version usable from the terminal"
       },
       "done": {
         "es": [
-          "Thesis Validation Track completo: TV0–TV7 cerrados con evidencia",
-          "Revisión de tesis: veredicto PARTIALLY VALIDATED",
+          "Validación de la tesis completa: siete etapas cerradas con evidencia",
+          "Tesis validada parcialmente y plan de remediación",
           "@aqorin/cli 0.2.0 publicado en npm con licencia MIT",
-          "Fases P16–P23 cerradas con evidencia de salida",
+          "23 fases de producto cerradas con evidencia",
           "Ejecución verificada en Codex y Claude Code (skills y MCP)",
-          "Terminal Alpha (ADR-0049) aceptado como hoja de ruta"
+          "Hoja de ruta hacia la primera versión usable"
         ],
         "en": [
-          "Full Thesis Validation Track: TV0–TV7 closed with evidence",
-          "Thesis review: PARTIALLY VALIDATED verdict",
+          "Thesis validation complete: seven stages closed with evidence",
+          "Thesis partially validated, with a remediation plan",
           "@aqorin/cli 0.2.0 published on npm under MIT",
-          "Phases P16–P23 closed with recorded exit evidence",
+          "23 product phases closed with recorded evidence",
           "Execution verified on Codex and Claude Code (skills and MCP)",
-          "Terminal Alpha (ADR-0049) accepted as roadmap"
+          "Roadmap to the first usable version"
         ]
       },
       "doing": {
         "es": [
-          "Tramo Terminal Alpha (TA1a)"
+          "Inventario de runtimes, autenticación y modelos",
+          "Registro de compatibilidad y evidencias por runtime"
         ],
         "en": [
-          "Terminal Alpha track (TA1a)"
+          "Runtime, authentication and model inventory",
+          "Compatibility and evidence ledger per runtime"
         ]
       },
       "next": {
-        "es": [],
-        "en": []
+        "es": [
+          "Interfaz de terminal para crear agentes y workflows",
+          "Runs mixtos en Claude Code, Codex, OpenCode y Pi con revisión",
+          "Seguimiento en vivo, preguntas y reanudación desde la terminal"
+        ],
+        "en": [
+          "Terminal UI to create agents and workflows",
+          "Mixed runs across Claude Code, Codex, OpenCode and Pi with review",
+          "Live follow-up, questions and resume from the terminal"
+        ]
       },
       "changelog": [
+        {
+          "date": "2026-10-07",
+          "prs": [
+            77,
+            78,
+            79,
+            80
+          ],
+          "es": "Protocolo de remediación y revalidación de la tesis aceptado",
+          "en": "Thesis remediation and revalidation protocol accepted"
+        },
         {
           "date": "2026-10-05",
           "prs": [
             76
           ],
-          "es": "Revisión de tesis: veredicto PARTIALLY VALIDATED (decisión del propietario)",
-          "en": "Thesis review: PARTIALLY VALIDATED verdict (owner decision)"
+          "es": "Revisión de la tesis: validada parcialmente, con plan de remediación",
+          "en": "Thesis review: partially validated, with a remediation plan"
         },
         {
           "date": "2026-10-05",
@@ -340,17 +399,6 @@
           ],
           "es": "TV5 cerrado: asignación por rol de runtime y modelo con evidencia multi-runtime en vivo",
           "en": "TV5 closed: per-role runtime and model assignment with live multi-runtime evidence"
-        },
-        {
-          "date": "2026-10-07",
-          "prs": [
-            77,
-            78,
-            79,
-            80
-          ],
-          "es": "Protocolo de remediación y revalidación de tesis aceptado (ADR-0048)",
-          "en": "Thesis remediation and revalidation protocol accepted (ADR-0048)"
         },
         {
           "date": "2026-10-01",
@@ -481,14 +529,6 @@
       },
       "changelog": [
         {
-          "date": "2026-09-16",
-          "prs": [
-            12
-          ],
-          "es": "Identidad de tarea que sobrevive a la sesión: los eventos de un run se registran juntos",
-          "en": "A task identity that outlives the session: a run's events recorded together"
-        },
-        {
           "date": "2026-10-07",
           "prs": [
             8,
@@ -497,6 +537,14 @@
           ],
           "es": "La revisión adversarial cubre todo el diff, deja informe legible y ataca tests debilitados",
           "en": "The adversarial review covers the whole diff, leaves a readable report and attacks weakened tests"
+        },
+        {
+          "date": "2026-09-16",
+          "prs": [
+            12
+          ],
+          "es": "Identidad de tarea que sobrevive a la sesión: los eventos de un run se registran juntos",
+          "en": "A task identity that outlives the session: a run's events recorded together"
         },
         {
           "date": "2026-09-14",
@@ -508,15 +556,6 @@
           "en": "Failures are classified before reacting: code, check, harness or something missing"
         },
         {
-          "date": "2026-09-12",
-          "prs": [
-            2,
-            5
-          ],
-          "es": "Verificación en runtime con procedimiento propio y evidencia adaptada a cada superficie",
-          "en": "Runtime verification with its own procedure and evidence shaped per surface"
-        },
-        {
           "date": "2026-09-13",
           "prs": [
             1,
@@ -524,6 +563,15 @@
           ],
           "es": "auto-run-task: una fase completa sin supervisión, decisiones registradas y PR abierta al final",
           "en": "auto-run-task: a whole phase unsupervised, decisions logged, ending in an open PR"
+        },
+        {
+          "date": "2026-09-12",
+          "prs": [
+            2,
+            5
+          ],
+          "es": "Verificación en runtime con procedimiento propio y evidencia adaptada a cada superficie",
+          "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
       "checkedUntil": "2026-10-08T13:20:07Z"
@@ -561,17 +609,6 @@
       },
       "changelog": [
         {
-          "date": "2026-09-18",
-          "prs": [
-            21,
-            24,
-            25
-          ],
-          "url": "https://github.com/jcarlosrodicio/opencode-agent-orchestration-kit/pull/21",
-          "es": "Mejoras de compatibilidad con Windows en instalación y comprobaciones",
-          "en": "Windows compatibility improvements in installation and checks"
-        },
-        {
           "date": "2026-09-28",
           "prs": [
             32
@@ -588,14 +625,25 @@
           "url": "https://github.com/jcarlosrodicio/opencode-agent-orchestration-kit/pull/31",
           "es": "Proceso propio sin plugins de terceros; /autonomous llega hasta abrir la PR",
           "en": "First-party process skills, no third-party plugins; /autonomous opens the PR"
+        },
+        {
+          "date": "2026-09-18",
+          "prs": [
+            21,
+            24,
+            25
+          ],
+          "url": "https://github.com/jcarlosrodicio/opencode-agent-orchestration-kit/pull/21",
+          "es": "Mejoras de compatibilidad con Windows en instalación y comprobaciones",
+          "en": "Windows compatibility improvements in installation and checks"
         }
       ],
       "checkedUntil": "2026-10-08T13:20:07Z"
     },
     "grodar": {
       "now": {
-        "es": "Fase 33 en producción",
-        "en": "Phase 33 in production"
+        "es": "34 de 44 fases hechas, en producción",
+        "en": "34 of 44 phases done, in production"
       },
       "done": {
         "es": [
@@ -617,17 +665,70 @@
       },
       "doing": {
         "es": [
-          "Aceptación final con datos reales de las fases 30 a 32"
+          "Visibilidad en búsquedas con IA (GEO)"
         ],
         "en": [
-          "Final acceptance with real data for phases 30 to 32"
+          "Visibility in AI search (GEO)"
         ]
       },
       "next": {
-        "es": [],
-        "en": []
+        "es": [
+          "Reseñas de las apps",
+          "Indexación y backlinks",
+          "Analítica web",
+          "Directorios"
+        ],
+        "en": [
+          "App reviews",
+          "Indexing and backlinks",
+          "Web analytics",
+          "Directories"
+        ]
       },
       "changelog": [
+        {
+          "date": "2026-10-08",
+          "prs": [
+            73,
+            74
+          ],
+          "es": "Fase 33: seguimiento de posiciones en Google y métricas de keywords, en producción",
+          "en": "Phase 33: Google rank tracking and keyword metrics, in production"
+        },
+        {
+          "date": "2026-10-07",
+          "prs": [
+            67,
+            70
+          ],
+          "es": "Fases 31-32: seguimiento de keywords en tiendas y vigilancia de webs competidoras",
+          "en": "Phases 31-32: store keyword tracking and competitor website monitoring"
+        },
+        {
+          "date": "2026-10-06",
+          "prs": [
+            64
+          ],
+          "es": "Fase 30: fichas de tienda propias y de competidores, versionadas",
+          "en": "Phase 30: versioned store listings for own apps and competitors"
+        },
+        {
+          "date": "2026-10-05",
+          "prs": [
+            62,
+            63
+          ],
+          "es": "Fase 29: varios proyectos a la vez y configuración desde la web",
+          "en": "Phase 29: multiple projects at once and configuration from the web"
+        },
+        {
+          "date": "2026-10-04",
+          "prs": [
+            60
+          ],
+          "es": "Fase 28: skills de marketing y un orquestador de crecimiento, verificado en producción",
+          "en": "Phase 28: marketing skills and a growth orchestrator, verified in production"
+        },
         {
           "date": "2026-10-03",
           "prs": [
@@ -672,6 +773,15 @@
           "en": "Phase 23: demand signals and opportunities from search data."
         },
         {
+          "date": "2026-09-25",
+          "prs": [
+            26,
+            50
+          ],
+          "es": "Fase 16 cerrada: despliegue v1 verificado en producción y roadmap alineado (0–22 hechos).",
+          "en": "Phase 16 closed: v1 deployment verified in production and roadmap aligned (0–22 done)."
+        },
+        {
           "date": "2026-09-22",
           "prs": [
             43
@@ -706,15 +816,6 @@
           ],
           "es": "Bing Webmaster como segundo buscador, con backlinks verificados en producción.",
           "en": "Bing Webmaster as a second search engine, with backlinks verified in production."
-        },
-        {
-          "date": "2026-09-25",
-          "prs": [
-            26,
-            50
-          ],
-          "es": "Fase 16 cerrada: despliegue v1 verificado en producción y roadmap alineado (0–22 hechos).",
-          "en": "Phase 16 closed: v1 deployment verified in production and roadmap aligned (0–22 done)."
         },
         {
           "date": "2026-09-11",
@@ -764,8 +865,8 @@
     },
     "obs": {
       "now": {
-        "es": "Fase 25: evaluador en sombra",
-        "en": "Phase 25: shadow evaluator"
+        "es": "Fase 25 cerrada: evaluador en sombra sobre datos reales",
+        "en": "Phase 25 closed: shadow evaluator on real data"
       },
       "done": {
         "es": [
@@ -786,12 +887,8 @@
         ]
       },
       "doing": {
-        "es": [
-          "Evaluador en sombra"
-        ],
-        "en": [
-          "Shadow evaluator"
-        ]
+        "es": [],
+        "en": []
       },
       "next": {
         "es": [],
