@@ -91,7 +91,7 @@ function parseJSON(text) {
 
 // ---------- validación ----------
 
-const LEAK = /https?:\/\/|www\.|@[\w-]+\.\w|\b\d{1,3}(\.\d{1,3}){3}\b|\b[\w-]+\/[\w./-]+\.\w{1,5}\b|(sk|ghp|github_pat|key)[-_][A-Za-z0-9]{8,}/i;
+const LEAK = /https?:\/\/|www\.|@[\w-]+\.[a-z]{2,}\b|\b\d{1,3}(\.\d{1,3}){3}\b|\b[\w-]+\/[\w./-]+\.\w{1,5}\b|(sk|ghp|github_pat|key)[-_][A-Za-z0-9]{8,}/i;
 
 function text(v, where) {
   if (typeof v !== 'string' || !v.trim()) throw new Error(`${where}: texto vacío`);
@@ -113,7 +113,7 @@ function bilingualList(v, where) {
 
 function validate(answer, prNumbers) {
   if (typeof answer !== 'object' || !answer) throw new Error('respuesta no es un objeto');
-  const changelog = (answer.changelog ?? []).slice(0, 5).map((e, i) => {
+  const changelog = (answer.changelog ?? []).slice(0, 8).map((e, i) => {
     const prs = (Array.isArray(e.prs) ? e.prs : []).map(Number).filter((n) => prNumbers.has(n));
     if (!prs.length) throw new Error(`changelog[${i}]: no cita ninguna PR de la lista`);
     return { prs, es: text(e.es, `changelog[${i}].es`), en: text(e.en, `changelog[${i}].en`) };
@@ -171,7 +171,9 @@ for (const [id, [, repo]] of Object.entries(REPOS)) {
         es: e.es,
         en: e.en,
       }));
-      project.changelog = [...entries.reverse(), ...(project.changelog ?? [])].slice(0, CHANGELOG_MAX);
+      project.changelog = [...entries, ...(project.changelog ?? [])]
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .slice(0, CHANGELOG_MAX);
       Object.assign(project, status);
       const changed = entries.length || Object.keys(status).length;
       console.log(`${changed ? '✓' : '·'} ${id}: ${chunk.length} PRs → ${entries.length} entradas, campos: ${Object.keys(status).join(', ') || 'ninguno'}`);
