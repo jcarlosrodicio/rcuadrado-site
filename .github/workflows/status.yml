@@ -1,0 +1,83 @@
+# Una vez al día, una IA (NaN, API compatible con OpenAI) lee las PRs mergeadas en los repos
+# de los proyectos y propone cambios de estado y changelog en src/data/status.json.
+# Nunca publica sola: deja los cambios en la rama ia/estado con una PR para revisar.
+name: Estado con IA
+
+on:
+  schedule:
+    - cron: '47 5 * * *' # 30 min después del despliegue diario
+  workflow_dispatch:
+    inputs:
+      since:
+        description: 'Revisar PRs desde esta fecha (YYYY-MM-DD). Vacío: desde la última revisión.'
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: status-ai
+  cancel-in-progress: false
+
+env:
+  BRANCH: ia/estado
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      # Si ya hay una PR abierta de la IA, se sigue trabajando sobre su rama para no
+      # pisar lo que aún no has revisado. Si se cerró sin mergear, se empieza de main.
+      - name: Elegir base
+        id: base
+        run: |
+          open=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
+          if [ -n "$open" ]; then
+            git checkout "$BRANCH"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git merge --no-edit origin/main || git merge --abort
+            echo "pr=$open" >> "$GITHUB_OUTPUT"
+          elif git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null; then
+            git push origin --delete "$BRANCH"
+          fi
+
+      - name: Revisar PRs con la IA
+        id: ai
+        run: node scripts/status-ai.mjs
+        env:
+          ACTIVITY_TOKEN: ${{ secrets.ACTIVITY_TOKEN }}
+          NAN_API_KEY: ${{ secrets.NAN_API_KEY }}
+          NAN_MODEL: ${{ vars.NAN_MODEL }}
+          NAN_BASE_URL: ${{ vars.NAN_BASE_URL }}
+          SINCE: ${{ inputs.since }}
+
+      - name: Guardar
+        run: |
+          git diff --quiet src/data/status.json && { echo "Sin cambios."; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/status.json
+          if [ "${{ steps.ai.outputs.changed }}" != "true" ] && [ -z "${{ steps.base.outputs.pr }}" ]; then
+            # Solo ha avanzado la fecha de revisión: no merece una PR.
+            git commit -m "chore: revisión diaria de PRs sin cambios de contenido"
+            git pull --rebase origin main
+            git push origin HEAD:main
+            exit 0
+          fi
+          git commit -m "content: estado de proyectos propuesto por IA (${{ steps.ai.outputs.projects || 'sin cambios nuevos' }})"
+          git push origin "HEAD:$BRANCH"
+          if [ -z "${{ steps.base.outputs.pr }}" ]; then
+            gh pr create --base main --head "$BRANCH" \
+              --title "Estado de proyectos propuesto por IA" \
+              --body "Cambios de estado y changelog que la IA propone a partir de las PRs mergeadas en los repos de los proyectos. Revisa el diff de \`src/data/status.json\`: si algo no es exacto o no debe ser público, edítalo en esta rama o cierra la PR. Al mergear se publica en rcuadrado.es."
+          fi

@@ -73,6 +73,20 @@ const states = [
           </div>
         </section>
         {p.cli && <section><h2>{t.tryIt}</h2><code class="cli-lg">{p.cli}</code></section>}
+        {p.changelog.length > 0 && (
+          <section>
+            <h2>{t.changes}</h2>
+            <p class="changes-note">{t.changesNote}</p>
+            <ol class="changes">
+              {p.changelog.slice(0, 10).map((e) => (
+                <li>
+                  <time datetime={e.date}>{new Date(e.date).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' })}</time>
+                  <span>{e.url ? <a href={e.url}>{e[lang]}</a> : e[lang]}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
       </div>
       <aside class="facts">
         <dl>

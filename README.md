@@ -13,7 +13,8 @@ npm run build      # regenera la actividad y genera dist/
 
 | Qué | Fichero |
 |---|---|
-| Proyectos (textos, estado, enlaces, capturas) | `src/data/projects.ts` |
+| Proyectos (textos fijos, enlaces, capturas) | `src/data/projects.ts` |
+| Estado de cada proyecto (Ahora, Hecho, En curso, Después, changelog) | `src/data/status.json` |
 | Portada, trayectoria, qué hago, contacto | `src/i18n.ts` |
 | Estilos | `src/styles/global.css` |
 | CV descargable | `public/cv/juan-carlos-rodicio-cv-en.pdf` |
@@ -23,8 +24,7 @@ npm run build      # regenera la actividad y genera dist/
 `src/data/activity.json` (commits por semana, último commit, total) lo genera
 `scripts/activity.mjs` desde la API de GitHub, rama por defecto de cada repo. En local
 usa el token de `gh auth token --user jcarlosrodicio`; si no hay token, lee el git local;
-si tampoco, conserva los datos anteriores. Lo que no se actualiza solo son los textos
-("Ahora", Hecho / Ahora / Después): esos se editan en `projects.ts`.
+si tampoco, conserva los datos anteriores.
 
 El workflow `.github/workflows/deploy.yml` lo ejecuta en cada push a `main` y cada día a
 las 05:17 UTC, guarda el JSON en el repo y publica en GitHub Pages.
@@ -42,5 +42,34 @@ las 05:17 UTC, guarda el JSON en el repo y publica en GitHub Pages.
    (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) y
    `www` como CNAME a `jcarlosrodicio.github.io`. Activar HTTPS cuando haya certificado.
 
-Un proyecto nuevo con actividad: añadirlo en `src/data/projects.ts` y en `REPOS` de
-`scripts/activity.mjs`, y dar acceso al token a ese repo.
+Un proyecto nuevo con actividad: añadirlo en `src/data/projects.ts`, en `src/data/status.json`
+y en `REPOS` de `scripts/github.mjs`, y dar acceso al token a ese repo.
+
+## Estado y changelog con IA
+
+`.github/workflows/status.yml` se ejecuta cada día (05:47 UTC) y a mano desde Actions.
+`scripts/status-ai.mjs` lee las PRs mergeadas desde la última revisión de cada proyecto
+(**solo título y descripción**, nunca código), se las pasa a un modelo con API compatible
+con OpenAI (NaN por defecto) junto con el estado actual, y aplica lo que proponga en
+`src/data/status.json`: entradas de changelog y, si cambia, Ahora / Hecho / En curso /
+Después, en español e inglés.
+
+Antes de aceptar una respuesta la valida: JSON con la forma esperada, PRs que existen,
+textos cortos y sin URLs, rutas, IPs ni claves. Si un proyecto falla, su corte
+(`checkedUntil`) no avanza y se reintenta al día siguiente.
+
+Nunca publica solo: deja los cambios en la rama `ia/estado` con **una PR** para revisar.
+Mientras esa PR siga abierta, los cambios de los días siguientes se acumulan en ella. Si la
+cierras sin mergear, se descarta y el siguiente día se vuelve a proponer desde `main`. Los
+textos de una PR de este repo son públicos aunque no se mergee.
+
+Configuración (Settings → Secrets and variables → Actions):
+
+| Nombre | Tipo | Valor |
+|---|---|---|
+| `NAN_API_KEY` | secreto | clave de la API de NaN |
+| `NAN_MODEL` | variable | id del modelo, p. ej. el que devuelva `GET /v1/models` |
+| `NAN_BASE_URL` | variable (opcional) | por defecto `https://api.nan.builders/v1` |
+| `ACTIVITY_TOKEN` | secreto | el mismo token de la actividad, con **Pull requests: read-only** además de Contents |
+
+Para revisar un periodo pasado: Actions → Estado con IA → Run workflow → `since: YYYY-MM-DD`.

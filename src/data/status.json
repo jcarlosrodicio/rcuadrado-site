@@ -1,0 +1,302 @@
+{
+  "checkedUntil": "2026-10-08T13:08:35Z",
+  "projects": {
+    "tally": {
+      "now": {
+        "es": "Mejoras tras la 2.6.0",
+        "en": "Improvements after 2.6.0"
+      },
+      "done": {
+        "es": [
+          "Publicada en App Store y Google Play",
+          "Multi-cuenta, 45 divisas, metas y estadísticas",
+          "Importación de extractos y Norma 43 (PRO)",
+          "Cuentas compartidas cifradas vía Supabase (PRO)",
+          "Captura de pagos desde Apple Pay y Google Wallet (PRO)"
+        ],
+        "en": [
+          "Live on the App Store and Google Play",
+          "Multiple accounts, 45 currencies, goals and statistics",
+          "Bank statement and Norma 43 import (PRO)",
+          "Encrypted shared accounts through Supabase (PRO)",
+          "Payment capture from Apple Pay and Google Wallet (PRO)"
+        ]
+      },
+      "doing": {
+        "es": [
+          "Siguiente versión, sin fecha fijada"
+        ],
+        "en": [
+          "Next version, no date set"
+        ]
+      },
+      "next": {
+        "es": [],
+        "en": []
+      },
+      "changelog": []
+    },
+    "grapit": {
+      "now": {
+        "es": "Herramientas del MVP · 10 de 25 fases hacia la v1",
+        "en": "MVP tools · 10 of 25 phases to v1"
+      },
+      "done": {
+        "es": [
+          "Motor PDF probado con documentos grandes",
+          "Abrir y compartir desde otras apps en iOS y Android",
+          "Firmar, unir y bóveda de firmas",
+          "Límites de Pro (aún sin compras)"
+        ],
+        "en": [
+          "PDF engine proven on large documents",
+          "Open in and share from other apps on iOS and Android",
+          "Sign, merge and a signature vault",
+          "Pro limits (no purchases yet)"
+        ]
+      },
+      "doing": {
+        "es": [
+          "Escanear y ajustar el escaneo"
+        ],
+        "en": [
+          "Scanning and scan adjustment"
+        ]
+      },
+      "next": {
+        "es": [
+          "Dividir, anotar, formularios y OCR",
+          "Bloqueado: compras (RevenueCat) y analítica (PostHog EU)",
+          "Lanzamiento en las dos tiendas"
+        ],
+        "en": [
+          "Split, annotate, forms and OCR",
+          "Blocked: purchases (RevenueCat) and analytics (PostHog EU)",
+          "Launch on both stores"
+        ]
+      },
+      "changelog": []
+    },
+    "intriga": {
+      "now": {
+        "es": "Revisando el caso gratuito tras el playtest",
+        "en": "Reworking the free case after the playtest"
+      },
+      "done": {
+        "es": [
+          "Formato de caso y validador (case validate)",
+          "Móvil del caso: mensajes, galería, notas, calendario, llamadas",
+          "Skill de autoría con Solver y Critic",
+          "Primer caso gratuito",
+          "Playtest con personas reales (hito 1)"
+        ],
+        "en": [
+          "Case format and validator (case validate)",
+          "The case phone: messages, gallery, notes, calendar, calls",
+          "Authoring skill with Solver and Critic",
+          "First free case",
+          "Playtest with real people (milestone 1)"
+        ]
+      },
+      "doing": {
+        "es": [
+          "Revisión del caso gratuito y ajustes de interfaz del playtest"
+        ],
+        "en": [
+          "Free case rework and UI fixes from the playtest"
+        ]
+      },
+      "next": {
+        "es": [
+          "Catálogo remoto, pistas y compras",
+          "Tres casos de pago",
+          "Lanzamiento en las dos tiendas"
+        ],
+        "en": [
+          "Remote catalogue, hints and purchases",
+          "Three paid cases",
+          "Launch on both stores"
+        ]
+      },
+      "changelog": []
+    },
+    "aqorin": {
+      "now": {
+        "es": "Thesis Validation Track tras cerrar la fase 23",
+        "en": "Thesis Validation Track after closing phase 23"
+      },
+      "done": {
+        "es": [
+          "@aqorin/cli 0.1.0 publicado en npm (macOS arm64 verificado)",
+          "23 fases de producto cerradas con evidencia de salida",
+          "TV0 cerrada"
+        ],
+        "en": [
+          "@aqorin/cli 0.1.0 published on npm (macOS arm64 verified)",
+          "23 product phases closed with recorded exit evidence",
+          "TV0 closed"
+        ]
+      },
+      "doing": {
+        "es": [
+          "Thesis Validation Track"
+        ],
+        "en": [
+          "Thesis Validation Track"
+        ]
+      },
+      "next": {
+        "es": [],
+        "en": []
+      },
+      "changelog": []
+    },
+    "norma": {
+      "now": {
+        "es": "Afinando la v0.20.0 en mis repos",
+        "en": "Tuning v0.20.0 across my repos"
+      },
+      "done": {
+        "es": [
+          "16 perfiles de stack (Flutter, Swift, Go, Rust, Next, Django...)",
+          "install, upgrade, doctor y start",
+          "Instalado en mis otros repos"
+        ],
+        "en": [
+          "16 stack profiles (Flutter, Swift, Go, Rust, Next, Django...)",
+          "install, upgrade, doctor and start",
+          "Installed in my other repos"
+        ]
+      },
+      "doing": {
+        "es": [],
+        "en": []
+      },
+      "next": {
+        "es": [],
+        "en": []
+      },
+      "changelog": []
+    },
+    "oak": {
+      "now": {
+        "es": "Estable en v1.1.1",
+        "en": "Stable at v1.1.1"
+      },
+      "done": {
+        "es": [
+          "Release v1.1.1",
+          "Modelo asignable por rol, agnóstico de proveedor",
+          "Reanudación segura tras fallos"
+        ],
+        "en": [
+          "Release v1.1.1",
+          "Per-role model assignment, provider-agnostic",
+          "Crash-safe resume"
+        ]
+      },
+      "doing": {
+        "es": [],
+        "en": []
+      },
+      "next": {
+        "es": [],
+        "en": []
+      },
+      "changelog": []
+    },
+    "grodar": {
+      "now": {
+        "es": "Fase 4: secretos y conexiones",
+        "en": "Phase 4: secrets and connections"
+      },
+      "done": {
+        "es": [
+          "Monorepo y value objects",
+          "Aggregate Project",
+          "PostgreSQL y Drizzle, con el mismo contract test en memoria, PGlite y Postgres 17",
+          "CLI grodar y proyectos en YAML"
+        ],
+        "en": [
+          "Monorepo and value objects",
+          "Project aggregate",
+          "PostgreSQL and Drizzle, one contract test suite on in-memory, PGlite and Postgres 17",
+          "grodar CLI and YAML project definitions"
+        ]
+      },
+      "doing": {
+        "es": [
+          "Secretos y conexiones"
+        ],
+        "en": [
+          "Secrets and connections"
+        ]
+      },
+      "next": {
+        "es": [
+          "Conectores de fuentes",
+          "Señales y oportunidades",
+          "Dashboard y Grodar MCP"
+        ],
+        "en": [
+          "Source connectors",
+          "Signals and opportunities",
+          "Dashboard and Grodar MCP"
+        ]
+      },
+      "changelog": []
+    },
+    "obs": {
+      "now": {
+        "es": "Fase 25: evaluador en sombra",
+        "en": "Phase 25: shadow evaluator"
+      },
+      "done": {
+        "es": [
+          "Trazas OTel, Collector, métricas y dashboards",
+          "Convenciones GenAI, router, retry y subagentes",
+          "Despliegue en NAS con agentes reales",
+          "Primera campaña real de benchmark: 12 observaciones verificadas"
+        ],
+        "en": [
+          "OTel traces, Collector, metrics and dashboards",
+          "GenAI conventions, routing, retries and subagents",
+          "NAS deployment with real agents",
+          "First real benchmark campaign: 12 verified observations"
+        ]
+      },
+      "doing": {
+        "es": [
+          "Evaluador en sombra"
+        ],
+        "en": [
+          "Shadow evaluator"
+        ]
+      },
+      "next": {
+        "es": [],
+        "en": []
+      },
+      "changelog": []
+    },
+    "cinepedia": {
+      "done": {
+        "es": [
+          "Publicada en App Store y Google Play"
+        ],
+        "en": [
+          "Live on the App Store and Google Play"
+        ]
+      },
+      "doing": {
+        "es": [],
+        "en": []
+      },
+      "next": {
+        "es": [],
+        "en": []
+      },
+      "changelog": []
+    }
+  }
+}

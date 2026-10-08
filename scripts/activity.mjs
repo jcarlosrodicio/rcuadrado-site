@@ -1,38 +1,18 @@
 // Regenera src/data/activity.json con la actividad de cada proyecto.
 // Fuente, por orden:
 //   1. API de GitHub (rama por defecto): refleja lo publicado desde cualquier máquina.
-//      Token: ACTIVITY_TOKEN, o en local el de `gh auth token --user jcarlosrodicio`.
+//      Token: ACTIVITY_TOKEN, o en local el de `gh` (ver github.mjs).
 //   2. git local, si no hay token o la API falla y el repo está en esta máquina.
 //   3. Los datos anteriores.
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
+import { REPOS, TOKEN, api } from './github.mjs';
 
 const WEEKS = 26;
 const WEEK = 7 * 24 * 3600;
 const OUT = new URL('../src/data/activity.json', import.meta.url);
-const OWNER = 'jcarlosrodicio';
-const TOKEN = process.env.ACTIVITY_TOKEN || ghToken();
-
-function ghToken() {
-  try {
-    return execFileSync('gh', ['auth', 'token', '--user', OWNER], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
-  } catch {
-    return '';
-  }
-}
-
-const REPOS = {
-  tally: ['Nasito/Desarrollo/apps/tally', 'tally'],
-  grapit: ['Nasito/Desarrollo/apps/grapit', 'grapit'],
-  intriga: ['Nasito/Desarrollo/apps/intriga', 'intriga'],
-  aqorin: ['Nasito/Desarrollo/apps/aqorin', 'aqorin'],
-  norma: ['Nasito/Desarrollo/norma', 'norma'],
-  oak: ['Desarrollo/opencode-agent-orchestration-kit', 'opencode-agent-orchestration-kit'],
-  grodar: ['Nasito/Desarrollo/apps/grodar', 'grodar'],
-  obs: ['Nasito/Desarrollo/agent-observability', 'agent-observability'],
-};
 
 const day = (seconds) => new Date(seconds * 1000).toISOString().slice(0, 10);
 const now = Math.floor(Date.now() / 1000);
@@ -46,14 +26,6 @@ function fromGit(dir) {
     if (ago < WEEKS) weeks[WEEKS - 1 - ago]++;
   }
   return { since: day(Math.min(...stamps)), last: day(Math.max(...stamps)), commits: stamps.length, weeks };
-}
-
-async function api(path) {
-  const res = await fetch(`https://api.github.com/repos/${OWNER}/${path}`, {
-    headers: { Authorization: `Bearer ${TOKEN}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
-  });
-  if (!res.ok && res.status !== 202) throw new Error(`${path}: HTTP ${res.status}`);
-  return res;
 }
 
 async function fromGitHub(repo, previous) {
