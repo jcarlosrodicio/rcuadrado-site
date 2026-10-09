@@ -61,7 +61,7 @@ export const UI = {
     recs: 'Recomendaciones',
     recsIntro: 'Lo que han escrito en LinkedIn personas que han trabajado conmigo, tal cual.',
     recsLink: 'Verlas en LinkedIn',
-    recsRel: { manager: 'mi responsable directo', team: 'mismo equipo' },
+    recsRel: { manager: 'mi responsable directo', team: 'mismo equipo', po: 'Product Owner de mi equipo' },
     recsAt: 'En',
     recsOriginal: 'Original en inglés',
     what: 'Qué hago y qué no',
@@ -135,7 +135,7 @@ export const UI = {
     recs: 'Recommendations',
     recsIntro: 'What people I have worked with wrote on LinkedIn, word for word.',
     recsLink: 'See them on LinkedIn',
-    recsRel: { manager: 'my direct manager', team: 'same team' },
+    recsRel: { manager: 'my direct manager', team: 'same team', po: 'my team’s Product Owner' },
     recsAt: 'At',
     recsOriginal: 'Original in Spanish',
     what: 'What I do, and what I don’t',
@@ -246,9 +246,9 @@ export const EDUCATION = {
 
 // Recomendaciones de LinkedIn, copiadas literalmente y en su idioma original (sin traducir
 // ni corregir). Sin fotos: solo iniciales. Más recientes primero.
-export const RECOMMENDATIONS: { name: string; headline: string; company: string; relation: 'manager' | 'team'; date: string; lang: Lang; text: string[] }[] = [
+export const RECOMMENDATIONS: { name: string; headline: string; company: string; relation: 'manager' | 'team' | 'po'; date: string; lang: Lang; text: string[] }[] = [
   {
-    name: 'Daniel Escudero', headline: 'EMBA | Product Manager | Business Strategy | Growth Strategy | Go-to-Market Strategy', company: 'Lookiero', relation: 'team', date: '2022-12-15', lang: 'en',
+    name: 'Daniel Escudero', headline: 'EMBA | Product Manager | Business Strategy | Growth Strategy | Go-to-Market Strategy', company: 'Lookiero', relation: 'po', date: '2022-12-15', lang: 'en',
     text: [
       'Juan Carlos is one of those people that every Product Manager would love to have on all their teams.',
       'In addition to offering confidence in technical aspects, he is able to offer very good solutions. In addition to his technical knowledge, he is capable of generating a very good environment in the co-creation of products and technology with the rest of the team.',
