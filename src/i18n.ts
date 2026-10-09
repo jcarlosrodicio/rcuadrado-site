@@ -29,7 +29,7 @@ export const UI = {
   es: {
     title: 'Juan Carlos Rodicio · AI Engineer · Rcuadrado',
     description: 'AI Engineer y Senior Software Engineer en Sevilla. Harnesses para agentes de código, once años de backend Java y apps móviles publicadas.',
-    nav: { work: 'Trabajo', career: 'Trayectoria', what: 'Qué hago', contact: 'Contacto' },
+    nav: { work: 'Trabajo', career: 'Trayectoria', recs: 'Recomendaciones', what: 'Qué hago', contact: 'Contacto' },
     write: 'Escríbeme',
     eyebrow: 'Rcuadrado · Sevilla',
     hello: 'Hola, soy Juan Carlos.',
@@ -58,6 +58,12 @@ export const UI = {
     career: 'Trayectoria',
     careerIntro: 'Once años de ingeniería backend, de programador a senior.',
     education: 'Formación',
+    recs: 'Recomendaciones',
+    recsIntro: 'Lo que han escrito en LinkedIn personas que han trabajado conmigo, tal cual.',
+    recsLink: 'Verlas en LinkedIn',
+    recsRel: { manager: 'mi responsable directo', team: 'mismo equipo' },
+    recsAt: 'En',
+    recsOriginal: 'Original en inglés',
     what: 'Qué hago y qué no',
     whatIntro: 'Para que no perdamos el tiempo ninguno de los dos.',
     yes: 'Me encargo de',
@@ -97,7 +103,7 @@ export const UI = {
   en: {
     title: 'Juan Carlos Rodicio · AI Engineer · Rcuadrado',
     description: 'AI Engineer and Senior Software Engineer in Seville, Spain. Harnesses for coding agents, eleven years of Java backends and shipped mobile apps.',
-    nav: { work: 'Work', career: 'Career', what: 'What I do', contact: 'Contact' },
+    nav: { work: 'Work', career: 'Career', recs: 'Recommendations', what: 'What I do', contact: 'Contact' },
     write: 'Get in touch',
     eyebrow: 'Rcuadrado · Seville, Spain',
     hello: 'Hi, I’m Juan Carlos.',
@@ -126,6 +132,12 @@ export const UI = {
     career: 'Career',
     careerIntro: 'Eleven years of backend engineering, from programmer to senior.',
     education: 'Education',
+    recs: 'Recommendations',
+    recsIntro: 'What people I have worked with wrote on LinkedIn, word for word.',
+    recsLink: 'See them on LinkedIn',
+    recsRel: { manager: 'my direct manager', team: 'same team' },
+    recsAt: 'At',
+    recsOriginal: 'Original in Spanish',
     what: 'What I do, and what I don’t',
     whatIntro: 'So neither of us wastes any time.',
     yes: 'I take care of',
@@ -231,3 +243,40 @@ export const EDUCATION = {
   es: [['2010 – 2015', 'Grado en Ingeniería del Software', 'Escuela Técnica Superior de Ingeniería Informática, Sevilla'], ['2008 – 2010', 'Técnico Superior en Administración de Sistemas Informáticos', 'Nuevas Profesiones, Sevilla']],
   en: [['2010 – 2015', 'Software Engineering Degree', 'Higher School of Computer Engineering, Seville'], ['2008 – 2010', 'Higher Vocational Training, Computer Systems Administration', 'Nuevas Profesiones, Seville']],
 };
+
+// Recomendaciones de LinkedIn, copiadas literalmente y en su idioma original (sin traducir
+// ni corregir). Sin fotos: solo iniciales. Más recientes primero.
+export const RECOMMENDATIONS: { name: string; headline: string; company: string; relation: 'manager' | 'team'; date: string; lang: Lang; text: string[] }[] = [
+  {
+    name: 'Daniel Escudero', headline: 'EMBA | Product Manager | Business Strategy | Growth Strategy | Go-to-Market Strategy', company: 'Lookiero', relation: 'team', date: '2022-12-15', lang: 'en',
+    text: [
+      'Juan Carlos is one of those people that every Product Manager would love to have on all their teams.',
+      'In addition to offering confidence in technical aspects, he is able to offer very good solutions. In addition to his technical knowledge, he is capable of generating a very good environment in the co-creation of products and technology with the rest of the team.',
+      'He is without a doubt an amazing person for the team!',
+    ],
+  },
+  {
+    name: 'Benjamin Iriarte', headline: 'Technical Lead', company: 'Lookiero', relation: 'manager', date: '2022-12-15', lang: 'en',
+    text: [
+      'Juan Carlos is a highly passionate developer always taking care of code quality.',
+      'Proving the most appropriate technical solution depending on the business demands and taking into account different points of view.',
+      'It was a really pleasure to have him as part of the squad and I recommend him without hesitation.',
+    ],
+  },
+  {
+    name: 'Pedro José Barrios Gausí', headline: 'Senior Java Software Engineer', company: 'Sngular', relation: 'team', date: '2021-10-23', lang: 'es',
+    text: ['Gran trabajador y compañero. Una persona que hace su trabajo muy bien, no duda en ofrecerse a ayudar a sus compañeros, que genera un ambiente agradable y de confianza al resto del equipo. Cualquier equipo que lo tenga, va a tener en su proyecto un gran programador.'],
+  },
+  {
+    name: 'Iago Trancón Barros', headline: 'Analista Programador en Seresco', company: 'Sngular', relation: 'manager', date: '2021-10-14', lang: 'es',
+    text: [
+      'Juan Carlos es técnicamente excelente y un gran compañero de equipo. Muy proactivo e independiente lo que le permite asumir tareas de análisis y diseño sin problemas.',
+      'Siempre busca la mejora continua en su trabajo y ayuda a crear muy buen ambiente.',
+      'Un placer trabajar con él.',
+    ],
+  },
+  {
+    name: 'Antonio Jesús Ocaña Campos', headline: 'Engineering Manager | Tech Delivery Lead', company: 'Deloitte', relation: 'manager', date: '2020-11-24', lang: 'es',
+    text: ['Juan Carlos es un gran profesional con el que he tenido la oportunidad de compartir muchos momentos. Gran persona y valor seguro en cualquier proyecto!'],
+  },
+];

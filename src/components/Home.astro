@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Mark from './Mark.astro';
 import Spark from './Spark.astro';
 import { GENERATED_AT, PROJECTS, type Kind, type Lang } from '../data/projects';
-import { CAREER, CONTACT, EDUCATION, KIND, NOT_MY_THING, PERSON, STATUS, UI, WHAT_I_DO, home, projectUrl } from '../i18n';
+import { CAREER, CONTACT, EDUCATION, KIND, NOT_MY_THING, PERSON, RECOMMENDATIONS, STATUS, UI, WHAT_I_DO, home, projectUrl } from '../i18n';
 import { ago, daysSince } from '../lib/time';
 
 interface Props { lang: Lang }
@@ -28,6 +28,8 @@ const jsonLd = {
     { '@type': 'WebSite', '@id': 'https://rcuadrado.es/#website', url: 'https://rcuadrado.es/', name: 'Rcuadrado', inLanguage: ['es', 'en'], publisher: { '@id': PERSON['@id'] } },
   ],
 };
+const initials = (name: string) => name.split(' ').slice(0, 2).map((w) => w[0]).join('');
+const month = (d: string) => new Date(d).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-GB', { month: 'short', year: 'numeric' });
 const date = new Date(GENERATED_AT).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 ---
 <Layout lang={lang} title={t.title} description={t.description} alt={home(lang === 'es' ? 'en' : 'es')} jsonLd={jsonLd}>
@@ -123,6 +125,29 @@ const date = new Date(GENERATED_AT).toLocaleDateString(lang === 'es' ? 'es-ES' :
           {EDUCATION[lang].map(([when, what, where]) => <div><time>{when}</time><b>{what}</b><small>{where}</small></div>)}
           <a class="btn cvlink" href={CONTACT.cv} download>{t.downloadCv} ↓</a>
         </aside>
+      </div>
+    </section>
+
+    <section class="sec" id="recomendaciones">
+      <div class="sec-head">
+        <h2 class="title">{t.recs}<small>{RECOMMENDATIONS.length}</small></h2>
+        <p>{t.recsIntro} <a href={`${CONTACT.linkedin}/details/recommendations/`}>{t.recsLink} ↗</a></p>
+      </div>
+      <div class="recs">
+        {RECOMMENDATIONS.map((r) => (
+          <figure class="rec">
+            <blockquote lang={r.lang}>{r.text.map((para) => <p>{para}</p>)}</blockquote>
+            {r.lang !== lang && <small class="orig">{t.recsOriginal}</small>}
+            <figcaption>
+              <span class="ini" aria-hidden="true">{initials(r.name)}</span>
+              <div>
+                <b>{r.name}</b>
+                <span>{r.headline}</span>
+                <small>{t.recsAt} {r.company} · {t.recsRel[r.relation]} · <time datetime={r.date}>{month(r.date)}</time></small>
+              </div>
+            </figcaption>
+          </figure>
+        ))}
       </div>
     </section>
 
