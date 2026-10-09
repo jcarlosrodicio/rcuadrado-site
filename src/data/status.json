@@ -156,7 +156,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-09T12:06:03Z"
     },
     "grapit": {
       "now": {
@@ -231,7 +231,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-09T12:06:03Z"
     },
     "intriga": {
       "now": {
@@ -315,19 +315,19 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-09T12:06:03Z"
     },
     "aqorin": {
       "now": {
-        "es": "TUI de terminal funcionando con seguimiento en vivo de Runs",
-        "en": "Terminal TUI working with live Run follow-up"
+        "es": "Conversaciones en la terminal y chat libre en cuatro runtimes",
+        "en": "Terminal conversations and free chat on four runtimes"
       },
       "done": {
         "es": [
           "TUI de terminal con Runs, Runtimes y seguimiento en vivo",
           "Compatibilidad de runtimes verificada con registro de evidencias",
           "Run en segundo plano que sobrevive al cierre de la terminal",
-          "Conversaciones con Codex desde la terminal",
+          "Conversaciones con Codex y Claude Code, y chat libre en cuatro runtimes",
           "@aqorin/cli 0.2.0 publicado en npm con licencia MIT",
           "23 fases de producto cerradas con evidencia"
         ],
@@ -335,7 +335,7 @@
           "Terminal TUI with Runs, Runtimes and live follow-up",
           "Verified runtime compatibility with a per-binary evidence ledger",
           "Detached Run that survives closing the terminal",
-          "Codex conversations from the terminal",
+          "Codex and Claude Code conversations, plus free chat on four runtimes",
           "@aqorin/cli 0.2.0 published on npm under MIT",
           "23 product phases closed with recorded evidence"
         ]
@@ -352,15 +352,21 @@
       },
       "next": {
         "es": [
-          "Preguntas y reanudación desde la terminal",
-          "Conversaciones en los demás runtimes"
+          "Preguntas y reanudación desde la terminal"
         ],
         "en": [
-          "Questions and resume from the terminal",
-          "Conversations on the other runtimes"
+          "Questions and resume from the terminal"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-09",
+          "prs": [
+            95
+          ],
+          "es": "Conversaciones con Claude Code y chat libre sin revisión en los cuatro runtimes",
+          "en": "Claude Code conversations and review-free chat on the four runtimes"
+        },
         {
           "date": "2026-10-09",
           "prs": [
@@ -546,7 +552,7 @@
           "en": "P07–P09: Codex adapter with authenticated execution, skills and MCP"
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-09T12:06:03Z"
     },
     "norma": {
       "now": {
@@ -642,7 +648,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-09T12:06:03Z"
     },
     "oak": {
       "now": {
@@ -706,7 +712,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-09T12:06:03Z"
     },
     "grodar": {
       "now": {
@@ -929,29 +935,29 @@
           "en": "Phase 4: credentials encrypted at rest and source connections with CLI."
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-09T12:06:03Z"
     },
     "obs": {
       "now": {
-        "es": "Fase 25 cerrada: evaluador en sombra sobre datos reales",
-        "en": "Phase 25 closed: shadow evaluator on real data"
+        "es": "Campaña observability-pilot-1 cerrada: 12/12 válidas y evaluador en sombra",
+        "en": "observability-pilot-1 campaign closed: 12/12 valid with shadow evaluator"
       },
       "done": {
         "es": [
           "Trazas OTel, Collector, métricas y dashboards",
           "Convenciones GenAI, router, retry y subagentes",
-          "Fases 8 a 11: MCP y jobs asíncronos, sesiones en Langfuse, privacidad y depuración de fallos",
-          "Despliegue en NAS con agentes reales y los cuatro runtimes por su gateway",
-          "SLI/SLO con panel y alertas a Telegram",
-          "Suite de benchmark coding-v1: 10 tareas con resultados cruzados con telemetría"
+          "Despliegue en NAS con los cuatro runtimes reales; SLI/SLO con alertas a Telegram",
+          "Suite coding-v1: 25 tareas en 4 fixtures con corpus de resultados",
+          "Aislamiento definition-isolated@5 con los canaries en verde",
+          "Campaña observability-pilot-1: 12/12 válidas; Jev como evaluador en sombra"
         ],
         "en": [
           "OTel traces, Collector, metrics and dashboards",
           "GenAI conventions, routing, retries and subagents",
-          "Phases 8–11: MCP and async jobs, Langfuse sessions, privacy and failure debugging",
-          "NAS deployment with real agents and all four runtimes through its gateway",
-          "SLI/SLO with dashboard and alerts to Telegram",
-          "coding-v1 benchmark suite: 10 tasks with results joined against telemetry"
+          "NAS deployment with all four real runtimes; SLI/SLO with alerts to Telegram",
+          "coding-v1 suite: 25 tasks on 4 fixtures with a results corpus",
+          "definition-isolated@5 isolation with canaries green",
+          "observability-pilot-1 campaign: 12/12 valid; Jev as shadow evaluator"
         ]
       },
       "doing": {
@@ -963,6 +969,68 @@
         "en": []
       },
       "changelog": [
+        {
+          "date": "2026-09-24",
+          "prs": [
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73
+          ],
+          "es": "Aislamiento del candidato hasta definition-isolated@5 y cohorte de Pi cerrada",
+          "en": "Candidate isolation up to definition-isolated@5 and Pi cohort closed"
+        },
+        {
+          "date": "2026-09-24",
+          "prs": [
+            74
+          ],
+          "es": "Primera campaña real: 12 de 12 ejecuciones válidas y verificadas con dos agentes",
+          "en": "First real campaign: 12 of 12 valid, verified runs across two agents"
+        },
+        {
+          "date": "2026-09-24",
+          "prs": [
+            75
+          ],
+          "es": "Fase 25: TypeSafe Jev como evaluador en sombra de las 12 observaciones",
+          "en": "Phase 25: TypeSafe Jev as shadow evaluator of the 12 observations"
+        },
+        {
+          "date": "2026-09-22",
+          "prs": [
+            58,
+            61,
+            62,
+            63,
+            65,
+            66
+          ],
+          "es": "Telemetría corregida: fronteras de arranque, uso de tokens y lectura completa de trazas",
+          "en": "Telemetry fixed: start boundaries, token usage and exhaustive trace reading"
+        },
+        {
+          "date": "2026-09-21",
+          "prs": [
+            56,
+            60
+          ],
+          "es": "Fase 24 y 24b: la puntuación mide lo previsto; coding-v1 pasa a 25 tareas en 4 fixtures",
+          "en": "Phases 24 and 24b: scoring measures what it should; coding-v1 grows to 25 tasks on 4 fixtures"
+        },
+        {
+          "date": "2026-09-18",
+          "prs": [
+            52,
+            53,
+            54
+          ],
+          "es": "Fases 21-23: procedencia sellable, qué cuenta la aceptación y cohortes honestas",
+          "en": "Phases 21–23: sealed provenance, acceptance semantics and honest cohorts"
+        },
         {
           "date": "2026-09-17",
           "prs": [
@@ -1033,7 +1101,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-09-17T16:31:18Z"
+      "checkedUntil": "2026-10-09T12:06:03Z"
     },
     "cinepedia": {
       "done": {
