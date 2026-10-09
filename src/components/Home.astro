@@ -14,9 +14,9 @@ const ref = new Date(GENERATED_AT);
 // Ahora mismo: proyectos con commits en los 7 días anteriores a la generación de datos
 const recent = PROJECTS.filter((p) => daysSince(p.activity?.last, ref) <= 7);
 
-// Gráfico apilado de commits por semana y proyecto
-const tracked = PROJECTS.filter((p) => p.activity);
-const totals = Array.from({ length: 26 }, (_, i) => tracked.reduce((s, p) => s + p.activity!.weeks[i], 0));
+// Gráfico apilado de commits por semana y proyecto, últimas 4 semanas
+const tracked = PROJECTS.filter((p) => p.activity).map((p) => ({ ...p, weeks: p.activity!.weeks.slice(-4) }));
+const totals = Array.from({ length: 4 }, (_, i) => tracked.reduce((s, p) => s + p.weeks[i], 0));
 const max = Math.max(...totals, 1);
 
 const kinds: ('all' | Kind)[] = ['all', 'app', 'agents', 'data'];
@@ -63,8 +63,8 @@ const date = new Date(GENERATED_AT).toLocaleDateString(lang === 'es' ? 'es-ES' :
           <div class="bars" role="img" aria-label={t.chartLabel}>
             {totals.map((total, i) => (
               <span class="col" title={`${total} commits`}>
-                {tracked.filter((p) => p.activity!.weeks[i]).map((p) => (
-                  <i style={`height:${(p.activity!.weeks[i] / max) * 100}%;background:${p.color}`} title={`${p.name}: ${p.activity!.weeks[i]}`} />
+                {tracked.filter((p) => p.weeks[i]).map((p) => (
+                  <i style={`height:${(p.weeks[i] / max) * 100}%;background:${p.color}`} title={`${p.name}: ${p.weeks[i]}`} />
                 ))}
               </span>
             ))}
