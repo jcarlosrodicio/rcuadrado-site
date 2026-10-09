@@ -156,7 +156,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-08T13:20:07Z"
+      "checkedUntil": "2026-10-09T11:26:01Z"
     },
     "grapit": {
       "now": {
@@ -165,29 +165,25 @@
       },
       "done": {
         "es": [
+          "Escáner: papel a PDF con recorte y filtros",
           "Motor PDF probado con documentos grandes",
           "Abrir y compartir desde otras apps en iOS y Android",
           "Firmar, unir y bóveda de firmas",
           "Límites de Pro (aún sin compras)",
-          "Pantalla de inicio con documentos recientes",
           "Builds internas en TestFlight y Play"
         ],
         "en": [
+          "Scanner: paper to PDF with crop and filters",
           "PDF engine proven on large documents",
           "Open in and share from other apps on iOS and Android",
           "Sign, merge and a signature vault",
           "Pro limits (no purchases yet)",
-          "Home screen with recent documents",
           "Internal builds on TestFlight and Play"
         ]
       },
       "doing": {
-        "es": [
-          "Escanear y ajustar el escaneo"
-        ],
-        "en": [
-          "Scanning and scan adjustment"
-        ]
+        "es": [],
+        "en": []
       },
       "next": {
         "es": [
@@ -202,6 +198,14 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-08",
+          "prs": [
+            14
+          ],
+          "es": "Escáner: papel a PDF con el escáner del sistema, con recorte, enderezado y filtros",
+          "en": "Scanner: paper to PDF with the system scanner, plus crop, straighten and filters"
+        },
         {
           "date": "2026-10-07",
           "prs": [
@@ -227,7 +231,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-08T13:20:07Z"
+      "checkedUntil": "2026-10-09T11:26:01Z"
     },
     "intriga": {
       "now": {
@@ -311,54 +315,102 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-08T13:20:07Z"
+      "checkedUntil": "2026-10-09T11:26:01Z"
     },
     "aqorin": {
       "now": {
-        "es": "Camino a la primera versión usable desde la terminal",
-        "en": "Working towards the first version usable from the terminal"
+        "es": "TUI de terminal funcionando con seguimiento en vivo de Runs",
+        "en": "Terminal TUI working with live Run follow-up"
       },
       "done": {
         "es": [
-          "Validación de la tesis completa: siete etapas cerradas con evidencia",
-          "Tesis validada parcialmente y plan de remediación",
+          "TUI de terminal con Runs, Runtimes y seguimiento en vivo",
+          "Compatibilidad de runtimes verificada con registro de evidencias",
+          "Run en segundo plano que sobrevive al cierre de la terminal",
+          "Conversaciones con Codex desde la terminal",
           "@aqorin/cli 0.2.0 publicado en npm con licencia MIT",
-          "23 fases de producto cerradas con evidencia",
-          "Ejecución verificada en Codex y Claude Code (skills y MCP)",
-          "Hoja de ruta hacia la primera versión usable"
+          "23 fases de producto cerradas con evidencia"
         ],
         "en": [
-          "Thesis validation complete: seven stages closed with evidence",
-          "Thesis partially validated, with a remediation plan",
+          "Terminal TUI with Runs, Runtimes and live follow-up",
+          "Verified runtime compatibility with a per-binary evidence ledger",
+          "Detached Run that survives closing the terminal",
+          "Codex conversations from the terminal",
           "@aqorin/cli 0.2.0 published on npm under MIT",
-          "23 product phases closed with recorded evidence",
-          "Execution verified on Codex and Claude Code (skills and MCP)",
-          "Roadmap to the first usable version"
+          "23 product phases closed with recorded evidence"
         ]
       },
       "doing": {
         "es": [
-          "Inventario de runtimes, autenticación y modelos",
-          "Registro de compatibilidad y evidencias por runtime"
+          "Pantallas de la TUI para crear agentes y workflows",
+          "Runs mixtos en los cuatro runtimes con revisión"
         ],
         "en": [
-          "Runtime, authentication and model inventory",
-          "Compatibility and evidence ledger per runtime"
+          "TUI screens to create agents and workflows",
+          "Mixed runs across the four runtimes with review"
         ]
       },
       "next": {
         "es": [
-          "Interfaz de terminal para crear agentes y workflows",
-          "Runs mixtos en Claude Code, Codex, OpenCode y Pi con revisión",
-          "Seguimiento en vivo, preguntas y reanudación desde la terminal"
+          "Preguntas y reanudación desde la terminal",
+          "Conversaciones en los demás runtimes"
         ],
         "en": [
-          "Terminal UI to create agents and workflows",
-          "Mixed runs across Claude Code, Codex, OpenCode and Pi with review",
-          "Live follow-up, questions and resume from the terminal"
+          "Questions and resume from the terminal",
+          "Conversations on the other runtimes"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-09",
+          "prs": [
+            92
+          ],
+          "es": "Run en segundo plano: cerrar la terminal ya no lo detiene; un Run activo por árbol",
+          "en": "Detached Run: closing the terminal no longer stops it; one active Run per tree"
+        },
+        {
+          "date": "2026-10-09",
+          "prs": [
+            93
+          ],
+          "es": "Timeout de intento por Run; al agotarse espera la decisión de una persona",
+          "en": "Per-Run attempt timeout; on expiry it waits for a person's decision"
+        },
+        {
+          "date": "2026-10-09",
+          "prs": [
+            94
+          ],
+          "es": "Conversaciones con Codex: turnos encadenados en un mismo hilo desde la terminal",
+          "en": "Codex conversations: chained turns on a single thread from the terminal"
+        },
+        {
+          "date": "2026-10-08",
+          "prs": [
+            87
+          ],
+          "es": "Compatibilidad de runtimes por versión mínima, contrato por adaptador y doctor en vivo",
+          "en": "Runtime compatibility by minimum version, per-adapter contract and live doctor"
+        },
+        {
+          "date": "2026-10-08",
+          "prs": [
+            88,
+            89
+          ],
+          "es": "Logs --follow y actividad normalizada (texto, herramientas, estado) en los cuatro runtimes",
+          "en": "`logs --follow` and normalized activity (text, tools, status) on the four runtimes"
+        },
+        {
+          "date": "2026-10-08",
+          "prs": [
+            90,
+            91
+          ],
+          "es": "TUI de terminal con pantallas de Runs, Runtimes y seguimiento en vivo de un Run",
+          "en": "Terminal TUI with Runs and Runtimes screens and live Run follow-up"
+        },
         {
           "date": "2026-10-07",
           "prs": [
@@ -494,7 +546,7 @@
           "en": "P07–P09: Codex adapter with authenticated execution, skills and MCP"
         }
       ],
-      "checkedUntil": "2026-10-08T13:20:07Z"
+      "checkedUntil": "2026-10-09T11:26:01Z"
     },
     "norma": {
       "now": {
@@ -504,7 +556,7 @@
       "done": {
         "es": [
           "Publicado como open source con licencia MIT (v0.21.0)",
-          "Instalable con Homebrew",
+          "Instalable con Homebrew o script en una línea",
           "install, upgrade, doctor y start",
           "auto-run-task: fases completas sin supervisión",
           "Verificación en runtime con evidencia",
@@ -512,7 +564,7 @@
         ],
         "en": [
           "Released as open source under MIT (v0.21.0)",
-          "Installable with Homebrew",
+          "Installable with Homebrew or a one-line script",
           "install, upgrade, doctor and start",
           "auto-run-task: whole phases unsupervised",
           "Runtime verification with evidence",
@@ -528,6 +580,15 @@
         "en": []
       },
       "changelog": [
+        {
+          "date": "2026-10-09",
+          "prs": [
+            4
+          ],
+          "url": "https://github.com/jcarlosrodicio/norma/pull/4",
+          "es": "install.sh: instalación en una línea desde una release; tres vías (Homebrew, script o tag)",
+          "en": "install.sh: one-line install from a release; three routes (Homebrew, script or tag)"
+        },
         {
           "date": "2026-10-09",
           "prs": [],
@@ -581,7 +642,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-08T13:20:07Z"
+      "checkedUntil": "2026-10-09T11:26:01Z"
     },
     "oak": {
       "now": {
@@ -645,7 +706,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-08T13:20:07Z"
+      "checkedUntil": "2026-10-09T11:26:01Z"
     },
     "grodar": {
       "now": {
@@ -868,7 +929,7 @@
           "en": "Phase 4: credentials encrypted at rest and source connections with CLI."
         }
       ],
-      "checkedUntil": "2026-10-08T13:20:07Z"
+      "checkedUntil": "2026-10-09T11:26:01Z"
     },
     "obs": {
       "now": {
