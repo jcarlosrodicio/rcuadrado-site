@@ -63,6 +63,15 @@ const states = [
     </div>
     <div class="band"></div>
 
+    {p.video && (
+      <figure class="video">
+        <video controls muted playsinline preload="none" poster={p.video.poster} aria-label={`${t.launchVideo}: ${p.name}`}>
+          <source src={p.video.src} type="video/mp4" />
+        </video>
+        <figcaption>{t.launchVideo}</figcaption>
+      </figure>
+    )}
+
     {p.gallery && (
       <div class="gallery" tabindex="0" aria-label={`${t.screenshots} ${p.name}`}>
         {p.gallery.map((src) => <img src={src} alt={`${t.screenshots} ${p.name}`} loading="lazy" />)}

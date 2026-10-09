@@ -498,25 +498,25 @@
     },
     "norma": {
       "now": {
-        "es": "v0.20.0: el gate detecta tests rebajados",
-        "en": "v0.20.0: the gate detects weakened tests"
+        "es": "Recién publicado como open source (v0.21.0)",
+        "en": "Just released as open source (v0.21.0)"
       },
       "done": {
         "es": [
-          "16 perfiles de stack (Flutter, Swift, Go, Rust, Next, Django...)",
+          "Publicado como open source con licencia MIT (v0.21.0)",
+          "Instalable con Homebrew",
           "install, upgrade, doctor y start",
           "auto-run-task: fases completas sin supervisión",
           "Verificación en runtime con evidencia",
-          "La revisión adversarial deja informe",
-          "El gate avisa si un cambio rebaja los tests"
+          "16 perfiles de stack (Flutter, Swift, Go, Rust, Next, Django...)"
         ],
         "en": [
-          "16 stack profiles (Flutter, Swift, Go, Rust, Next, Django...)",
+          "Released as open source under MIT (v0.21.0)",
+          "Installable with Homebrew",
           "install, upgrade, doctor and start",
           "auto-run-task: whole phases unsupervised",
           "Runtime verification with evidence",
-          "The adversarial review leaves a report",
-          "The gate warns on weakened tests"
+          "16 stack profiles (Flutter, Swift, Go, Rust, Next, Django...)"
         ]
       },
       "doing": {
@@ -528,6 +528,13 @@
         "en": []
       },
       "changelog": [
+        {
+          "date": "2026-10-09",
+          "prs": [],
+          "url": "https://github.com/jcarlosrodicio/norma/releases/tag/0.21.0",
+          "es": "Primera versión pública: open source con licencia MIT e instalación con Homebrew",
+          "en": "First public release: open source under MIT, installable with Homebrew"
+        },
         {
           "date": "2026-10-07",
           "prs": [

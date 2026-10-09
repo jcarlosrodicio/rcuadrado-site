@@ -31,6 +31,8 @@ export interface Project {
   links: { label: T; url: string }[];
   changelog: ChangelogEntry[];
   gallery?: string[];
+  /** Vídeo propio (mp4 en public/assets) con su imagen de portada. */
+  video?: { src: string; poster: string };
   cli?: string;
   activity?: Activity;
 }
@@ -97,18 +99,19 @@ const projects: Omit<Project, Editable>[] = [
     cli: 'npm i -g @aqorin/cli',
   },
   {
-    id: 'norma', name: 'norma', kind: 'agents', status: 'building', color: 'oklch(0.42 0.02 85)',
+    id: 'norma', name: 'norma', kind: 'agents', status: 'published', color: 'oklch(0.42 0.02 85)',
     glyph: 'n',
-    tagline: { es: 'El harness de tareas para agentes, instalable en cualquier repo.', en: 'The agent task harness, installable in any repository.' },
-    version: { es: 'v0.20.0 · repo privado', en: 'v0.20.0 · private repo' },
+    tagline: { es: 'Un bucle, una puerta y unas skills para cualquier agente de código, impuestos por git.', en: 'One task loop, one gate and one skill library for every coding agent, enforced by git.' },
+    version: { es: 'v0.21.0 · MIT · open source', en: 'v0.21.0 · MIT · open source' },
     role: { es: 'Diseño y código.', en: 'Design and code.' },
     about: {
-      es: 'Un bucle, una puerta de verificación y una librería de skills, iguales sea cual sea el agente que conduce, porque todo se referencia por ruta de fichero y lo hace cumplir git, no el sistema de hooks de un agente concreto. Es el harness que uso en el resto de mis proyectos.',
-      en: 'One loop, one verification gate and one skill library, identical whichever agent is driving, because everything is referenced by file path and enforced by git rather than by any single agent’s hook system. It is the harness I use across my other projects.',
+      es: 'Instala y mantiene un harness de tareas en cualquier repositorio. Conduzca quien conduzca (Claude Code, Codex, OpenCode, Cursor…), el agente sigue el mismo procedimiento, leído por ruta de fichero desde el repo, y no puede hacer commit hasta pasar la misma puerta de verificación: la impone un hook de git, no el sistema de un agente concreto. POSIX sh, sin dependencias. Es el harness que uso en el resto de mis proyectos.',
+      en: 'Installs and maintains a task harness in any repository. Whatever agent is driving (Claude Code, Codex, OpenCode, Cursor…), it follows the same procedure, read by file path from the repo, and cannot commit until the same verification gate has passed: a git hook enforces it, not any one agent’s hook system. POSIX sh, no dependencies. It is the harness I use across my other projects.',
     },
-    stack: ['Shell', 'git hooks', 'Agent skills'],
-    links: [],
-    cli: 'norma install',
+    stack: ['POSIX sh', 'git hooks', 'Agent skills', 'Homebrew'],
+    links: [{ label: { es: 'GitHub', en: 'GitHub' }, url: 'https://github.com/jcarlosrodicio/norma' }],
+    video: { src: '/assets/norma-launch.mp4', poster: '/assets/norma-launch-poster.jpg' },
+    cli: 'brew install jcarlosrodicio/tap/norma',
   },
   {
     id: 'oak', name: 'OAK', kind: 'agents', status: 'published', color: 'oklch(0.58 0.13 145)',
