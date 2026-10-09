@@ -186,7 +186,7 @@ const date = new Date(GENERATED_AT).toLocaleDateString(lang === 'es' ? 'es-ES' :
       </div>
     </section>
   </main>
-  <Fragment slot="foot">{t.dataNote} {date}</Fragment>
+  <Fragment slot="foot">{`${t.dataNote} ${date}`}</Fragment>
 </Layout>
 
 <script>
