@@ -83,8 +83,12 @@ const ld = jsonLd && JSON.stringify(jsonLd).replace(/</g, '\\u003c');
     // Recalcula "hace X días" con la fecha real del visitante, no la del build.
     const lang = document.documentElement.lang;
     const DAY = 86400000;
+    // Días de calendario: el datetime es una fecha (medianoche UTC), así que se compara con la
+    // fecha de hoy del visitante y no con la hora actual (si no, por la tarde "hoy" salía "ayer").
+    const now = new Date();
+    const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
     document.querySelectorAll('time[data-ago]').forEach((el) => {
-      const d = Math.max(0, Math.round((Date.now() - new Date(el.getAttribute('datetime')!).getTime()) / DAY));
+      const d = Math.max(0, Math.round((today - Date.parse(el.getAttribute('datetime')!)) / DAY));
       el.textContent = lang === 'es'
         ? d === 0 ? 'hoy' : d === 1 ? 'ayer' : d < 14 ? `hace ${d} días` : `hace ${Math.round(d / 7)} semanas`
         : d === 0 ? 'today' : d === 1 ? 'yesterday' : d < 14 ? `${d} days ago` : `${Math.round(d / 7)} weeks ago`;
