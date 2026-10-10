@@ -156,7 +156,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-09T12:06:03Z"
+      "checkedUntil": "2026-10-10T11:22:46Z"
     },
     "grapit": {
       "now": {
@@ -231,7 +231,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-09T12:06:03Z"
+      "checkedUntil": "2026-10-10T11:22:46Z"
     },
     "intriga": {
       "now": {
@@ -243,40 +243,55 @@
           "Formato de caso y validador (case validate)",
           "Móvil del caso: mensajes, galería, notas, calendario, llamadas",
           "Skill de autoría con Solver y Critic",
-          "Primer caso gratuito",
-          "Playtest con personas reales (hito 1)"
+          "Playtest con personas reales (hito 1)",
+          "Caso gratuito revisado tras el playtest (0.9.0)",
+          "Catálogo remoto de casos: publicar, descargar y jugar sin actualizar la app"
         ],
         "en": [
           "Case format and validator (case validate)",
           "The case phone: messages, gallery, notes, calendar, calls",
           "Authoring skill with Solver and Critic",
-          "First free case",
-          "Playtest with real people (milestone 1)"
+          "Playtest with real people (milestone 1)",
+          "Free case rewritten after the playtest (0.9.0)",
+          "Remote case catalogue: publish, download and play without updating the app"
         ]
       },
       "doing": {
-        "es": [
-          "Revisión del caso gratuito y ajustes de interfaz del playtest"
-        ],
-        "en": [
-          "Free case rework and UI fixes from the playtest"
-        ]
+        "es": [],
+        "en": []
       },
       "next": {
         "es": [
           "Primer arranque, estados vacíos y ajustes",
           "Tres casos de pago",
-          "Bloqueado: catálogo remoto, pistas, compras y analítica (cuentas externas pendientes)",
+          "Bloqueado: pistas, compras y analítica (cuentas externas pendientes)",
           "Lanzamiento en las dos tiendas"
         ],
         "en": [
           "First run, empty states and settings",
           "Three paid cases",
-          "Blocked: remote catalogue, hints, purchases and analytics (pending external accounts)",
+          "Blocked: hints, purchases and analytics (pending external accounts)",
           "Launch on both stores"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-09",
+          "prs": [
+            20,
+            22
+          ],
+          "es": "Tras el playtest, reescrito el caso gratuito (0.9.0) y ajustada la interfaz",
+          "en": "After the playtest, the free case is rewritten (0.9.0) and the UI adjusted"
+        },
+        {
+          "date": "2026-10-09",
+          "prs": [
+            23
+          ],
+          "es": "Catálogo remoto: los casos se publican y descargan sin actualizar la app",
+          "en": "Remote catalogue: cases publish and download without an app update"
+        },
         {
           "date": "2026-10-04",
           "prs": [
@@ -315,40 +330,34 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-09T12:06:03Z"
+      "checkedUntil": "2026-10-10T11:22:46Z"
     },
     "aqorin": {
       "now": {
-        "es": "Conversaciones en la terminal y chat libre en cuatro runtimes",
-        "en": "Terminal conversations and free chat on four runtimes"
+        "es": "Edición de agentes y workflows en la TUI y Run en cuatro runtimes",
+        "en": "Editing agents and workflows in the TUI, and a Run on four runtimes"
       },
       "done": {
         "es": [
-          "TUI de terminal con Runs, Runtimes y seguimiento en vivo",
+          "TUI con Runs, Runtimes, agentes, workflows, asignación y preflight",
           "Compatibilidad de runtimes verificada con registro de evidencias",
-          "Run en segundo plano que sobrevive al cierre de la terminal",
           "Conversaciones con Codex y Claude Code, y chat libre en cuatro runtimes",
-          "@aqorin/cli 0.2.0 publicado en npm con licencia MIT",
-          "23 fases de producto cerradas con evidencia"
+          "Run completo en los cuatro runtimes con revisión y evidencia",
+          "Skills y servidores MCP como recursos por rol con preflight",
+          "@aqorin/cli 0.2.0 publicado en npm con licencia MIT"
         ],
         "en": [
-          "Terminal TUI with Runs, Runtimes and live follow-up",
+          "TUI with Runs, Runtimes, agents, workflows, assignment and preflight",
           "Verified runtime compatibility with a per-binary evidence ledger",
-          "Detached Run that survives closing the terminal",
           "Codex and Claude Code conversations, plus free chat on four runtimes",
-          "@aqorin/cli 0.2.0 published on npm under MIT",
-          "23 product phases closed with recorded evidence"
+          "Full Run across the four runtimes with review and evidence",
+          "Skills and MCP servers as per-role resources with preflight",
+          "@aqorin/cli 0.2.0 published on npm under MIT"
         ]
       },
       "doing": {
-        "es": [
-          "Pantallas de la TUI para crear agentes y workflows",
-          "Runs mixtos en los cuatro runtimes con revisión"
-        ],
-        "en": [
-          "TUI screens to create agents and workflows",
-          "Mixed runs across the four runtimes with review"
-        ]
+        "es": [],
+        "en": []
       },
       "next": {
         "es": [
@@ -359,6 +368,49 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-10",
+          "prs": [
+            100,
+            101
+          ],
+          "es": "Primer Run completo en los cuatro runtimes, con revisión y evidencia",
+          "en": "First full Run across the four runtimes, with review and evidence"
+        },
+        {
+          "date": "2026-10-10",
+          "prs": [
+            102,
+            103
+          ],
+          "es": "TA10 cerrada: editores de agentes y workflows en la TUI con preflight",
+          "en": "TA10 closed: agent and workflow editors in the TUI with preflight"
+        },
+        {
+          "date": "2026-10-09",
+          "prs": [
+            96
+          ],
+          "es": "Agentes y workflows con esquema v2, verbos CLI y errores con línea y columna",
+          "en": "Agents and workflows with schema v2, CLI verbs and line-and-column errors"
+        },
+        {
+          "date": "2026-10-09",
+          "prs": [
+            97,
+            98
+          ],
+          "es": "Skills y servidores MCP como recursos por rol, con preflight por runtime",
+          "en": "Skills and MCP servers as per-role resources, with a per-runtime preflight"
+        },
+        {
+          "date": "2026-10-09",
+          "prs": [
+            99
+          ],
+          "es": "Refresco de la elegibilidad de un runtime desde la CLI con evidencia local",
+          "en": "Runtime eligibility refresh from the CLI with local evidence"
+        },
         {
           "date": "2026-10-09",
           "prs": [
@@ -552,7 +604,7 @@
           "en": "P07–P09: Codex adapter with authenticated execution, skills and MCP"
         }
       ],
-      "checkedUntil": "2026-10-09T12:06:03Z"
+      "checkedUntil": "2026-10-10T11:22:46Z"
     },
     "norma": {
       "now": {
@@ -648,7 +700,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-09T12:06:03Z"
+      "checkedUntil": "2026-10-10T11:22:46Z"
     },
     "oak": {
       "now": {
@@ -712,7 +764,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-09T12:06:03Z"
+      "checkedUntil": "2026-10-10T11:22:46Z"
     },
     "grodar": {
       "now": {
@@ -935,7 +987,7 @@
           "en": "Phase 4: credentials encrypted at rest and source connections with CLI."
         }
       ],
-      "checkedUntil": "2026-10-09T12:06:03Z"
+      "checkedUntil": "2026-10-10T11:22:46Z"
     },
     "obs": {
       "now": {
@@ -1101,7 +1153,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-09T12:06:03Z"
+      "checkedUntil": "2026-10-10T11:22:46Z"
     },
     "cinepedia": {
       "done": {
