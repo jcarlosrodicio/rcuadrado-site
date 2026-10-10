@@ -100,7 +100,7 @@ h1 span { color: var(--mute); }
 .now small { display: block; color: var(--ink-2); font-size: 13.5px; line-height: 1.35; }
 .now time { font-family: var(--mono); font-size: 12px; color: var(--mute); white-space: nowrap; }
 .chart { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
-.chart .bars { display: flex; align-items: flex-end; gap: 3px; height: 92px; }
+.chart .bars { display: flex; align-items: flex-end; gap: 8px; height: 92px; }
 .chart .col { flex: 1; display: flex; flex-direction: column-reverse; gap: 1px; height: 100%; justify-content: flex-start; }
 .chart .col i { display: block; border-radius: 1.5px; min-height: 0; }
 .chart .axis { display: flex; justify-content: space-between; margin-top: 8px; font-family: var(--mono); font-size: 11.5px; color: var(--mute); }
@@ -271,6 +271,20 @@ aside.facts { position: sticky; top: 88px; background: var(--surface); border: 1
 }
 
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* ---------- recomendaciones ---------- */
+.sec-head p a { white-space: nowrap; text-underline-offset: 3px; }
+.recs { columns: 3 300px; column-gap: 14px; }
+.rec { break-inside: avoid; margin-bottom: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 22px; display: grid; gap: 14px; }
+.rec blockquote { display: grid; gap: 10px; font-size: 16px; line-height: 1.5; }
+.rec blockquote::before { content: "\201C"; font-family: var(--display); font-weight: 700; font-size: 44px; line-height: 0.6; color: var(--accent); height: 18px; }
+.rec .orig { font-family: var(--mono); font-size: 12px; color: var(--mute); margin-top: -6px; }
+.rec figcaption { display: flex; gap: 12px; align-items: flex-start; padding-top: 14px; border-top: 1px solid var(--line); }
+.rec .ini { flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font: 600 13.5px var(--body); background: color-mix(in oklch, var(--accent) 14%, var(--surface)); color: oklch(0.45 0.15 37); }
+.rec figcaption div { display: grid; gap: 1px; min-width: 0; }
+.rec figcaption b { font-weight: 600; font-size: 15.5px; }
+.rec figcaption span { font-size: 14px; color: var(--ink-2); line-height: 1.35; }
+.rec figcaption small { font-family: var(--mono); font-size: 12px; color: var(--mute); margin-top: 3px; }
 
 /* ---------- changelog ---------- */
 .changes-note { font-size: 14px; color: var(--mute); margin: -6px 0 12px; }

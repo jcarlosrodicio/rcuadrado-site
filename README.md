@@ -15,7 +15,7 @@ npm run build      # regenera la actividad y genera dist/
 |---|---|
 | Proyectos (textos fijos, enlaces, capturas) | `src/data/projects.ts` |
 | Estado de cada proyecto (Ahora, Hecho, En curso, Después, changelog) | `src/data/status.json` |
-| Portada, trayectoria, qué hago, contacto | `src/i18n.ts` |
+| Portada, trayectoria, recomendaciones, qué hago, contacto | `src/i18n.ts` |
 | Estilos | `src/styles/global.css` |
 | CV descargable | `public/cv/juan-carlos-rodicio-cv-en.pdf` |
 

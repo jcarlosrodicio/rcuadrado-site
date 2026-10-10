@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Mark from './Mark.astro';
 import Spark from './Spark.astro';
 import { GENERATED_AT, PROJECTS, type Kind, type Lang } from '../data/projects';
-import { CAREER, CONTACT, EDUCATION, KIND, NOT_MY_THING, PERSON, STATUS, UI, WHAT_I_DO, home, projectUrl } from '../i18n';
+import { CAREER, CONTACT, EDUCATION, KIND, NOT_MY_THING, PERSON, RECOMMENDATIONS, STATUS, UI, WHAT_I_DO, home, projectUrl } from '../i18n';
 import { ago, daysSince } from '../lib/time';
 
 interface Props { lang: Lang }
@@ -14,9 +14,9 @@ const ref = new Date(GENERATED_AT);
 // Ahora mismo: proyectos con commits en los 7 días anteriores a la generación de datos
 const recent = PROJECTS.filter((p) => daysSince(p.activity?.last, ref) <= 7);
 
-// Gráfico apilado de commits por semana y proyecto
-const tracked = PROJECTS.filter((p) => p.activity);
-const totals = Array.from({ length: 26 }, (_, i) => tracked.reduce((s, p) => s + p.activity!.weeks[i], 0));
+// Gráfico apilado de commits por semana y proyecto, últimas 4 semanas
+const tracked = PROJECTS.filter((p) => p.activity).map((p) => ({ ...p, weeks: p.activity!.weeks.slice(-4) }));
+const totals = Array.from({ length: 4 }, (_, i) => tracked.reduce((s, p) => s + p.weeks[i], 0));
 const max = Math.max(...totals, 1);
 
 const kinds: ('all' | Kind)[] = ['all', 'app', 'agents', 'data'];
@@ -28,6 +28,8 @@ const jsonLd = {
     { '@type': 'WebSite', '@id': 'https://rcuadrado.es/#website', url: 'https://rcuadrado.es/', name: 'Rcuadrado', inLanguage: ['es', 'en'], publisher: { '@id': PERSON['@id'] } },
   ],
 };
+const initials = (name: string) => name.split(' ').slice(0, 2).map((w) => w[0]).join('');
+const month = (d: string) => new Date(d).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-GB', { month: 'short', year: 'numeric' });
 const date = new Date(GENERATED_AT).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 ---
 <Layout lang={lang} title={t.title} description={t.description} alt={home(lang === 'es' ? 'en' : 'es')} jsonLd={jsonLd}>
@@ -61,8 +63,8 @@ const date = new Date(GENERATED_AT).toLocaleDateString(lang === 'es' ? 'es-ES' :
           <div class="bars" role="img" aria-label={t.chartLabel}>
             {totals.map((total, i) => (
               <span class="col" title={`${total} commits`}>
-                {tracked.filter((p) => p.activity!.weeks[i]).map((p) => (
-                  <i style={`height:${(p.activity!.weeks[i] / max) * 100}%;background:${p.color}`} title={`${p.name}: ${p.activity!.weeks[i]}`} />
+                {tracked.filter((p) => p.weeks[i]).map((p) => (
+                  <i style={`height:${(p.weeks[i] / max) * 100}%;background:${p.color}`} title={`${p.name}: ${p.weeks[i]}`} />
                 ))}
               </span>
             ))}
@@ -126,6 +128,29 @@ const date = new Date(GENERATED_AT).toLocaleDateString(lang === 'es' ? 'es-ES' :
       </div>
     </section>
 
+    <section class="sec" id="recomendaciones">
+      <div class="sec-head">
+        <h2 class="title">{t.recs}<small>{RECOMMENDATIONS.length}</small></h2>
+        <p>{t.recsIntro} <a href={`${CONTACT.linkedin}/details/recommendations/`}>{t.recsLink} ↗</a></p>
+      </div>
+      <div class="recs">
+        {RECOMMENDATIONS.map((r) => (
+          <figure class="rec">
+            <blockquote lang={r.lang}>{r.text.map((para) => <p>{para}</p>)}</blockquote>
+            {r.lang !== lang && <small class="orig">{t.recsOriginal}</small>}
+            <figcaption>
+              <span class="ini" aria-hidden="true">{initials(r.name)}</span>
+              <div>
+                <b>{r.name}</b>
+                <span>{r.headline}</span>
+                <small>{t.recsAt} {r.company} · {t.recsRel[r.relation]} · <time datetime={r.date}>{month(r.date)}</time></small>
+              </div>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
     <section class="sec" id="que-hago">
       <div class="sec-head">
         <h2 class="title">{t.what}</h2>
@@ -161,7 +186,7 @@ const date = new Date(GENERATED_AT).toLocaleDateString(lang === 'es' ? 'es-ES' :
       </div>
     </section>
   </main>
-  <Fragment slot="foot">{t.dataNote} {date}</Fragment>
+  <Fragment slot="foot">{`${t.dataNote} ${date}`}</Fragment>
 </Layout>
 
 <script>
