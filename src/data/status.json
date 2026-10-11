@@ -156,7 +156,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-10T11:22:46Z"
+      "checkedUntil": "2026-10-11T11:36:33Z"
     },
     "grapit": {
       "now": {
@@ -231,7 +231,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-10T11:22:46Z"
+      "checkedUntil": "2026-10-11T11:36:33Z"
     },
     "intriga": {
       "now": {
@@ -330,44 +330,109 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-10T11:22:46Z"
+      "checkedUntil": "2026-10-11T11:36:33Z"
     },
     "aqorin": {
       "now": {
-        "es": "Edición de agentes y workflows en la TUI y Run en cuatro runtimes",
-        "en": "Editing agents and workflows in the TUI, and a Run on four runtimes"
+        "es": "TUI rediseñada: chat en bloques, Nueva tarea en un formulario y conexiones",
+        "en": "Redesigned TUI: block chat, New task as a single form, and connections"
       },
       "done": {
         "es": [
-          "TUI con Runs, Runtimes, agentes, workflows, asignación y preflight",
-          "Compatibilidad de runtimes verificada con registro de evidencias",
-          "Conversaciones con Codex y Claude Code, y chat libre en cuatro runtimes",
           "Run completo en los cuatro runtimes con revisión y evidencia",
-          "Skills y servidores MCP como recursos por rol con preflight",
+          "Conversaciones y chat libre en cuatro runtimes con aprobaciones",
+          "Conexiones de runtime y modelos configurables por referencia",
+          "Aceptación técnica como usuario nueva superada con instalaciones múltiples",
+          "Rediseño Post-Alpha aplicado a la TUI: runtimes, agentes, workflows y chat",
           "@aqorin/cli 0.2.0 publicado en npm con licencia MIT"
         ],
         "en": [
-          "TUI with Runs, Runtimes, agents, workflows, assignment and preflight",
-          "Verified runtime compatibility with a per-binary evidence ledger",
-          "Codex and Claude Code conversations, plus free chat on four runtimes",
           "Full Run across the four runtimes with review and evidence",
-          "Skills and MCP servers as per-role resources with preflight",
+          "Conversations and free chat on four runtimes with approvals",
+          "Runtime connections and models configurable by reference",
+          "Technical acceptance as a new user passed with multiple installations",
+          "Post-Alpha redesign applied to the TUI: runtimes, agents, workflows and chat",
           "@aqorin/cli 0.2.0 published on npm under MIT"
         ]
       },
       "doing": {
-        "es": [],
-        "en": []
+        "es": [
+          "Tramos restantes del rediseño Post-Alpha de la TUI"
+        ],
+        "en": [
+          "Remaining slices of the Post-Alpha TUI redesign"
+        ]
       },
       "next": {
         "es": [
-          "Preguntas y reanudación desde la terminal"
+          "Completar el rediseño Post-Alpha de la TUI"
         ],
         "en": [
-          "Questions and resume from the terminal"
+          "Finishing the Post-Alpha TUI redesign"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-11",
+          "prs": [
+            109
+          ],
+          "es": "Nuevo tramo Post-Alpha UX: investigación, arquitectura de información y lenguaje visual",
+          "en": "New Post-Alpha UX track: research, information architecture and visual language"
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            110,
+            111
+          ],
+          "es": "Rediseño de la TUI: lenguaje visual, Home, onboarding y pantallas de runtimes y conexiones",
+          "en": "TUI redesign: visual language, Home, onboarding and runtime and connection screens"
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            112,
+            113
+          ],
+          "es": "Agentes, workflows, skills y servidores MCP con formularios e inspectores en la TUI",
+          "en": "Agents, workflows, skills and MCP servers with forms and inspectors in the TUI"
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            114,
+            115
+          ],
+          "es": "Nueva tarea como un solo formulario y chat con el estado del turno en vivo",
+          "en": "New task as a single form, and chat with the live turn state"
+        },
+        {
+          "date": "2026-10-10",
+          "prs": [
+            104,
+            105
+          ],
+          "es": "La TUI lanza, supervisa y cancela Runs, con chat libre, aprobaciones, replan y reanudación",
+          "en": "The TUI launches, supervises and cancels Runs, with free chat, approvals, replan and resume"
+        },
+        {
+          "date": "2026-10-10",
+          "prs": [
+            106
+          ],
+          "es": "Conexiones de runtime y modelos propios, con credenciales por referencia y preflight",
+          "en": "Aqorin-owned runtime connections and models, with credential references and preflight"
+        },
+        {
+          "date": "2026-10-10",
+          "prs": [
+            107,
+            108
+          ],
+          "es": "Aceptación como usuario nuevo superada, con elección de instalación y guía de uso",
+          "en": "Acceptance as a new user passed, with installation choice and a user guide"
+        },
         {
           "date": "2026-10-10",
           "prs": [
@@ -573,38 +638,9 @@
           ],
           "es": "P14–P15: proyección de skills/instrucciones y MCP en Claude Code",
           "en": "P14–P15: skills/instructions projection and MCP on Claude Code"
-        },
-        {
-          "date": "2026-09-11",
-          "prs": [
-            24
-          ],
-          "es": "P13: cancelación en curso y apertura nativa de Claude Code",
-          "en": "P13: in-flight cancellation and native open for Claude Code"
-        },
-        {
-          "date": "2026-09-11",
-          "prs": [
-            19,
-            20,
-            21
-          ],
-          "es": "P11–P12: inspección y ejecución autenticada sobre Claude Code",
-          "en": "P11–P12: inspection and authenticated execution on Claude Code"
-        },
-        {
-          "date": "2026-09-09",
-          "prs": [
-            14,
-            15,
-            16,
-            17
-          ],
-          "es": "P07–P09: adapter Codex con ejecución autenticada, skills y MCP",
-          "en": "P07–P09: Codex adapter with authenticated execution, skills and MCP"
         }
       ],
-      "checkedUntil": "2026-10-10T11:22:46Z"
+      "checkedUntil": "2026-10-11T11:36:33Z"
     },
     "norma": {
       "now": {
@@ -700,7 +736,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-10T11:22:46Z"
+      "checkedUntil": "2026-10-11T11:36:33Z"
     },
     "oak": {
       "now": {
@@ -764,7 +800,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-10T11:22:46Z"
+      "checkedUntil": "2026-10-11T11:36:33Z"
     },
     "grodar": {
       "now": {
@@ -778,7 +814,7 @@
           "Señales, oportunidades y recolección automática",
           "Experimentos y learnings de extremo a extremo",
           "IA en servidor y MCP con escritura acotada",
-          "Fases 30-33: fichas, ASO, competidores web y SERP"
+          "Fases 30-35: fichas, ASO, competidores, SERP, GEO y reseñas"
         ],
         "en": [
           "v1 deployment to production",
@@ -786,32 +822,42 @@
           "Signals, opportunities and automated collection",
           "End-to-end experiments and learnings",
           "Server-side AI and MCP with bounded writes",
-          "Phases 30-33: listings, ASO, web competitors and SERP"
+          "Phases 30-35: listings, ASO, web competitors, SERP, GEO and reviews"
         ]
       },
       "doing": {
-        "es": [
-          "Visibilidad en búsquedas con IA (GEO)"
-        ],
-        "en": [
-          "Visibility in AI search (GEO)"
-        ]
+        "es": [],
+        "en": []
       },
       "next": {
         "es": [
-          "Reseñas de las apps",
           "Indexación y backlinks",
           "Analítica web",
           "Directorios"
         ],
         "en": [
-          "App reviews",
           "Indexing and backlinks",
           "Web analytics",
           "Directories"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-11",
+          "prs": [
+            76
+          ],
+          "es": "Fase 35: reseñas propias y de competidores, señal de caída de valoración y oportunidad",
+          "en": "Phase 35: own and competitor reviews, rating-drop signal and opportunity"
+        },
+        {
+          "date": "2026-10-10",
+          "prs": [
+            75
+          ],
+          "es": "Fase 34: visibilidad en búsquedas con IA (GEO), con muestreo semanal por motor",
+          "en": "Phase 34: AI search visibility (GEO), with weekly sampling per engine"
+        },
         {
           "date": "2026-10-08",
           "prs": [
@@ -987,7 +1033,7 @@
           "en": "Phase 4: credentials encrypted at rest and source connections with CLI."
         }
       ],
-      "checkedUntil": "2026-10-10T11:22:46Z"
+      "checkedUntil": "2026-10-11T11:36:33Z"
     },
     "obs": {
       "now": {
@@ -1153,7 +1199,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-10T11:22:46Z"
+      "checkedUntil": "2026-10-11T11:36:33Z"
     },
     "cinepedia": {
       "done": {
