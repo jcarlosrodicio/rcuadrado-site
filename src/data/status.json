@@ -3,8 +3,8 @@
   "projects": {
     "tally": {
       "now": {
-        "es": "2.7.0 en beta con categorías y paywall; ficha de tienda renovada",
-        "en": "2.7.0 in beta with categories and paywall; renewed store listing"
+        "es": "2.8.0 en beta con recordatorios locales",
+        "en": "2.8.0 in beta with local reminders"
       },
       "done": {
         "es": [
@@ -26,23 +26,40 @@
       },
       "doing": {
         "es": [
-          "Publicación de la 2.7.0 en App Store y Google Play"
+          "Pruebas de la 2.8.0 en beta"
         ],
         "en": [
-          "Releasing 2.7.0 on the App Store and Google Play"
+          "Testing the 2.8.0 beta"
         ]
       },
       "next": {
         "es": [
-          "Notificaciones locales de recordatorio",
+          "Publicación de la 2.8.0 en App Store y Google Play",
           "Presupuestos con límite mensual y por categoría"
         ],
         "en": [
-          "Local reminder notifications",
+          "Releasing 2.8.0 on the App Store and Google Play",
           "Monthly and per-category budgets"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-11",
+          "prs": [
+            122,
+            123
+          ],
+          "es": "Recordatorio local para apuntar gastos y aviso con antelación de los recurrentes",
+          "en": "Local reminder to log expenses and advance warning for recurring movements"
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            125
+          ],
+          "es": "Pantalla única de Notificaciones con selector de días; 2.8.0 en beta",
+          "en": "Single Notifications screen with day selector; 2.8.0 in beta"
+        },
         {
           "date": "2026-10-06",
           "prs": [
@@ -156,7 +173,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-11T11:36:33Z"
+      "checkedUntil": "2026-10-12T13:31:58Z"
     },
     "grapit": {
       "now": {
@@ -231,7 +248,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-11T11:36:33Z"
+      "checkedUntil": "2026-10-12T13:31:58Z"
     },
     "intriga": {
       "now": {
@@ -330,37 +347,37 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-11T11:36:33Z"
+      "checkedUntil": "2026-10-12T13:31:58Z"
     },
     "aqorin": {
       "now": {
-        "es": "TUI rediseñada: chat en bloques, Nueva tarea en un formulario y conexiones",
-        "en": "Redesigned TUI: block chat, New task as a single form, and connections"
+        "es": "Chat con permisos nativos por runtime y marca propia en la TUI",
+        "en": "Chat with native per-runtime permissions and our own mark in the TUI"
       },
       "done": {
         "es": [
           "Run completo en los cuatro runtimes con revisión y evidencia",
-          "Conversaciones y chat libre en cuatro runtimes con aprobaciones",
+          "Chat libre con permisos nativos por chat en los cuatro runtimes",
           "Conexiones de runtime y modelos configurables por referencia",
-          "Aceptación técnica como usuario nueva superada con instalaciones múltiples",
           "Rediseño Post-Alpha aplicado a la TUI: runtimes, agentes, workflows y chat",
+          "Identidad visual propia: marca de rombo y colores por runtime",
           "@aqorin/cli 0.2.0 publicado en npm con licencia MIT"
         ],
         "en": [
           "Full Run across the four runtimes with review and evidence",
-          "Conversations and free chat on four runtimes with approvals",
+          "Free chat with native per-chat permissions across the four runtimes",
           "Runtime connections and models configurable by reference",
-          "Technical acceptance as a new user passed with multiple installations",
           "Post-Alpha redesign applied to the TUI: runtimes, agents, workflows and chat",
+          "Our own visual identity: diamond mark and per-runtime colours",
           "@aqorin/cli 0.2.0 published on npm under MIT"
         ]
       },
       "doing": {
         "es": [
-          "Tramos restantes del rediseño Post-Alpha de la TUI"
+          "Ajustes de la TUI tras la primera prueba con uso real"
         ],
         "en": [
-          "Remaining slices of the Post-Alpha TUI redesign"
+          "TUI tweaks after the first real-world hands-on"
         ]
       },
       "next": {
@@ -372,6 +389,41 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-12",
+          "prs": [
+            122
+          ],
+          "es": "Identidad visual propia: marca de rombo en la TUI, colores por runtime y horas en el reloj local.",
+          "en": "Our own visual identity: a diamond mark in the TUI, per-runtime colours and times on the local clock."
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            116,
+            117,
+            118
+          ],
+          "es": "La TUI muestra el Run como panel con su Result, trazas de tres niveles, bandeja de atención, paleta y filtros.",
+          "en": "The TUI shows the Run as a dashboard with its Result, three-level trace, attention inbox, palette and filters."
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            119
+          ],
+          "es": "Ajustes tras la primera prueba con uso real: credenciales, chat, tareas y planes rechazados.",
+          "en": "Fixes after the first real-world hands-on: credentials, chat, tasks and refused plans."
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            120,
+            121
+          ],
+          "es": "El chat libre actúa como el runtime nativo: permisos por chat (Ask o acceso completo) en los cuatro runtimes.",
+          "en": "Free chat behaves as its runtime does natively: per-chat permissions (Ask or full access) on all four runtimes."
+        },
         {
           "date": "2026-10-11",
           "prs": [
@@ -601,46 +653,9 @@
           ],
           "es": "Chat en vivo con OpenCode: mensajes, preguntas, permisos e interrupción.",
           "en": "Live chat on OpenCode: messages, questions, permissions and interruption."
-        },
-        {
-          "date": "2026-09-24",
-          "prs": [
-            47,
-            49,
-            51
-          ],
-          "es": "Conversaciones Aqorin: identidad, segundo turno y cierre con revisión.",
-          "en": "Aqorin conversations: identity, second turn and finish with review."
-        },
-        {
-          "date": "2026-09-21",
-          "prs": [
-            42,
-            45,
-            46
-          ],
-          "es": "@aqorin/cli 0.2.0 publicado en npm bajo licencia MIT.",
-          "en": "@aqorin/cli 0.2.0 published on npm under the MIT licence."
-        },
-        {
-          "date": "2026-09-18",
-          "prs": [
-            39
-          ],
-          "es": "Recuperación de ejecuciones interrumpidas en Claude Code con evidencia de recursos.",
-          "en": "Recovery of interrupted runs on Claude Code with attested resource evidence."
-        },
-        {
-          "date": "2026-09-15",
-          "prs": [
-            34,
-            35
-          ],
-          "es": "P14–P15: proyección de skills/instrucciones y MCP en Claude Code",
-          "en": "P14–P15: skills/instructions projection and MCP on Claude Code"
         }
       ],
-      "checkedUntil": "2026-10-11T11:36:33Z"
+      "checkedUntil": "2026-10-12T13:31:58Z"
     },
     "norma": {
       "now": {
@@ -736,7 +751,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-11T11:36:33Z"
+      "checkedUntil": "2026-10-12T13:31:58Z"
     },
     "oak": {
       "now": {
@@ -800,7 +815,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-11T11:36:33Z"
+      "checkedUntil": "2026-10-12T13:31:58Z"
     },
     "grodar": {
       "now": {
@@ -814,7 +829,7 @@
           "Señales, oportunidades y recolección automática",
           "Experimentos y learnings de extremo a extremo",
           "IA en servidor y MCP con escritura acotada",
-          "Fases 30-35: fichas, ASO, competidores, SERP, GEO y reseñas"
+          "Fases 30-35 desplegadas: fichas, ASO, competidores, SERP, GEO y reseñas"
         ],
         "en": [
           "v1 deployment to production",
@@ -822,7 +837,7 @@
           "Signals, opportunities and automated collection",
           "End-to-end experiments and learnings",
           "Server-side AI and MCP with bounded writes",
-          "Phases 30-35: listings, ASO, web competitors, SERP, GEO and reviews"
+          "Phases 30-35 deployed: listings, ASO, web competitors, SERP, GEO and reviews"
         ]
       },
       "doing": {
@@ -842,6 +857,14 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-11",
+          "prs": [
+            86
+          ],
+          "es": "GEO y reseñas (fases 34 y 35) ya desplegadas y verificadas en producción.",
+          "en": "GEO and reviews (phases 34 and 35) now deployed and verified in production."
+        },
         {
           "date": "2026-10-11",
           "prs": [
@@ -1033,12 +1056,12 @@
           "en": "Phase 4: credentials encrypted at rest and source connections with CLI."
         }
       ],
-      "checkedUntil": "2026-10-11T11:36:33Z"
+      "checkedUntil": "2026-10-12T13:31:58Z"
     },
     "obs": {
       "now": {
-        "es": "Campaña observability-pilot-1 cerrada: 12/12 válidas y evaluador en sombra",
-        "en": "observability-pilot-1 campaign closed: 12/12 valid with shadow evaluator"
+        "es": "F25b cerrada: Jev no aporta señal y queda retirado",
+        "en": "F25b closed: Jev adds no signal and is retired"
       },
       "done": {
         "es": [
@@ -1047,7 +1070,7 @@
           "Despliegue en NAS con los cuatro runtimes reales; SLI/SLO con alertas a Telegram",
           "Suite coding-v1: 25 tareas en 4 fixtures con corpus de resultados",
           "Aislamiento definition-isolated@5 con los canaries en verde",
-          "Campaña observability-pilot-1: 12/12 válidas; Jev como evaluador en sombra"
+          "Campaña observability-pilot-1 cerrada: 12/12 válidas; Jev retirado sin señal"
         ],
         "en": [
           "OTel traces, Collector, metrics and dashboards",
@@ -1055,7 +1078,7 @@
           "NAS deployment with all four real runtimes; SLI/SLO with alerts to Telegram",
           "coding-v1 suite: 25 tasks on 4 fixtures with a results corpus",
           "definition-isolated@5 isolation with canaries green",
-          "observability-pilot-1 campaign: 12/12 valid; Jev as shadow evaluator"
+          "observability-pilot-1 campaign closed: 12/12 valid; Jev retired, no signal"
         ]
       },
       "doing": {
@@ -1067,6 +1090,14 @@
         "en": []
       },
       "changelog": [
+        {
+          "date": "2026-10-11",
+          "prs": [
+            77
+          ],
+          "es": "Jev evaluado en F25b: no aporta señal propia; se retira la capa.",
+          "en": "Jev evaluated in F25b: brings no signal of its own; layer retired."
+        },
         {
           "date": "2026-09-24",
           "prs": [
@@ -1199,7 +1230,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-11T11:36:33Z"
+      "checkedUntil": "2026-10-12T13:31:58Z"
     },
     "cinepedia": {
       "done": {
