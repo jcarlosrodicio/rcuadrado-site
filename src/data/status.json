@@ -173,7 +173,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-12T13:31:58Z"
+      "checkedUntil": "2026-10-13T12:57:14Z"
     },
     "grapit": {
       "now": {
@@ -248,7 +248,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-12T13:31:58Z"
+      "checkedUntil": "2026-10-13T12:57:14Z"
     },
     "intriga": {
       "now": {
@@ -347,7 +347,7 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-12T13:31:58Z"
+      "checkedUntil": "2026-10-13T12:57:14Z"
     },
     "aqorin": {
       "now": {
@@ -358,18 +358,18 @@
         "es": [
           "Run completo en los cuatro runtimes con revisión y evidencia",
           "Chat libre con permisos nativos por chat en los cuatro runtimes",
-          "Conexiones de runtime y modelos configurables por referencia",
-          "Rediseño Post-Alpha aplicado a la TUI: runtimes, agentes, workflows y chat",
+          "Modelos de Claude Code y Codex listos para elegir; conexiones configurables por referencia",
           "Identidad visual propia: marca de rombo y colores por runtime",
-          "@aqorin/cli 0.2.0 publicado en npm con licencia MIT"
+          "@aqorin/cli 0.2.0 publicado en npm con licencia MIT",
+          "Roles de solo lectura: restringido en Claude Code y avisando para cualquier agente en cualquier nodo"
         ],
         "en": [
           "Full Run across the four runtimes with review and evidence",
           "Free chat with native per-chat permissions across the four runtimes",
-          "Runtime connections and models configurable by reference",
-          "Post-Alpha redesign applied to the TUI: runtimes, agents, workflows and chat",
+          "Claude Code and Codex models ready to pick; connections configurable by reference",
           "Our own visual identity: diamond mark and per-runtime colours",
-          "@aqorin/cli 0.2.0 published on npm under MIT"
+          "@aqorin/cli 0.2.0 published on npm under MIT",
+          "Read-only roles: restricted on Claude Code and advisory for any agent on any node"
         ]
       },
       "doing": {
@@ -389,6 +389,48 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-13",
+          "prs": [
+            123
+          ],
+          "es": "Ayuda contextual con ? que abre la documentación de la pantalla y la referencia de la CLI en help",
+          "en": "Contextual help with ? opening the docs for the screen you are on and the CLI reference in help"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            124,
+            127
+          ],
+          "es": "Ajustes de la TUI: campo de credencial más claro, plan rechazado plegado y Nueva asignación con w",
+          "en": "TUI tweaks: a clearer credential field, the refused plan folded, and New assignment with w"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            125,
+            129
+          ],
+          "es": "Rol restringido en Claude Code y restricciones avisando: cualquier agente en cualquier nodo",
+          "en": "A restricted role on Claude Code and advisory restrictions: any agent on any node"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            130
+          ],
+          "es": "Nueva versión mayor admitida con aviso; el primer intento completado la da por verificada",
+          "en": "A new major version admitted with notice; its first completed attempt marks it verified"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            128
+          ],
+          "es": "Los modelos de Claude Code y Codex aparecen para elegir en asignaciones, tareas y chat libre",
+          "en": "Claude Code and Codex models are offered to pick from in assignments, tasks and free chat"
+        },
         {
           "date": "2026-10-12",
           "prs": [
@@ -604,58 +646,9 @@
           ],
           "es": "Revisión de la tesis: validada parcialmente, con plan de remediación",
           "en": "Thesis review: partially validated, with a remediation plan"
-        },
-        {
-          "date": "2026-10-05",
-          "prs": [
-            74,
-            75
-          ],
-          "es": "TV6 y TV7 cerrados: recuperación con replanificación y benchmark de tesis 10/10",
-          "en": "TV6 and TV7 closed: recovery with explicit replanning and 10/10 thesis benchmark"
-        },
-        {
-          "date": "2026-10-02",
-          "prs": [
-            68,
-            69,
-            70,
-            71,
-            72,
-            73
-          ],
-          "es": "TV5 cerrado: asignación por rol de runtime y modelo con evidencia multi-runtime en vivo",
-          "en": "TV5 closed: per-role runtime and model assignment with live multi-runtime evidence"
-        },
-        {
-          "date": "2026-10-01",
-          "prs": [
-            64,
-            66
-          ],
-          "es": "Workflows definidos por el usuario y roles abiertos por clase de acceso, con prueba de independencia",
-          "en": "User-defined workflows and open roles by access class, with the independence proof"
-        },
-        {
-          "date": "2026-09-28",
-          "prs": [
-            56
-          ],
-          "es": "Chat de dos turnos con el runtime Pi.",
-          "en": "Two-turn chat on the Pi runtime."
-        },
-        {
-          "date": "2026-09-27",
-          "prs": [
-            53,
-            54,
-            55
-          ],
-          "es": "Chat en vivo con OpenCode: mensajes, preguntas, permisos e interrupción.",
-          "en": "Live chat on OpenCode: messages, questions, permissions and interruption."
         }
       ],
-      "checkedUntil": "2026-10-12T13:31:58Z"
+      "checkedUntil": "2026-10-13T12:57:14Z"
     },
     "norma": {
       "now": {
@@ -751,7 +744,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-12T13:31:58Z"
+      "checkedUntil": "2026-10-13T12:57:14Z"
     },
     "oak": {
       "now": {
@@ -815,7 +808,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-12T13:31:58Z"
+      "checkedUntil": "2026-10-13T12:57:14Z"
     },
     "grodar": {
       "now": {
@@ -1056,29 +1049,29 @@
           "en": "Phase 4: credentials encrypted at rest and source connections with CLI."
         }
       ],
-      "checkedUntil": "2026-10-12T13:31:58Z"
+      "checkedUntil": "2026-10-13T12:57:14Z"
     },
     "obs": {
       "now": {
-        "es": "F25b cerrada: Jev no aporta señal y queda retirado",
-        "en": "F25b closed: Jev adds no signal and is retired"
+        "es": "F26–F27 cerradas: registro y evidencia externa en solo lectura",
+        "en": "F26–F27 closed: registry and read-only external evidence"
       },
       "done": {
         "es": [
-          "Trazas OTel, Collector, métricas y dashboards",
+          "Trazas OTel, métricas y dashboards",
           "Convenciones GenAI, router, retry y subagentes",
-          "Despliegue en NAS con los cuatro runtimes reales; SLI/SLO con alertas a Telegram",
-          "Suite coding-v1: 25 tareas en 4 fixtures con corpus de resultados",
-          "Aislamiento definition-isolated@5 con los canaries en verde",
-          "Campaña observability-pilot-1 cerrada: 12/12 válidas; Jev retirado sin señal"
+          "Despliegue en NAS con los cuatro runtimes; SLI/SLO con alertas a Telegram",
+          "coding-v1: 25 tareas en 4 fixtures; aislamiento definition-isolated@5 en verde",
+          "Evaluación externa: registro de evaluaciones y evidencia de GitHub en solo lectura",
+          "observability-pilot-1: 12/12 válidas; Jev retirado sin señal"
         ],
         "en": [
-          "OTel traces, Collector, metrics and dashboards",
+          "OTel traces, metrics and dashboards",
           "GenAI conventions, routing, retries and subagents",
-          "NAS deployment with all four real runtimes; SLI/SLO with alerts to Telegram",
-          "coding-v1 suite: 25 tasks on 4 fixtures with a results corpus",
-          "definition-isolated@5 isolation with canaries green",
-          "observability-pilot-1 campaign closed: 12/12 valid; Jev retired, no signal"
+          "NAS deployment with all four runtimes; SLI/SLO with Telegram alerts",
+          "coding-v1: 25 tasks on 4 fixtures; definition-isolated@5 isolation green",
+          "External evaluation: registry and read-only GitHub evidence",
+          "observability-pilot-1: 12/12 valid; Jev retired, no signal"
         ]
       },
       "doing": {
@@ -1090,6 +1083,23 @@
         "en": []
       },
       "changelog": [
+        {
+          "date": "2026-10-13",
+          "prs": [
+            80,
+            81
+          ],
+          "es": "ADR de evaluación externa aceptada; F26: contrato y registro de evaluaciones",
+          "en": "External evaluation ADR accepted; F26: contract and evaluation registry"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            82
+          ],
+          "es": "F27: evidencia de GitHub y CI en solo lectura, con instantáneas con hash",
+          "en": "F27: read-only GitHub and CI evidence with hashed snapshots"
+        },
         {
           "date": "2026-10-11",
           "prs": [
@@ -1230,7 +1240,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-12T13:31:58Z"
+      "checkedUntil": "2026-10-13T12:57:14Z"
     },
     "cinepedia": {
       "done": {
