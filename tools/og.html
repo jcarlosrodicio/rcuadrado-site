@@ -3,44 +3,57 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Geist:wght@400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../node_modules/@fontsource-variable/recursive/full.css">
 <style>
-  * { margin: 0; box-sizing: border-box; }
+  * { margin: 0; box-sizing: border-box; font-variation-settings: "MONO" var(--mono, 0), "CASL" var(--casl, 0), "CRSV" 0.5; }
   html, body { width: 1200px; height: 630px; overflow: hidden; }
-  body { background: oklch(0.975 0.005 85); color: oklch(0.21 0.01 85); font-family: Geist, sans-serif; padding: 72px 80px; display: flex; flex-direction: column; }
-  .top { display: flex; align-items: center; gap: 16px; font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 34px; letter-spacing: -0.02em; }
-  .sq { width: 56px; height: 56px; border-radius: 14px; background: oklch(0.21 0.01 85); color: oklch(0.975 0.005 85); display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 800; }
-  .sq sup { font-size: 15px; color: oklch(0.64 0.2 37); margin: -14px 0 0 2px; }
-  h1 { font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 84px; line-height: 1; letter-spacing: -0.04em; margin-top: 64px; }
-  h2 { font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 44px; letter-spacing: -0.03em; color: oklch(0.56 0.01 85); margin-top: 14px; }
-  .bottom { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; }
-  .bottom p { font-family: 'Geist Mono'; font-size: 24px; color: oklch(0.42 0.01 85); }
-  .bars { display: flex; gap: 8px; align-items: flex-end; height: 110px; }
-  .bars i { width: 22px; border-radius: 4px; }
+  body { position: relative; background: oklch(0.2 0.012 60); color: oklch(0.95 0.018 88); font-family: "Recursive Variable", sans-serif; padding: 60px 72px; }
+  .top { display: flex; align-items: baseline; gap: 16px; }
+  .top b { font-size: 44px; font-weight: 900; letter-spacing: -0.04em; }
+  .top sup { color: oklch(0.68 0.19 40); font-size: 0.55em; }
+  .top span { font-size: 26px; color: oklch(0.76 0.02 85); }
+  h1 { margin-top: 44px; max-width: 900px; font-size: 76px; font-weight: 820; line-height: 0.98; letter-spacing: -0.035em; }
+  h1 span { --casl: 1; font-weight: 700; }
+  p { margin-top: 22px; font-size: 24px; color: oklch(0.76 0.02 85); --mono: 1; }
+  svg { position: absolute; left: 0; bottom: 0; width: 1200px; height: 210px; }
 </style>
 </head>
 <body>
-  <div class="top"><span class="sq">R<sup>2</sup></span>rcuadrado</div>
-  <h1>Juan Carlos Rodicio</h1>
-  <h2 id="role">AI Engineer · Senior Software Engineer</h2>
-  <div class="bottom">
-    <p id="line">Agentes de IA · Backend Java · Apps móviles</p>
-    <div class="bars">
-      <i style="height:92%;background:oklch(0.56 0.2 262)"></i>
-      <i style="height:64%;background:oklch(0.55 0.09 185)"></i>
-      <i style="height:56%;background:oklch(0.72 0.15 70)"></i>
-      <i style="height:100%;background:oklch(0.64 0.2 37)"></i>
-      <i style="height:72%;background:oklch(0.58 0.13 145)"></i>
-      <i style="height:48%;background:oklch(0.42 0.02 85)"></i>
-      <i style="height:84%;background:oklch(0.58 0.18 350)"></i>
-      <i style="height:60%;background:oklch(0.52 0.15 295)"></i>
-      <i style="height:36%;background:oklch(0.58 0.15 25)"></i>
-    </div>
-  </div>
+  <div class="top"><b>R<sup>2</sup></b><span>Juan Carlos Rodicio</span></div>
+  <h1 id="h1">Agentes de código que trabajan <span>con método.</span></h1>
+  <p id="line">AI Engineer · Sevilla · rcuadrado.es</p>
+  <svg viewBox="0 0 1200 210" preserveAspectRatio="none" id="ridges"></svg>
   <script>
     if (new URLSearchParams(location.search).get('lang') === 'en') {
-      document.getElementById('line').textContent = 'AI agents · Java backends · Mobile apps';
+      document.getElementById('h1').innerHTML = 'Coding agents that work <span>with method.</span>';
+      document.getElementById('line').textContent = 'AI Engineer · Seville, Spain · rcuadrado.es';
     }
+    // Crestas de la portada con los commits por semana (26 semanas hasta el 9 oct 2026), de atrás hacia delante
+    const P = [
+      ['oklch(0.58 0.13 145)', [0,0,10,2,0,4,4,4,1,0,2,2,2,0,49,5,2,2,11,2,2,1,3,7,8,0]],
+      ['oklch(0.56 0.2 262)', [0,0,14,21,12,39,24,13,9,6,15,11,10,63,66,34,126,48,16,30,85,59,9,22,26,31]],
+      ['oklch(0.64 0.2 37)', [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21,100,31,48,46,98,98]],
+      ['oklch(0.58 0.18 350)', [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,110,86,16,39,75]],
+      ['oklch(0.62 0.02 85)', [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,30,14,0,0,15]],
+      ['oklch(0.52 0.15 295)', [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,56,30,0,1]],
+      ['oklch(0.72 0.15 70)', [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,81,9]],
+      ['oklch(0.55 0.09 185)', [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,12]],
+    ];
+    const W = 1200, TOP = 80, GAP = 16, AMP = 74, MAX = 126;
+    const r = (n) => Math.round(n * 10) / 10;
+    let out = '';
+    P.forEach(([c, w], i) => {
+      const base = TOP + i * GAP;
+      const p = w.map((v, k) => [(k * W) / (w.length - 1), base - Math.sqrt(v / MAX) * AMP]);
+      let d = `M${p[0][0]},${r(p[0][1])}`;
+      for (let j = 0; j < p.length - 1; j++) {
+        const a = p[j - 1] || p[j], b = p[j], e = p[j + 1], f = p[j + 2] || e;
+        d += ` C${r(b[0] + (e[0] - a[0]) / 6)},${r(Math.min(base, b[1] + (e[1] - a[1]) / 6))} ${r(e[0] - (f[0] - b[0]) / 6)},${r(Math.min(base, e[1] - (f[1] - b[1]) / 6))} ${r(e[0])},${r(e[1])}`;
+      }
+      out += `<path d="${d} L${W},210 L0,210 Z" fill="oklch(from ${c} 0.235 calc(c * 0.4) h)"/>`;
+      out += `<path d="${d}" fill="none" stroke="oklch(from ${c} max(l, 0.76) c h)" stroke-width="2.4" vector-effect="non-scaling-stroke"/>`;
+    });
+    document.getElementById('ridges').innerHTML = out;
   </script>
 </body>
 </html>

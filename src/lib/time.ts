@@ -15,6 +15,3 @@ export function ago(date: string | undefined, lang: Lang, now = new Date()): str
   if (d === 1) return 'yesterday';
   return d < 14 ? `${d} days ago` : `${Math.round(d / 7)} weeks ago`;
 }
-
-export const daysSince = (date: string | undefined, now = new Date()) =>
-  date ? Math.round((now.getTime() - new Date(date).getTime()) / DAY) : Infinity;

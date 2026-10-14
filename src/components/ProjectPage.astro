@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Bar from './Bar.astro';
+import Contact from './Contact.astro';
 import Mark from './Mark.astro';
-import Spark from './Spark.astro';
 import { GENERATED_AT, PROJECTS, type Lang, type Project } from '../data/projects';
 import { KIND, PERSON, STATUS, UI, home, projectUrl } from '../i18n';
+import { r1, smooth } from '../lib/ridge';
 import { ago } from '../lib/time';
 
 interface Props { lang: Lang; p: Project }
@@ -29,110 +31,210 @@ const jsonLd = p.kind === 'app' && p.status === 'published' ? {
 } : undefined;
 const blocked = (s: string) => /^(Bloqueado|Blocked)/.test(s);
 const states = [
-  ['done', t.done, p.done[lang], t.emptyDone],
-  ['doing', t.doing, p.doing[lang], t.emptyDoing],
-  ['next', t.later, p.next[lang], t.emptyLater],
+  ['done', '✓', t.done, p.done[lang], t.emptyDone],
+  ['doing', '◐', t.doing, p.doing[lang], t.emptyDoing],
+  ['next', '○', t.later, p.next[lang], t.emptyLater],
 ] as const;
----
-<Layout lang={lang} title={`${p.name} · ${p.tagline[lang]} · Rcuadrado`} description={p.about[lang]} alt={projectUrl(lang === 'es' ? 'en' : 'es', p.id)} section="work" jsonLd={jsonLd}>
-  <main class="wrap" style={`--c:${p.color}`}>
-    <div class="crumbs">
-      <span><a href={`${home(lang)}#trabajo`}>{t.crumbs}</a> / {p.name}</span>
-      <nav aria-label={`${t.prev} / ${t.next}`}>
-        <a href={projectUrl(lang, prev.id)}>← {prev.name}</a>
-        <a href={projectUrl(lang, next.id)}>{next.name} →</a>
-      </nav>
-    </div>
 
-    <div class="hero">
-      <Mark p={p} size={88} />
-      <div>
-        <h1>{p.name}</h1>
-        <p>{p.tagline[lang]}</p>
-        <div class="meta">
-          <span class={`pill ${p.status}`}>{STATUS[lang][p.status]}</span>
-          {p.version && <span>{p.version[lang]}</span>}
-          <span>{KIND[lang][p.kind]}</span>
-        </div>
+// La cresta del proyecto: sus 26 semanas de commits, a su propia escala
+const VW = 1000, H = 140, AMP = 124;
+const weeks = p.activity?.weeks ?? [];
+const peak = Math.max(1, ...weeks);
+const pts = weeks.map((v, k) => [(k * VW) / (weeks.length - 1), H - (v / peak) * AMP]);
+const line = weeks.length ? smooth(pts, H) : '';
+const end = pts[pts.length - 1];
+const since = p.activity && new Date(p.activity.since).toLocaleDateString(locale, { month: 'long', year: 'numeric' });
+---
+<Layout lang={lang} title={`${p.name} · ${p.tagline[lang]} · Rcuadrado`} description={p.about[lang]} alt={projectUrl(lang === 'es' ? 'en' : 'es', p.id)} jsonLd={jsonLd}>
+  <section class="cover" style={`--c:${p.color}`}>
+    <div class="wrap">
+      <Bar lang={lang} alt={projectUrl(lang === 'es' ? 'en' : 'es', p.id)} />
+      <nav class="crumbs tt" aria-label={`${t.prev} / ${t.next}`}>
+        <span><a href={`${home(lang)}#trabajo`}>{t.crumbs}</a> / {p.name}</span>
+        <span><a href={projectUrl(lang, prev.id)}>← {prev.name}</a><a href={projectUrl(lang, next.id)}>{next.name} →</a></span>
+      </nav>
+
+      <div class="head">
+        <Mark p={p} size={72} />
+        <h1 class="ch-name">{p.name}</h1>
+        <p class="ch-tag">{p.tagline[lang]}</p>
+        <p class="meta"><span>{STATUS[lang][p.status]}</span>{p.version && <span>{p.version[lang]}</span>}<span>{KIND[lang][p.kind]}</span></p>
+        {p.links.length > 0 && <p class="go">{p.links.map((l) => <a href={l.url}>{l.label[lang]} ↗</a>)}</p>}
       </div>
-      {p.links.length > 0 && (
-        <div class="links">
-          {p.links.map((l, k) => <a class:list={['btn', { primary: k === 0 }]} href={l.url}>{l.label[lang]} ↗</a>)}
-        </div>
+
+      {p.activity && (
+        <figure class="pulse">
+          <svg viewBox={`0 0 ${VW} ${H}`} preserveAspectRatio="none" role="img" aria-label={t.activity}>
+            <path class="fill" d={`${line} L${VW},${H} L0,${H} Z`} />
+            <path class="line" d={line} />
+            <path class="dot" d={`M${r1(end[0])},${r1(end[1])} h0`} />
+          </svg>
+          <div class="ticks tt"><span>{t.halfYearAgo}</span><span>{t.today}</span></div>
+          <figcaption class="tt">
+            {t.activity} · {p.activity.commits.toLocaleString(locale)} {t.commitsSince} {since} · {t.lastChange}: <time data-ago datetime={p.activity.last}>{ago(p.activity.last, lang, ref)}</time>
+          </figcaption>
+        </figure>
       )}
     </div>
-    <div class="band"></div>
+  </section>
 
-    {p.video && (
-      <figure class="video">
-        <video controls muted playsinline preload="none" poster={p.video.poster} aria-label={`${t.launchVideo}: ${p.name}`}>
-          <source src={p.video.src} type="video/mp4" />
-        </video>
-        <figcaption>{t.launchVideo}</figcaption>
-      </figure>
-    )}
-
-    {p.gallery && (
-      <div class="gallery" tabindex="0" aria-label={`${t.screenshots} ${p.name}`}>
+  {p.gallery && (
+    <section class="shots" style={`--c:${p.color}`}>
+      <div class="strip" tabindex="0" aria-label={`${t.screenshots} ${p.name}`}>
         {p.gallery.map((src) => <img src={src} alt={`${t.screenshots} ${p.name}`} loading="lazy" />)}
       </div>
-    )}
+    </section>
+  )}
 
-    <div class="pbody">
-      <div>
-        <section><h2>{t.whatIs}</h2><p class="about">{p.about[lang]}</p></section>
+  <div class="wrap body">
+    <div class="main">
+      {p.video && (
+        <figure class="film">
+          <video controls muted playsinline preload="none" poster={p.video.poster} aria-label={`${t.launchVideo}: ${p.name}`}>
+            <source src={p.video.src} type="video/mp4" />
+          </video>
+          <figcaption class="tt">{t.launchVideo}</figcaption>
+        </figure>
+      )}
+
+      <section><h2>{t.whatIs}</h2><p class="about">{p.about[lang]}</p></section>
+
+      <section>
+        <h2>{t.state}</h2>
+        <div class="state">
+          {states.map(([cls, glyph, title, items, empty]) => (
+            <div class={cls}>
+              <h3><span aria-hidden="true">{glyph}</span>{title}</h3>
+              {items.length
+                ? <ul>{items.map((s) => <li class:list={{ blocked: blocked(s) }}>{s}</li>)}</ul>
+                : <p class="empty">{empty}</p>}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {p.cli && (
         <section>
-          <h2>{t.state}</h2>
-          <div class="state">
-            {states.map(([cls, title, items, empty]) => (
-              <div class={cls}>
-                <h3>{title}</h3>
-                {items.length
-                  ? <ul>{items.map((s) => <li class:list={{ blocked: blocked(s) }}>{s}</li>)}</ul>
-                  : <p class="empty">{empty}</p>}
-              </div>
-            ))}
-          </div>
+          <h2>{t.tryIt}</h2>
+          <div class="cmd"><code><span aria-hidden="true">$ </span>{p.cli}</code><button type="button" class="copy" data-copy={p.cli} data-done={t.copied}>{t.copy}</button></div>
         </section>
-        {p.cli && <section><h2>{t.tryIt}</h2><code class="cli-lg">{p.cli}</code></section>}
-        {p.changelog.length > 0 && (
-          <section>
-            <h2>{t.changes}</h2>
-            <p class="changes-note">{t.changesNote}</p>
-            <ol class="changes">
-              {p.changelog.slice(0, 10).map((e) => (
-                <li>
-                  <time datetime={e.date}>{new Date(e.date).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' })}</time>
-                  <span>{e.url ? <a href={e.url}>{e[lang]}</a> : e[lang]}</span>
-                </li>
-              ))}
-            </ol>
-          </section>
-        )}
-      </div>
-      <aside class="facts">
-        <dl>
-          <dt>{t.myRole}</dt><dd>{p.role[lang]}</dd>
-          {p.activity && <>
-            <dt>{t.started}</dt><dd>{new Date(p.activity.since).toLocaleDateString(locale, { month: 'long', year: 'numeric' })}</dd>
-            <dt>{t.lastChange}</dt><dd><time data-ago datetime={p.activity.last}>{ago(p.activity.last, lang, ref)}</time></dd>
-            <dt>{t.commits}</dt><dd>{p.activity.commits.toLocaleString(locale)}</dd>
-          </>}
-          <dt>{t.stack}</dt><dd class="tags">{p.stack.map((s) => <span>{s}</span>)}</dd>
-        </dl>
-        {p.activity && (
-          <div class="act">
-            <h3>{t.activity}</h3>
-            <Spark p={p} height={64} label={t.activity} />
-            <div class="axis"><span>{t.weeksAgo}</span><span>{t.today}</span></div>
-          </div>
-        )}
-      </aside>
+      )}
+
+      {p.changelog.length > 0 && (
+        <section>
+          <h2>{t.changes}</h2>
+          <p class="note">{t.changesNote}</p>
+          <ol class="changes">
+            {p.changelog.slice(0, 10).map((e) => (
+              <li>
+                <time class="tt" datetime={e.date}>{new Date(e.date).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' })}</time>
+                <span>{e.url ? <a href={e.url}>{e[lang]}</a> : e[lang]}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
     </div>
 
-    <div class="pager">
-      <a href={projectUrl(lang, prev.id)} style={`--c:${prev.color}`}><Mark p={prev} size={40} /><span><small>{t.prev}</small><b>{prev.name}</b></span></a>
-      <a href={projectUrl(lang, next.id)} style={`--c:${next.color}`}><span><small>{t.next}</small><b>{next.name}</b></span><Mark p={next} size={40} /></a>
-    </div>
-  </main>
+    <aside class="facts">
+      <dl>
+        <dt class="tt">{t.myRole}</dt><dd>{p.role[lang]}</dd>
+        {p.activity && <>
+          <dt class="tt">{t.started}</dt><dd>{since}</dd>
+          <dt class="tt">{t.lastChange}</dt><dd><time data-ago datetime={p.activity.last}>{ago(p.activity.last, lang, ref)}</time></dd>
+          <dt class="tt">{t.commits}</dt><dd>{p.activity.commits.toLocaleString(locale)}</dd>
+        </>}
+        <dt class="tt">{t.stack}</dt><dd class="stack">{p.stack.join(' · ')}</dd>
+      </dl>
+    </aside>
+  </div>
+
+  <nav class="pager" aria-label={`${t.prev} / ${t.next}`}>
+    <a href={projectUrl(lang, prev.id)} style={`--c:${prev.color}`}><small class="tt">← {t.prev}</small><span><Mark p={prev} size={44} /><b>{prev.name}</b></span></a>
+    <a href={projectUrl(lang, next.id)} style={`--c:${next.color}`}><small class="tt">{t.next} →</small><span><b>{next.name}</b><Mark p={next} size={44} /></span></a>
+  </nav>
+
+  <Contact lang={lang} />
 </Layout>
+
+<style>
+  /* ── cabecera (noche) con la cresta del proyecto ── */
+  .cover { background: var(--night); color: var(--cream); padding-bottom: clamp(40px, 6vw, 72px); }
+  .crumbs { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; font-size: 13px; color: var(--cream-2); }
+  .crumbs a { color: var(--cream-2); text-decoration: none; }
+  .crumbs a:hover { color: var(--cream); text-decoration: underline; text-underline-offset: 3px; }
+  .crumbs span + span { display: flex; gap: 20px; }
+  .head { padding-top: clamp(40px, 7vw, 88px); }
+  .head :global(.pmark) { margin-bottom: 24px; }
+  .ch-tag { font-size: clamp(22px, 2.4vw, 32px); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; margin-top: 20px; max-width: 34ch; }
+  .meta { color: var(--cream-2); }
+  .go a { color: oklch(from var(--c) max(l, 0.8) c h); }
+  .go a:hover { color: var(--cream); }
+
+  .pulse { margin-top: clamp(48px, 7vw, 88px); }
+  svg { display: block; width: 100%; height: 140px; overflow: visible; }
+  .fill { fill: oklch(from var(--c) 0.3 calc(c * 0.6) h); }
+  .line { fill: none; stroke: oklch(from var(--c) max(l, 0.78) c h); stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+  .dot { stroke: oklch(from var(--c) max(l, 0.78) c h); stroke-width: 7; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+  .ticks { display: flex; justify-content: space-between; margin-top: 10px; font-size: 12px; color: var(--cream-2); }
+  .pulse figcaption { margin-top: 14px; padding-top: 14px; border-top: 1px solid oklch(0.76 0.02 85 / 0.25); font-size: 13px; color: var(--cream-2); }
+
+  /* ── capturas sobre el color del proyecto ── */
+  .shots { background: oklch(from var(--c) calc(l - 0.09) c h); padding: 12px 0 44px; }
+  .shots .strip img { width: clamp(180px, 20vw, 260px); box-shadow: 0 2px 8px oklch(0.1 0.02 260 / 0.3); }
+
+  /* ── cuerpo (papel) ── */
+  .body { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: clamp(32px, 5vw, 80px); align-items: start; padding-top: clamp(64px, 8vw, 112px); padding-bottom: clamp(64px, 8vw, 112px); }
+  h2 { font-size: clamp(26px, 2.6vw, 34px); line-height: 1.05; margin-bottom: 18px; }
+  .main > * + * { margin-top: clamp(48px, 6vw, 72px); }
+  .about { font-size: clamp(19px, 1.6vw, 22px); line-height: 1.5; max-width: 60ch; }
+  .film { max-width: 560px; }
+  .film video { width: 100%; aspect-ratio: 1; border-radius: 6px; background: var(--night); }
+  .film figcaption { margin-top: 10px; font-size: 13px; color: var(--ink-2); }
+
+  .state { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 36px); }
+  .state > div { border-top: 2px solid var(--ink); padding-top: 14px; }
+  .state h3 { display: flex; gap: 8px; align-items: baseline; font-size: 19px; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .state h3 span { --mono: 1; font-size: 15px; }
+  .state > .doing { border-top-color: var(--orange); }
+  .doing h3 span { color: var(--orange); }
+  .state ul { list-style: none; display: grid; gap: 10px; font-size: 15.5px; line-height: 1.45; color: var(--ink-2); }
+  .state li.blocked { color: oklch(0.5 0.17 25); }
+  .state .empty { font-size: 15px; color: var(--ink-2); }
+
+  .note { font-size: 15px; color: var(--ink-2); margin: -8px 0 14px; }
+  .changes { list-style: none; border-top: 1px solid var(--rule); }
+  .changes li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 16px; }
+  .changes time { font-size: 13px; color: var(--ink-2); padding-top: 3px; }
+  .changes a { text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  .changes a:hover { text-decoration-color: currentColor; }
+
+  .facts { position: sticky; top: 32px; border-top: 2px solid var(--ink); padding-top: 18px; }
+  .facts dl { display: grid; gap: 4px; font-size: 16px; }
+  .facts dt { font-size: 12.5px; color: var(--ink-2); margin-top: 14px; }
+  .facts dt:first-child { margin-top: 0; }
+  .facts .stack { line-height: 1.6; }
+
+  /* ── anterior / siguiente ── */
+  .pager { display: grid; grid-template-columns: 1fr 1fr; background: var(--paper-2); }
+  .pager a { display: grid; gap: 10px; padding: clamp(32px, 5vw, 64px) var(--gut); text-decoration: none; transition: background 0.2s; }
+  .pager a:hover { background: oklch(from var(--c) l c h / 0.1); }
+  .pager a + a { text-align: right; justify-items: end; border-left: 1px solid var(--rule); }
+  .pager small { font-size: 13px; color: var(--ink-2); }
+  .pager span { display: flex; align-items: center; gap: 16px; }
+  .pager b { font-size: clamp(28px, 4vw, 56px); font-weight: 880; letter-spacing: -0.045em; line-height: 1; }
+
+  @media (max-width: 1100px) {
+    .state { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 900px) {
+    .body { grid-template-columns: 1fr; }
+    .facts { position: static; }
+  }
+  @media (max-width: 560px) {
+    .crumbs span + span { display: none; }
+    .changes li { grid-template-columns: 1fr; gap: 2px; }
+    .pager { grid-template-columns: 1fr; }
+    .pager a + a { border-left: 0; border-top: 1px solid var(--rule); }
+  }
+</style>
