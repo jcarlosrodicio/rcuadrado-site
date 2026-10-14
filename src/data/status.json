@@ -44,6 +44,14 @@
       },
       "changelog": [
         {
+          "date": "2026-10-13",
+          "prs": [
+            126
+          ],
+          "es": "Recordatorio «Estar al día» configurable desde la pantalla de recurrentes de cada cuenta",
+          "en": "\"Stay on track\" reminder configurable from each account's recurring screen"
+        },
+        {
           "date": "2026-10-11",
           "prs": [
             122,
@@ -173,7 +181,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-13T12:57:14Z"
+      "checkedUntil": "2026-10-14T10:37:07Z"
     },
     "grapit": {
       "now": {
@@ -248,7 +256,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-13T12:57:14Z"
+      "checkedUntil": "2026-10-14T10:37:07Z"
     },
     "intriga": {
       "now": {
@@ -347,12 +355,12 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-13T12:57:14Z"
+      "checkedUntil": "2026-10-14T10:37:07Z"
     },
     "aqorin": {
       "now": {
-        "es": "Chat con permisos nativos por runtime y marca propia en la TUI",
-        "en": "Chat with native per-runtime permissions and our own mark in the TUI"
+        "es": "TUI en pruebas reales: plan como flujo, avisos bajo demanda y check opcional",
+        "en": "TUI in real use: plan as a flow, notices on demand and an optional check"
       },
       "done": {
         "es": [
@@ -361,7 +369,7 @@
           "Modelos de Claude Code y Codex listos para elegir; conexiones configurables por referencia",
           "Identidad visual propia: marca de rombo y colores por runtime",
           "@aqorin/cli 0.2.0 publicado en npm con licencia MIT",
-          "Roles de solo lectura: restringido en Claude Code y avisando para cualquier agente en cualquier nodo"
+          "Claude Code ejecuta comandos con permiso y el check de la tarea es opcional por defecto"
         ],
         "en": [
           "Full Run across the four runtimes with review and evidence",
@@ -369,15 +377,15 @@
           "Claude Code and Codex models ready to pick; connections configurable by reference",
           "Our own visual identity: diamond mark and per-runtime colours",
           "@aqorin/cli 0.2.0 published on npm under MIT",
-          "Read-only roles: restricted on Claude Code and advisory for any agent on any node"
+          "Claude Code runs commands with permission and the task's check is optional by default"
         ]
       },
       "doing": {
         "es": [
-          "Ajustes de la TUI tras la primera prueba con uso real"
+          "Ajustes de la TUI tras las pruebas manuales Post-Alpha"
         ],
         "en": [
-          "TUI tweaks after the first real-world hands-on"
+          "TUI tweaks after the Post-Alpha hands-on sessions"
         ]
       },
       "next": {
@@ -389,6 +397,55 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-14",
+          "prs": [
+            131,
+            138
+          ],
+          "es": "Modelos del runtime para elegir en la conexión y en el agente; una clave reutilizable",
+          "en": "Runtime's models to pick in the connection and the agent; a key reusable"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            138
+          ],
+          "es": "Un paso fallido dice el porqué, toda Run espera una decisión y se ve el consumo",
+          "en": "A failed step says why, any Run waits for a decision and usage is visible"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            139
+          ],
+          "es": "La Run terminada pasa a su Resultado; el plan, un flujo; avisos bajo !",
+          "en": "A finished Run moves to its Result; the plan as a flow; notices on !"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            132
+          ],
+          "es": "El agente de Claude Code puede ejecutar comandos Bash con permiso",
+          "en": "Claude Code's agent can run Bash commands with permission"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            134
+          ],
+          "es": "La Run enseña los checks en vivo y la columna de detalle se simplifica",
+          "en": "The Run shows its checks live and the details pane is trimmed"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            135
+          ],
+          "es": "El check del agente es opcional por tarea y apagado por defecto",
+          "en": "The agent's check is optional per task and off by default"
+        },
         {
           "date": "2026-10-13",
           "prs": [
@@ -593,62 +650,9 @@
           ],
           "es": "Timeout de intento por Run; al agotarse espera la decisión de una persona",
           "en": "Per-Run attempt timeout; on expiry it waits for a person's decision"
-        },
-        {
-          "date": "2026-10-09",
-          "prs": [
-            94
-          ],
-          "es": "Conversaciones con Codex: turnos encadenados en un mismo hilo desde la terminal",
-          "en": "Codex conversations: chained turns on a single thread from the terminal"
-        },
-        {
-          "date": "2026-10-08",
-          "prs": [
-            87
-          ],
-          "es": "Compatibilidad de runtimes por versión mínima, contrato por adaptador y doctor en vivo",
-          "en": "Runtime compatibility by minimum version, per-adapter contract and live doctor"
-        },
-        {
-          "date": "2026-10-08",
-          "prs": [
-            88,
-            89
-          ],
-          "es": "Logs --follow y actividad normalizada (texto, herramientas, estado) en los cuatro runtimes",
-          "en": "`logs --follow` and normalized activity (text, tools, status) on the four runtimes"
-        },
-        {
-          "date": "2026-10-08",
-          "prs": [
-            90,
-            91
-          ],
-          "es": "TUI de terminal con pantallas de Runs, Runtimes y seguimiento en vivo de un Run",
-          "en": "Terminal TUI with Runs and Runtimes screens and live Run follow-up"
-        },
-        {
-          "date": "2026-10-07",
-          "prs": [
-            77,
-            78,
-            79,
-            80
-          ],
-          "es": "Protocolo de remediación y revalidación de la tesis aceptado",
-          "en": "Thesis remediation and revalidation protocol accepted"
-        },
-        {
-          "date": "2026-10-05",
-          "prs": [
-            76
-          ],
-          "es": "Revisión de la tesis: validada parcialmente, con plan de remediación",
-          "en": "Thesis review: partially validated, with a remediation plan"
         }
       ],
-      "checkedUntil": "2026-10-13T12:57:14Z"
+      "checkedUntil": "2026-10-14T10:37:07Z"
     },
     "norma": {
       "now": {
@@ -744,7 +748,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-13T12:57:14Z"
+      "checkedUntil": "2026-10-14T10:37:07Z"
     },
     "oak": {
       "now": {
@@ -808,7 +812,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-13T12:57:14Z"
+      "checkedUntil": "2026-10-14T10:37:07Z"
     },
     "grodar": {
       "now": {
@@ -1049,29 +1053,29 @@
           "en": "Phase 4: credentials encrypted at rest and source connections with CLI."
         }
       ],
-      "checkedUntil": "2026-10-13T12:57:14Z"
+      "checkedUntil": "2026-10-14T10:37:07Z"
     },
     "obs": {
       "now": {
-        "es": "F26–F27 cerradas: registro y evidencia externa en solo lectura",
-        "en": "F26–F27 closed: registry and read-only external evidence"
+        "es": "F26–F29: registro, evidencia externa, operativa de intento y veredicto",
+        "en": "F26–F29: registry, external evidence, attempt operations and verdict"
       },
       "done": {
         "es": [
-          "Trazas OTel, métricas y dashboards",
+          "Trazas OTel, métricas y dashboards; NAS con los cuatro runtimes, SLI/SLO y alertas a Telegram",
           "Convenciones GenAI, router, retry y subagentes",
-          "Despliegue en NAS con los cuatro runtimes; SLI/SLO con alertas a Telegram",
           "coding-v1: 25 tareas en 4 fixtures; aislamiento definition-isolated@5 en verde",
-          "Evaluación externa: registro de evaluaciones y evidencia de GitHub en solo lectura",
-          "observability-pilot-1: 12/12 válidas; Jev retirado sin señal"
+          "observability-pilot-1: 12/12 válidas; Jev retirado sin señal",
+          "Evaluación externa: registro, evidencia en solo lectura y operativa de un intento",
+          "Fase 29: primer veredicto de integridad sobre PR externas con política versionada"
         ],
         "en": [
-          "OTel traces, metrics and dashboards",
+          "OTel traces, metrics and dashboards; NAS with all four runtimes, SLI/SLO with Telegram alerts",
           "GenAI conventions, routing, retries and subagents",
-          "NAS deployment with all four runtimes; SLI/SLO with Telegram alerts",
           "coding-v1: 25 tasks on 4 fixtures; definition-isolated@5 isolation green",
-          "External evaluation: registry and read-only GitHub evidence",
-          "observability-pilot-1: 12/12 valid; Jev retired, no signal"
+          "observability-pilot-1: 12/12 valid; Jev retired, no signal",
+          "External evaluation: registry, read-only evidence and attempt operations",
+          "Phase 29: first integrity verdict on external PRs with versioned policy"
         ]
       },
       "doing": {
@@ -1083,6 +1087,22 @@
         "en": []
       },
       "changelog": [
+        {
+          "date": "2026-10-13",
+          "prs": [
+            83
+          ],
+          "es": "Fase 28: la operativa de un intento (duración, llamadas, coste) se atribuye en los cuatro runtimes",
+          "en": "Phase 28: attempt operations (duration, calls, cost) attributed across all four runtimes"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            84
+          ],
+          "es": "Fase 29: primer veredicto de integridad sobre PR externas con política versionada por repositorio",
+          "en": "Phase 29: first integrity verdict on external PRs with per-repo versioned policy"
+        },
         {
           "date": "2026-10-13",
           "prs": [
@@ -1240,7 +1260,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-13T12:57:14Z"
+      "checkedUntil": "2026-10-14T10:37:07Z"
     },
     "cinepedia": {
       "done": {
