@@ -181,7 +181,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-14T10:37:07Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "grapit": {
       "now": {
@@ -256,7 +256,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-14T10:37:07Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "intriga": {
       "now": {
@@ -355,29 +355,29 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-14T10:37:07Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "aqorin": {
       "now": {
-        "es": "TUI en pruebas reales: plan como flujo, avisos bajo demanda y check opcional",
-        "en": "TUI in real use: plan as a flow, notices on demand and an optional check"
+        "es": "Workflows en paralelo, biblioteca de flujos y sandbox, en pruebas reales",
+        "en": "Parallel workflows, workflow library and sandbox, in real use"
       },
       "done": {
         "es": [
           "Run completo en los cuatro runtimes con revisión y evidencia",
           "Chat libre con permisos nativos por chat en los cuatro runtimes",
-          "Modelos de Claude Code y Codex listos para elegir; conexiones configurables por referencia",
-          "Identidad visual propia: marca de rombo y colores por runtime",
-          "@aqorin/cli 0.2.0 publicado en npm con licencia MIT",
-          "Claude Code ejecuta comandos con permiso y el check de la tarea es opcional por defecto"
+          "Varios flujos en paralelo, cada uno en su worktree, con integrar o deshacer",
+          "Biblioteca de flujos con verificación y pasos que responden preguntas",
+          "Flujos y chats libres en el sandbox de macOS de Aqorin",
+          "@aqorin/cli 0.2.0 publicado en npm con licencia MIT"
         ],
         "en": [
           "Full Run across the four runtimes with review and evidence",
           "Free chat with native per-chat permissions across the four runtimes",
-          "Claude Code and Codex models ready to pick; connections configurable by reference",
-          "Our own visual identity: diamond mark and per-runtime colours",
-          "@aqorin/cli 0.2.0 published on npm under MIT",
-          "Claude Code runs commands with permission and the task's check is optional by default"
+          "Several workflows at once, each in its own worktree, with integrate or undo",
+          "Workflow library with verification and steps that answer questions",
+          "Workflow runs and free chats in Aqorin's macOS sandbox",
+          "@aqorin/cli 0.2.0 published on npm under MIT"
         ]
       },
       "doing": {
@@ -397,6 +397,48 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-15",
+          "prs": [
+            145,
+            146
+          ],
+          "es": "Flujos y chats libres corren en el sandbox de macOS de Aqorin, a prueba de fallos",
+          "en": "Workflow runs and free chats run in Aqorin's macOS sandbox, fail-closed"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            142,
+            143
+          ],
+          "es": "Varios flujos a la vez: cada uno en su propio worktree de git, con integrar, descartar o deshacer",
+          "en": "Several workflows at once: each in its own git worktree, with integrate, discard or undo"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            144
+          ],
+          "es": "Biblioteca de flujos de desarrollo: cambio de ingeniería y cinco más, con verificación y pasos que preguntan",
+          "en": "Built-in developer workflows: engineering-change and five more, with verification and steps that ask"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            141
+          ],
+          "es": "Los chats libres conviven con un Run y un turno fallido deja seguir; chats de Pi en conexión",
+          "en": "Free chats live beside a Run and a failed turn lets you continue; Pi chats on a connection"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            140
+          ],
+          "es": "Aviso del Home tras !, listas de modelos filtrables y claves de configuración heredadas",
+          "en": "Home's notice behind !, searchable model lists and inherited configuration variables"
+        },
         {
           "date": "2026-10-14",
           "prs": [
@@ -609,50 +651,9 @@
           ],
           "es": "Agentes y workflows con esquema v2, verbos CLI y errores con línea y columna",
           "en": "Agents and workflows with schema v2, CLI verbs and line-and-column errors"
-        },
-        {
-          "date": "2026-10-09",
-          "prs": [
-            97,
-            98
-          ],
-          "es": "Skills y servidores MCP como recursos por rol, con preflight por runtime",
-          "en": "Skills and MCP servers as per-role resources, with a per-runtime preflight"
-        },
-        {
-          "date": "2026-10-09",
-          "prs": [
-            99
-          ],
-          "es": "Refresco de la elegibilidad de un runtime desde la CLI con evidencia local",
-          "en": "Runtime eligibility refresh from the CLI with local evidence"
-        },
-        {
-          "date": "2026-10-09",
-          "prs": [
-            95
-          ],
-          "es": "Conversaciones con Claude Code y chat libre sin revisión en los cuatro runtimes",
-          "en": "Claude Code conversations and review-free chat on the four runtimes"
-        },
-        {
-          "date": "2026-10-09",
-          "prs": [
-            92
-          ],
-          "es": "Run en segundo plano: cerrar la terminal ya no lo detiene; un Run activo por árbol",
-          "en": "Detached Run: closing the terminal no longer stops it; one active Run per tree"
-        },
-        {
-          "date": "2026-10-09",
-          "prs": [
-            93
-          ],
-          "es": "Timeout de intento por Run; al agotarse espera la decisión de una persona",
-          "en": "Per-Run attempt timeout; on expiry it waits for a person's decision"
         }
       ],
-      "checkedUntil": "2026-10-14T10:37:07Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "norma": {
       "now": {
@@ -748,7 +749,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-14T10:37:07Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "oak": {
       "now": {
@@ -812,7 +813,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-14T10:37:07Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "grodar": {
       "now": {
@@ -854,6 +855,14 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-14",
+          "prs": [
+            90
+          ],
+          "es": "Android: rankings y fichas por mercado ya se consultan en su idioma; antes se medían mal fuera del idioma de la conexión",
+          "en": "Android: market ranks and listings are now queried in each market's language; previously they were wrong outside the connection's language"
+        },
         {
           "date": "2026-10-11",
           "prs": [
@@ -1053,7 +1062,7 @@
           "en": "Phase 4: credentials encrypted at rest and source connections with CLI."
         }
       ],
-      "checkedUntil": "2026-10-14T10:37:07Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "obs": {
       "now": {
@@ -1260,7 +1269,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-14T10:37:07Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "cinepedia": {
       "done": {
