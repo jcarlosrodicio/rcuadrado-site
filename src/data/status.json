@@ -3,8 +3,8 @@
   "projects": {
     "tally": {
       "now": {
-        "es": "2.7.0 en beta con categorías y paywall; ficha de tienda renovada",
-        "en": "2.7.0 in beta with categories and paywall; renewed store listing"
+        "es": "2.8.0 en beta con recordatorios locales",
+        "en": "2.8.0 in beta with local reminders"
       },
       "done": {
         "es": [
@@ -26,23 +26,48 @@
       },
       "doing": {
         "es": [
-          "Publicación de la 2.7.0 en App Store y Google Play"
+          "Pruebas de la 2.8.0 en beta"
         ],
         "en": [
-          "Releasing 2.7.0 on the App Store and Google Play"
+          "Testing the 2.8.0 beta"
         ]
       },
       "next": {
         "es": [
-          "Notificaciones locales de recordatorio",
+          "Publicación de la 2.8.0 en App Store y Google Play",
           "Presupuestos con límite mensual y por categoría"
         ],
         "en": [
-          "Local reminder notifications",
+          "Releasing 2.8.0 on the App Store and Google Play",
           "Monthly and per-category budgets"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-13",
+          "prs": [
+            126
+          ],
+          "es": "Recordatorio «Estar al día» configurable desde la pantalla de recurrentes de cada cuenta",
+          "en": "\"Stay on track\" reminder configurable from each account's recurring screen"
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            122,
+            123
+          ],
+          "es": "Recordatorio local para apuntar gastos y aviso con antelación de los recurrentes",
+          "en": "Local reminder to log expenses and advance warning for recurring movements"
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            125
+          ],
+          "es": "Pantalla única de Notificaciones con selector de días; 2.8.0 en beta",
+          "en": "Single Notifications screen with day selector; 2.8.0 in beta"
+        },
         {
           "date": "2026-10-06",
           "prs": [
@@ -156,7 +181,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "grapit": {
       "now": {
@@ -231,7 +256,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "intriga": {
       "now": {
@@ -243,40 +268,55 @@
           "Formato de caso y validador (case validate)",
           "Móvil del caso: mensajes, galería, notas, calendario, llamadas",
           "Skill de autoría con Solver y Critic",
-          "Primer caso gratuito",
-          "Playtest con personas reales (hito 1)"
+          "Playtest con personas reales (hito 1)",
+          "Caso gratuito revisado tras el playtest (0.9.0)",
+          "Catálogo remoto de casos: publicar, descargar y jugar sin actualizar la app"
         ],
         "en": [
           "Case format and validator (case validate)",
           "The case phone: messages, gallery, notes, calendar, calls",
           "Authoring skill with Solver and Critic",
-          "First free case",
-          "Playtest with real people (milestone 1)"
+          "Playtest with real people (milestone 1)",
+          "Free case rewritten after the playtest (0.9.0)",
+          "Remote case catalogue: publish, download and play without updating the app"
         ]
       },
       "doing": {
-        "es": [
-          "Revisión del caso gratuito y ajustes de interfaz del playtest"
-        ],
-        "en": [
-          "Free case rework and UI fixes from the playtest"
-        ]
+        "es": [],
+        "en": []
       },
       "next": {
         "es": [
           "Primer arranque, estados vacíos y ajustes",
           "Tres casos de pago",
-          "Bloqueado: catálogo remoto, pistas, compras y analítica (cuentas externas pendientes)",
+          "Bloqueado: pistas, compras y analítica (cuentas externas pendientes)",
           "Lanzamiento en las dos tiendas"
         ],
         "en": [
           "First run, empty states and settings",
           "Three paid cases",
-          "Blocked: remote catalogue, hints, purchases and analytics (pending external accounts)",
+          "Blocked: hints, purchases and analytics (pending external accounts)",
           "Launch on both stores"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-09",
+          "prs": [
+            20,
+            22
+          ],
+          "es": "Tras el playtest, reescrito el caso gratuito (0.9.0) y ajustada la interfaz",
+          "en": "After the playtest, the free case is rewritten (0.9.0) and the UI adjusted"
+        },
+        {
+          "date": "2026-10-09",
+          "prs": [
+            23
+          ],
+          "es": "Catálogo remoto: los casos se publican y descargan sin actualizar la app",
+          "en": "Remote catalogue: cases publish and download without an app update"
+        },
         {
           "date": "2026-10-04",
           "prs": [
@@ -315,238 +355,305 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "aqorin": {
       "now": {
-        "es": "TUI de terminal funcionando con seguimiento en vivo de Runs",
-        "en": "Terminal TUI working with live Run follow-up"
+        "es": "Workflows en paralelo, biblioteca de flujos y sandbox, en pruebas reales",
+        "en": "Parallel workflows, workflow library and sandbox, in real use"
       },
       "done": {
         "es": [
-          "TUI de terminal con Runs, Runtimes y seguimiento en vivo",
-          "Compatibilidad de runtimes verificada con registro de evidencias",
-          "Run en segundo plano que sobrevive al cierre de la terminal",
-          "Conversaciones con Codex desde la terminal",
-          "@aqorin/cli 0.2.0 publicado en npm con licencia MIT",
-          "23 fases de producto cerradas con evidencia"
+          "Run completo en los cuatro runtimes con revisión y evidencia",
+          "Chat libre con permisos nativos por chat en los cuatro runtimes",
+          "Varios flujos en paralelo, cada uno en su worktree, con integrar o deshacer",
+          "Biblioteca de flujos con verificación y pasos que responden preguntas",
+          "Flujos y chats libres en el sandbox de macOS de Aqorin",
+          "@aqorin/cli 0.2.0 publicado en npm con licencia MIT"
         ],
         "en": [
-          "Terminal TUI with Runs, Runtimes and live follow-up",
-          "Verified runtime compatibility with a per-binary evidence ledger",
-          "Detached Run that survives closing the terminal",
-          "Codex conversations from the terminal",
-          "@aqorin/cli 0.2.0 published on npm under MIT",
-          "23 product phases closed with recorded evidence"
+          "Full Run across the four runtimes with review and evidence",
+          "Free chat with native per-chat permissions across the four runtimes",
+          "Several workflows at once, each in its own worktree, with integrate or undo",
+          "Workflow library with verification and steps that answer questions",
+          "Workflow runs and free chats in Aqorin's macOS sandbox",
+          "@aqorin/cli 0.2.0 published on npm under MIT"
         ]
       },
       "doing": {
         "es": [
-          "Pantallas de la TUI para crear agentes y workflows",
-          "Runs mixtos en los cuatro runtimes con revisión"
+          "Ajustes de la TUI tras las pruebas manuales Post-Alpha"
         ],
         "en": [
-          "TUI screens to create agents and workflows",
-          "Mixed runs across the four runtimes with review"
+          "TUI tweaks after the Post-Alpha hands-on sessions"
         ]
       },
       "next": {
         "es": [
-          "Preguntas y reanudación desde la terminal",
-          "Conversaciones en los demás runtimes"
+          "Completar el rediseño Post-Alpha de la TUI"
         ],
         "en": [
-          "Questions and resume from the terminal",
-          "Conversations on the other runtimes"
+          "Finishing the Post-Alpha TUI redesign"
         ]
       },
       "changelog": [
         {
-          "date": "2026-10-09",
+          "date": "2026-10-15",
           "prs": [
-            92
+            145,
+            146
           ],
-          "es": "Run en segundo plano: cerrar la terminal ya no lo detiene; un Run activo por árbol",
-          "en": "Detached Run: closing the terminal no longer stops it; one active Run per tree"
+          "es": "Flujos y chats libres corren en el sandbox de macOS de Aqorin, a prueba de fallos",
+          "en": "Workflow runs and free chats run in Aqorin's macOS sandbox, fail-closed"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            142,
+            143
+          ],
+          "es": "Varios flujos a la vez: cada uno en su propio worktree de git, con integrar, descartar o deshacer",
+          "en": "Several workflows at once: each in its own git worktree, with integrate, discard or undo"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            144
+          ],
+          "es": "Biblioteca de flujos de desarrollo: cambio de ingeniería y cinco más, con verificación y pasos que preguntan",
+          "en": "Built-in developer workflows: engineering-change and five more, with verification and steps that ask"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            141
+          ],
+          "es": "Los chats libres conviven con un Run y un turno fallido deja seguir; chats de Pi en conexión",
+          "en": "Free chats live beside a Run and a failed turn lets you continue; Pi chats on a connection"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            140
+          ],
+          "es": "Aviso del Home tras !, listas de modelos filtrables y claves de configuración heredadas",
+          "en": "Home's notice behind !, searchable model lists and inherited configuration variables"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            131,
+            138
+          ],
+          "es": "Modelos del runtime para elegir en la conexión y en el agente; una clave reutilizable",
+          "en": "Runtime's models to pick in the connection and the agent; a key reusable"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            138
+          ],
+          "es": "Un paso fallido dice el porqué, toda Run espera una decisión y se ve el consumo",
+          "en": "A failed step says why, any Run waits for a decision and usage is visible"
+        },
+        {
+          "date": "2026-10-14",
+          "prs": [
+            139
+          ],
+          "es": "La Run terminada pasa a su Resultado; el plan, un flujo; avisos bajo !",
+          "en": "A finished Run moves to its Result; the plan as a flow; notices on !"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            132
+          ],
+          "es": "El agente de Claude Code puede ejecutar comandos Bash con permiso",
+          "en": "Claude Code's agent can run Bash commands with permission"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            134
+          ],
+          "es": "La Run enseña los checks en vivo y la columna de detalle se simplifica",
+          "en": "The Run shows its checks live and the details pane is trimmed"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            135
+          ],
+          "es": "El check del agente es opcional por tarea y apagado por defecto",
+          "en": "The agent's check is optional per task and off by default"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            123
+          ],
+          "es": "Ayuda contextual con ? que abre la documentación de la pantalla y la referencia de la CLI en help",
+          "en": "Contextual help with ? opening the docs for the screen you are on and the CLI reference in help"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            124,
+            127
+          ],
+          "es": "Ajustes de la TUI: campo de credencial más claro, plan rechazado plegado y Nueva asignación con w",
+          "en": "TUI tweaks: a clearer credential field, the refused plan folded, and New assignment with w"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            125,
+            129
+          ],
+          "es": "Rol restringido en Claude Code y restricciones avisando: cualquier agente en cualquier nodo",
+          "en": "A restricted role on Claude Code and advisory restrictions: any agent on any node"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            130
+          ],
+          "es": "Nueva versión mayor admitida con aviso; el primer intento completado la da por verificada",
+          "en": "A new major version admitted with notice; its first completed attempt marks it verified"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            128
+          ],
+          "es": "Los modelos de Claude Code y Codex aparecen para elegir en asignaciones, tareas y chat libre",
+          "en": "Claude Code and Codex models are offered to pick from in assignments, tasks and free chat"
+        },
+        {
+          "date": "2026-10-12",
+          "prs": [
+            122
+          ],
+          "es": "Identidad visual propia: marca de rombo en la TUI, colores por runtime y horas en el reloj local.",
+          "en": "Our own visual identity: a diamond mark in the TUI, per-runtime colours and times on the local clock."
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            116,
+            117,
+            118
+          ],
+          "es": "La TUI muestra el Run como panel con su Result, trazas de tres niveles, bandeja de atención, paleta y filtros.",
+          "en": "The TUI shows the Run as a dashboard with its Result, three-level trace, attention inbox, palette and filters."
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            119
+          ],
+          "es": "Ajustes tras la primera prueba con uso real: credenciales, chat, tareas y planes rechazados.",
+          "en": "Fixes after the first real-world hands-on: credentials, chat, tasks and refused plans."
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            120,
+            121
+          ],
+          "es": "El chat libre actúa como el runtime nativo: permisos por chat (Ask o acceso completo) en los cuatro runtimes.",
+          "en": "Free chat behaves as its runtime does natively: per-chat permissions (Ask or full access) on all four runtimes."
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            109
+          ],
+          "es": "Nuevo tramo Post-Alpha UX: investigación, arquitectura de información y lenguaje visual",
+          "en": "New Post-Alpha UX track: research, information architecture and visual language"
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            110,
+            111
+          ],
+          "es": "Rediseño de la TUI: lenguaje visual, Home, onboarding y pantallas de runtimes y conexiones",
+          "en": "TUI redesign: visual language, Home, onboarding and runtime and connection screens"
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            112,
+            113
+          ],
+          "es": "Agentes, workflows, skills y servidores MCP con formularios e inspectores en la TUI",
+          "en": "Agents, workflows, skills and MCP servers with forms and inspectors in the TUI"
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            114,
+            115
+          ],
+          "es": "Nueva tarea como un solo formulario y chat con el estado del turno en vivo",
+          "en": "New task as a single form, and chat with the live turn state"
+        },
+        {
+          "date": "2026-10-10",
+          "prs": [
+            104,
+            105
+          ],
+          "es": "La TUI lanza, supervisa y cancela Runs, con chat libre, aprobaciones, replan y reanudación",
+          "en": "The TUI launches, supervises and cancels Runs, with free chat, approvals, replan and resume"
+        },
+        {
+          "date": "2026-10-10",
+          "prs": [
+            106
+          ],
+          "es": "Conexiones de runtime y modelos propios, con credenciales por referencia y preflight",
+          "en": "Aqorin-owned runtime connections and models, with credential references and preflight"
+        },
+        {
+          "date": "2026-10-10",
+          "prs": [
+            107,
+            108
+          ],
+          "es": "Aceptación como usuario nuevo superada, con elección de instalación y guía de uso",
+          "en": "Acceptance as a new user passed, with installation choice and a user guide"
+        },
+        {
+          "date": "2026-10-10",
+          "prs": [
+            100,
+            101
+          ],
+          "es": "Primer Run completo en los cuatro runtimes, con revisión y evidencia",
+          "en": "First full Run across the four runtimes, with review and evidence"
+        },
+        {
+          "date": "2026-10-10",
+          "prs": [
+            102,
+            103
+          ],
+          "es": "TA10 cerrada: editores de agentes y workflows en la TUI con preflight",
+          "en": "TA10 closed: agent and workflow editors in the TUI with preflight"
         },
         {
           "date": "2026-10-09",
           "prs": [
-            93
+            96
           ],
-          "es": "Timeout de intento por Run; al agotarse espera la decisión de una persona",
-          "en": "Per-Run attempt timeout; on expiry it waits for a person's decision"
-        },
-        {
-          "date": "2026-10-09",
-          "prs": [
-            94
-          ],
-          "es": "Conversaciones con Codex: turnos encadenados en un mismo hilo desde la terminal",
-          "en": "Codex conversations: chained turns on a single thread from the terminal"
-        },
-        {
-          "date": "2026-10-08",
-          "prs": [
-            87
-          ],
-          "es": "Compatibilidad de runtimes por versión mínima, contrato por adaptador y doctor en vivo",
-          "en": "Runtime compatibility by minimum version, per-adapter contract and live doctor"
-        },
-        {
-          "date": "2026-10-08",
-          "prs": [
-            88,
-            89
-          ],
-          "es": "Logs --follow y actividad normalizada (texto, herramientas, estado) en los cuatro runtimes",
-          "en": "`logs --follow` and normalized activity (text, tools, status) on the four runtimes"
-        },
-        {
-          "date": "2026-10-08",
-          "prs": [
-            90,
-            91
-          ],
-          "es": "TUI de terminal con pantallas de Runs, Runtimes y seguimiento en vivo de un Run",
-          "en": "Terminal TUI with Runs and Runtimes screens and live Run follow-up"
-        },
-        {
-          "date": "2026-10-07",
-          "prs": [
-            77,
-            78,
-            79,
-            80
-          ],
-          "es": "Protocolo de remediación y revalidación de la tesis aceptado",
-          "en": "Thesis remediation and revalidation protocol accepted"
-        },
-        {
-          "date": "2026-10-05",
-          "prs": [
-            76
-          ],
-          "es": "Revisión de la tesis: validada parcialmente, con plan de remediación",
-          "en": "Thesis review: partially validated, with a remediation plan"
-        },
-        {
-          "date": "2026-10-05",
-          "prs": [
-            74,
-            75
-          ],
-          "es": "TV6 y TV7 cerrados: recuperación con replanificación y benchmark de tesis 10/10",
-          "en": "TV6 and TV7 closed: recovery with explicit replanning and 10/10 thesis benchmark"
-        },
-        {
-          "date": "2026-10-02",
-          "prs": [
-            68,
-            69,
-            70,
-            71,
-            72,
-            73
-          ],
-          "es": "TV5 cerrado: asignación por rol de runtime y modelo con evidencia multi-runtime en vivo",
-          "en": "TV5 closed: per-role runtime and model assignment with live multi-runtime evidence"
-        },
-        {
-          "date": "2026-10-01",
-          "prs": [
-            64,
-            66
-          ],
-          "es": "Workflows definidos por el usuario y roles abiertos por clase de acceso, con prueba de independencia",
-          "en": "User-defined workflows and open roles by access class, with the independence proof"
-        },
-        {
-          "date": "2026-09-28",
-          "prs": [
-            56
-          ],
-          "es": "Chat de dos turnos con el runtime Pi.",
-          "en": "Two-turn chat on the Pi runtime."
-        },
-        {
-          "date": "2026-09-27",
-          "prs": [
-            53,
-            54,
-            55
-          ],
-          "es": "Chat en vivo con OpenCode: mensajes, preguntas, permisos e interrupción.",
-          "en": "Live chat on OpenCode: messages, questions, permissions and interruption."
-        },
-        {
-          "date": "2026-09-24",
-          "prs": [
-            47,
-            49,
-            51
-          ],
-          "es": "Conversaciones Aqorin: identidad, segundo turno y cierre con revisión.",
-          "en": "Aqorin conversations: identity, second turn and finish with review."
-        },
-        {
-          "date": "2026-09-21",
-          "prs": [
-            42,
-            45,
-            46
-          ],
-          "es": "@aqorin/cli 0.2.0 publicado en npm bajo licencia MIT.",
-          "en": "@aqorin/cli 0.2.0 published on npm under the MIT licence."
-        },
-        {
-          "date": "2026-09-18",
-          "prs": [
-            39
-          ],
-          "es": "Recuperación de ejecuciones interrumpidas en Claude Code con evidencia de recursos.",
-          "en": "Recovery of interrupted runs on Claude Code with attested resource evidence."
-        },
-        {
-          "date": "2026-09-15",
-          "prs": [
-            34,
-            35
-          ],
-          "es": "P14–P15: proyección de skills/instrucciones y MCP en Claude Code",
-          "en": "P14–P15: skills/instructions projection and MCP on Claude Code"
-        },
-        {
-          "date": "2026-09-11",
-          "prs": [
-            24
-          ],
-          "es": "P13: cancelación en curso y apertura nativa de Claude Code",
-          "en": "P13: in-flight cancellation and native open for Claude Code"
-        },
-        {
-          "date": "2026-09-11",
-          "prs": [
-            19,
-            20,
-            21
-          ],
-          "es": "P11–P12: inspección y ejecución autenticada sobre Claude Code",
-          "en": "P11–P12: inspection and authenticated execution on Claude Code"
-        },
-        {
-          "date": "2026-09-09",
-          "prs": [
-            14,
-            15,
-            16,
-            17
-          ],
-          "es": "P07–P09: adapter Codex con ejecución autenticada, skills y MCP",
-          "en": "P07–P09: Codex adapter with authenticated execution, skills and MCP"
+          "es": "Agentes y workflows con esquema v2, verbos CLI y errores con línea y columna",
+          "en": "Agents and workflows with schema v2, CLI verbs and line-and-column errors"
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "norma": {
       "now": {
@@ -642,7 +749,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "oak": {
       "now": {
@@ -706,7 +813,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "grodar": {
       "now": {
@@ -720,7 +827,7 @@
           "Señales, oportunidades y recolección automática",
           "Experimentos y learnings de extremo a extremo",
           "IA en servidor y MCP con escritura acotada",
-          "Fases 30-33: fichas, ASO, competidores web y SERP"
+          "Fases 30-35 desplegadas: fichas, ASO, competidores, SERP, GEO y reseñas"
         ],
         "en": [
           "v1 deployment to production",
@@ -728,32 +835,58 @@
           "Signals, opportunities and automated collection",
           "End-to-end experiments and learnings",
           "Server-side AI and MCP with bounded writes",
-          "Phases 30-33: listings, ASO, web competitors and SERP"
+          "Phases 30-35 deployed: listings, ASO, web competitors, SERP, GEO and reviews"
         ]
       },
       "doing": {
-        "es": [
-          "Visibilidad en búsquedas con IA (GEO)"
-        ],
-        "en": [
-          "Visibility in AI search (GEO)"
-        ]
+        "es": [],
+        "en": []
       },
       "next": {
         "es": [
-          "Reseñas de las apps",
           "Indexación y backlinks",
           "Analítica web",
           "Directorios"
         ],
         "en": [
-          "App reviews",
           "Indexing and backlinks",
           "Web analytics",
           "Directories"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-14",
+          "prs": [
+            90
+          ],
+          "es": "Android: rankings y fichas por mercado ya se consultan en su idioma; antes se medían mal fuera del idioma de la conexión",
+          "en": "Android: market ranks and listings are now queried in each market's language; previously they were wrong outside the connection's language"
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            86
+          ],
+          "es": "GEO y reseñas (fases 34 y 35) ya desplegadas y verificadas en producción.",
+          "en": "GEO and reviews (phases 34 and 35) now deployed and verified in production."
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            76
+          ],
+          "es": "Fase 35: reseñas propias y de competidores, señal de caída de valoración y oportunidad",
+          "en": "Phase 35: own and competitor reviews, rating-drop signal and opportunity"
+        },
+        {
+          "date": "2026-10-10",
+          "prs": [
+            75
+          ],
+          "es": "Fase 34: visibilidad en búsquedas con IA (GEO), con muestreo semanal por motor",
+          "en": "Phase 34: AI search visibility (GEO), with weekly sampling per engine"
+        },
         {
           "date": "2026-10-08",
           "prs": [
@@ -929,29 +1062,29 @@
           "en": "Phase 4: credentials encrypted at rest and source connections with CLI."
         }
       ],
-      "checkedUntil": "2026-10-09T11:26:01Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "obs": {
       "now": {
-        "es": "Fase 25 cerrada: evaluador en sombra sobre datos reales",
-        "en": "Phase 25 closed: shadow evaluator on real data"
+        "es": "F26–F29: registro, evidencia externa, operativa de intento y veredicto",
+        "en": "F26–F29: registry, external evidence, attempt operations and verdict"
       },
       "done": {
         "es": [
-          "Trazas OTel, Collector, métricas y dashboards",
+          "Trazas OTel, métricas y dashboards; NAS con los cuatro runtimes, SLI/SLO y alertas a Telegram",
           "Convenciones GenAI, router, retry y subagentes",
-          "Fases 8 a 11: MCP y jobs asíncronos, sesiones en Langfuse, privacidad y depuración de fallos",
-          "Despliegue en NAS con agentes reales y los cuatro runtimes por su gateway",
-          "SLI/SLO con panel y alertas a Telegram",
-          "Suite de benchmark coding-v1: 10 tareas con resultados cruzados con telemetría"
+          "coding-v1: 25 tareas en 4 fixtures; aislamiento definition-isolated@5 en verde",
+          "observability-pilot-1: 12/12 válidas; Jev retirado sin señal",
+          "Evaluación externa: registro, evidencia en solo lectura y operativa de un intento",
+          "Fase 29: primer veredicto de integridad sobre PR externas con política versionada"
         ],
         "en": [
-          "OTel traces, Collector, metrics and dashboards",
+          "OTel traces, metrics and dashboards; NAS with all four runtimes, SLI/SLO with Telegram alerts",
           "GenAI conventions, routing, retries and subagents",
-          "Phases 8–11: MCP and async jobs, Langfuse sessions, privacy and failure debugging",
-          "NAS deployment with real agents and all four runtimes through its gateway",
-          "SLI/SLO with dashboard and alerts to Telegram",
-          "coding-v1 benchmark suite: 10 tasks with results joined against telemetry"
+          "coding-v1: 25 tasks on 4 fixtures; definition-isolated@5 isolation green",
+          "observability-pilot-1: 12/12 valid; Jev retired, no signal",
+          "External evaluation: registry, read-only evidence and attempt operations",
+          "Phase 29: first integrity verdict on external PRs with versioned policy"
         ]
       },
       "doing": {
@@ -963,6 +1096,109 @@
         "en": []
       },
       "changelog": [
+        {
+          "date": "2026-10-13",
+          "prs": [
+            83
+          ],
+          "es": "Fase 28: la operativa de un intento (duración, llamadas, coste) se atribuye en los cuatro runtimes",
+          "en": "Phase 28: attempt operations (duration, calls, cost) attributed across all four runtimes"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            84
+          ],
+          "es": "Fase 29: primer veredicto de integridad sobre PR externas con política versionada por repositorio",
+          "en": "Phase 29: first integrity verdict on external PRs with per-repo versioned policy"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            80,
+            81
+          ],
+          "es": "ADR de evaluación externa aceptada; F26: contrato y registro de evaluaciones",
+          "en": "External evaluation ADR accepted; F26: contract and evaluation registry"
+        },
+        {
+          "date": "2026-10-13",
+          "prs": [
+            82
+          ],
+          "es": "F27: evidencia de GitHub y CI en solo lectura, con instantáneas con hash",
+          "en": "F27: read-only GitHub and CI evidence with hashed snapshots"
+        },
+        {
+          "date": "2026-10-11",
+          "prs": [
+            77
+          ],
+          "es": "Jev evaluado en F25b: no aporta señal propia; se retira la capa.",
+          "en": "Jev evaluated in F25b: brings no signal of its own; layer retired."
+        },
+        {
+          "date": "2026-09-24",
+          "prs": [
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73
+          ],
+          "es": "Aislamiento del candidato hasta definition-isolated@5 y cohorte de Pi cerrada",
+          "en": "Candidate isolation up to definition-isolated@5 and Pi cohort closed"
+        },
+        {
+          "date": "2026-09-24",
+          "prs": [
+            74
+          ],
+          "es": "Primera campaña real: 12 de 12 ejecuciones válidas y verificadas con dos agentes",
+          "en": "First real campaign: 12 of 12 valid, verified runs across two agents"
+        },
+        {
+          "date": "2026-09-24",
+          "prs": [
+            75
+          ],
+          "es": "Fase 25: TypeSafe Jev como evaluador en sombra de las 12 observaciones",
+          "en": "Phase 25: TypeSafe Jev as shadow evaluator of the 12 observations"
+        },
+        {
+          "date": "2026-09-22",
+          "prs": [
+            58,
+            61,
+            62,
+            63,
+            65,
+            66
+          ],
+          "es": "Telemetría corregida: fronteras de arranque, uso de tokens y lectura completa de trazas",
+          "en": "Telemetry fixed: start boundaries, token usage and exhaustive trace reading"
+        },
+        {
+          "date": "2026-09-21",
+          "prs": [
+            56,
+            60
+          ],
+          "es": "Fase 24 y 24b: la puntuación mide lo previsto; coding-v1 pasa a 25 tareas en 4 fixtures",
+          "en": "Phases 24 and 24b: scoring measures what it should; coding-v1 grows to 25 tasks on 4 fixtures"
+        },
+        {
+          "date": "2026-09-18",
+          "prs": [
+            52,
+            53,
+            54
+          ],
+          "es": "Fases 21-23: procedencia sellable, qué cuenta la aceptación y cohortes honestas",
+          "en": "Phases 21–23: sealed provenance, acceptance semantics and honest cohorts"
+        },
         {
           "date": "2026-09-17",
           "prs": [
@@ -1033,7 +1269,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-09-17T16:31:18Z"
+      "checkedUntil": "2026-10-15T10:18:28Z"
     },
     "cinepedia": {
       "done": {
