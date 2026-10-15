@@ -1,0 +1,40 @@
+---
+// Cabecera común. Va dentro de una banda de noche: la portada y las fichas la ponen en su cabecera.
+import type { Lang } from '../data/projects';
+import { UI, home } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  /** Ruta equivalente en el otro idioma. */
+  alt: string;
+}
+const { lang, alt } = Astro.props;
+const t = UI[lang];
+const h = home(lang);
+const other: Lang = lang === 'es' ? 'en' : 'es';
+---
+<header class="bar">
+  <a class="brand" href={h}><b>R<sup>2</sup></b><span>Juan Carlos Rodicio</span></a>
+  <ul class="nav">
+    <li><a href={`${h}#trabajo`}>{t.nav.work}</a></li>
+    <li><a href={`${h}#trayectoria`}>{t.nav.career}</a></li>
+    <li><a href={`${h}#contacto`}>{t.nav.contact}</a></li>
+    <li><a class="tt" href={alt} hreflang={other} lang={other}>{other.toUpperCase()}<span class="sr-only"> {t.otherLang}</span></a></li>
+  </ul>
+</header>
+
+<style>
+  .bar { display: flex; align-items: center; gap: 28px; height: 76px; color: var(--cream); }
+  .brand { display: flex; align-items: baseline; gap: 12px; text-decoration: none; }
+  .brand b { font-size: 28px; font-weight: 900; letter-spacing: -0.04em; transition: font-variation-settings 0.5s var(--expo); }
+  .brand b sup { color: var(--orange); font-size: 0.55em; margin-left: 1px; }
+  .brand:hover b { --casl: 1; }
+  .brand span { font-size: 15px; color: var(--cream-2); }
+  .nav { display: flex; gap: 24px; margin-left: auto; list-style: none; font-size: 15px; }
+  .nav a { text-decoration: none; color: var(--cream-2); }
+  .nav a:hover { color: var(--cream); text-decoration: underline; text-underline-offset: 4px; }
+  .nav .tt { font-size: 13px; }
+  @media (max-width: 640px) {
+    .nav li:not(:last-child) { display: none; }
+  }
+</style>

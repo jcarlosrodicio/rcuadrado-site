@@ -1,0 +1,35 @@
+---
+// Cierre común de todas las páginas: contacto en grande y pie, sobre noche.
+import { GENERATED_AT, type Lang } from '../data/projects';
+import { CONTACT, UI } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = UI[lang];
+const date = new Date(GENERATED_AT).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+---
+<section class="reach-out" id="contacto">
+  <div class="wrap">
+    <p class="ask">{t.contactTitle} {t.contactText}</p>
+    <div class="mailrow">
+      <a class="big" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+      <button type="button" class="copy" data-copy={CONTACT.email} data-done={t.copied}>{t.copy}</button>
+    </div>
+    <p class="reach">
+      <a href={CONTACT.cv} download>{t.downloadCv}</a>
+      <a href={CONTACT.github}>GitHub</a>
+      <a href={CONTACT.linkedin}>LinkedIn</a>
+    </p>
+    <div class="endnote tt"><span>{t.footer}</span><span>{t.dataNote} {date}</span></div>
+  </div>
+</section>
+
+<style>
+  .reach-out { background: var(--night); color: var(--cream); padding: clamp(80px, 11vw, 150px) 0 40px; }
+  .ask { color: var(--cream-2); max-width: 52ch; font-size: 19px; }
+  .mailrow { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 20px; }
+  .big { font-size: clamp(30px, 6.4vw, 96px); font-weight: 850; letter-spacing: -0.045em; line-height: 1; color: var(--cream); text-decoration-color: var(--orange); text-decoration-thickness: 0.06em; text-underline-offset: 0.14em; overflow-wrap: anywhere; }
+  .big:hover { color: var(--orange); }
+  .reach { margin-top: 36px; }
+  .endnote { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: clamp(64px, 9vw, 120px); padding-top: 20px; border-top: 1px solid oklch(0.76 0.02 85 / 0.2); font-size: 13px; color: var(--cream-2); }
+</style>

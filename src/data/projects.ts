@@ -44,7 +44,7 @@ type Editable = 'now' | 'done' | 'doing' | 'next' | 'changelog' | 'activity';
 const projects: Omit<Project, Editable>[] = [
   {
     id: 'tally', name: 'Tally', kind: 'app', status: 'published', color: 'oklch(0.56 0.2 262)',
-    icon: '/assets/tally-icon.png',
+    icon: '/assets/tally-icon.webp',
     tagline: { es: 'Control de gastos sin conectar el banco.', en: 'Expense tracking without connecting your bank.' },
     version: { es: 'v2.6.0 · App Store y Google Play', en: 'v2.6.0 · App Store and Google Play' },
     role: { es: 'Todo: producto, diseño, código, release y ASO.', en: 'Everything: product, design, code, release and ASO.' },
@@ -58,11 +58,11 @@ const projects: Omit<Project, Editable>[] = [
       { label: { es: 'App Store', en: 'App Store' }, url: 'https://apps.apple.com/es/app/tally-control-de-gastos/id6768200630' },
       { label: { es: 'Google Play', en: 'Google Play' }, url: 'https://play.google.com/store/apps/details?id=com.rcuadrado.tally' },
     ],
-    gallery: ['/assets/tally-01.png', '/assets/tally-02-anadir-gasto.png', '/assets/tally-03.png', '/assets/tally-04-cuentas.png', '/assets/tally-05-tickets.png', '/assets/tally-06-metas.png'],
+    gallery: ['/assets/tally-01.webp', '/assets/tally-02-anadir-gasto.webp', '/assets/tally-03.webp', '/assets/tally-04-cuentas.webp', '/assets/tally-05-tickets.webp', '/assets/tally-06-metas.webp'],
   },
   {
     id: 'grapit', name: 'Grapit', kind: 'app', status: 'building', color: 'oklch(0.55 0.09 185)',
-    icon: '/assets/grapit-icon.png',
+    icon: '/assets/grapit-icon.webp',
     tagline: { es: 'Firma, escanea y une PDFs sin que salgan del móvil.', en: 'Sign, scan and merge PDFs without them leaving your phone.' },
     role: { es: 'Todo: producto, diseño y código.', en: 'Everything: product, design and code.' },
     about: {
@@ -74,7 +74,7 @@ const projects: Omit<Project, Editable>[] = [
   },
   {
     id: 'intriga', name: 'Intriga', kind: 'app', status: 'building', color: 'oklch(0.72 0.15 70)',
-    icon: '/assets/intriga-icon.png',
+    icon: '/assets/intriga-icon.webp',
     tagline: { es: 'Juego de misterio: investigas el móvil de otra persona.', en: 'Mystery game: you investigate someone else’s phone.' },
     role: { es: 'Todo: diseño del juego, casos y código.', en: 'Everything: game design, cases and code.' },
     about: {
@@ -110,7 +110,7 @@ const projects: Omit<Project, Editable>[] = [
     },
     stack: ['POSIX sh', 'git hooks', 'Agent skills', 'Homebrew'],
     links: [{ label: { es: 'GitHub', en: 'GitHub' }, url: 'https://github.com/jcarlosrodicio/norma' }],
-    video: { src: '/assets/norma-launch.mp4', poster: '/assets/norma-launch-poster.jpg' },
+    video: { src: '/assets/norma-launch.mp4', poster: '/assets/norma-launch-poster.webp' },
     cli: 'brew install jcarlosrodicio/tap/norma',
   },
   {
@@ -153,7 +153,7 @@ const projects: Omit<Project, Editable>[] = [
   },
   {
     id: 'cinepedia', name: 'Cinepedia', kind: 'app', status: 'published', color: 'oklch(0.58 0.15 25)',
-    icon: '/assets/cinepedia-icon.png',
+    icon: '/assets/cinepedia-icon.webp',
     tagline: { es: 'Estrenos de cine y series, en salas y en streaming.', en: 'Film and TV releases, in cinemas and on streaming.' },
     role: { es: 'Diseño y código.', en: 'Design and code.' },
     about: {
@@ -162,7 +162,7 @@ const projects: Omit<Project, Editable>[] = [
     },
     version: { es: 'v3.3.0 · App Store y Google Play · sin desarrollo activo', en: 'v3.3.0 · App Store and Google Play · not in active development' },
     stack: ['Flutter', 'REST APIs'],
-    gallery: ['/assets/cinepedia-01.jpg', '/assets/cinepedia-02.jpg', '/assets/cinepedia-03.jpg', '/assets/cinepedia-04.jpg', '/assets/cinepedia-05.jpg', '/assets/cinepedia-06.jpg', '/assets/cinepedia-07.jpg'],
+    gallery: ['/assets/cinepedia-01.webp', '/assets/cinepedia-02.webp', '/assets/cinepedia-03.webp', '/assets/cinepedia-04.webp', '/assets/cinepedia-05.webp', '/assets/cinepedia-06.webp', '/assets/cinepedia-07.webp'],
     links: [
       { label: { es: 'App Store', en: 'App Store' }, url: 'https://apps.apple.com/es/app/cinepedia/id6463052440' },
       { label: { es: 'Google Play', en: 'Google Play' }, url: 'https://play.google.com/store/apps/details?id=com.rcuadrado.cinepedia' },
