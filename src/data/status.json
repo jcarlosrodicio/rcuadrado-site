@@ -3,8 +3,8 @@
   "projects": {
     "tally": {
       "now": {
-        "es": "2.8.0 en beta con recordatorios locales",
-        "en": "2.8.0 in beta with local reminders"
+        "es": "2.8.0 en beta con recordatorios locales y arranque más rápido",
+        "en": "2.8.0 in beta with local reminders and faster launch"
       },
       "done": {
         "es": [
@@ -13,7 +13,8 @@
           "Multi-cuenta, 45 divisas, metas y estadísticas",
           "Importación de extractos y Norma 43 (PRO)",
           "Cuentas compartidas cifradas y captura de pagos (PRO)",
-          "Ficha de tienda renovada: capturas, icono azul y gráfico destacado"
+          "Ficha de tienda renovada: capturas, icono azul y gráfico destacado",
+          "Arranque instantáneo con datos locales, incluso sin conexión"
         ],
         "en": [
           "Live on the App Store and Google Play",
@@ -21,7 +22,8 @@
           "Multiple accounts, 45 currencies, goals and statistics",
           "Bank statement and Norma 43 import (PRO)",
           "Encrypted shared accounts and payment capture (PRO)",
-          "Renewed store listing: screenshots, blue icon and feature graphic"
+          "Renewed store listing: screenshots, blue icon and feature graphic",
+          "Instant launch with local data, even offline"
         ]
       },
       "doing": {
@@ -43,6 +45,14 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-15",
+          "prs": [
+            128
+          ],
+          "es": "Arranque instantáneo: la app abre con los datos locales y funciona sin red",
+          "en": "Instant launch: the app opens with local data and works offline"
+        },
         {
           "date": "2026-10-13",
           "prs": [
@@ -181,7 +191,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-15T10:18:28Z"
+      "checkedUntil": "2026-10-16T10:06:35Z"
     },
     "grapit": {
       "now": {
@@ -256,7 +266,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-15T10:18:28Z"
+      "checkedUntil": "2026-10-16T10:06:35Z"
     },
     "intriga": {
       "now": {
@@ -355,12 +365,12 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-15T10:18:28Z"
+      "checkedUntil": "2026-10-16T10:06:35Z"
     },
     "aqorin": {
       "now": {
-        "es": "Workflows en paralelo, biblioteca de flujos y sandbox, en pruebas reales",
-        "en": "Parallel workflows, workflow library and sandbox, in real use"
+        "es": "Salida en directo, reintentos automáticos y rediseño de la TUI Post-Alpha",
+        "en": "Live output, automatic retries and the Post-Alpha TUI redesign"
       },
       "done": {
         "es": [
@@ -368,16 +378,16 @@
           "Chat libre con permisos nativos por chat en los cuatro runtimes",
           "Varios flujos en paralelo, cada uno en su worktree, con integrar o deshacer",
           "Biblioteca de flujos con verificación y pasos que responden preguntas",
-          "Flujos y chats libres en el sandbox de macOS de Aqorin",
-          "@aqorin/cli 0.2.0 publicado en npm con licencia MIT"
+          "Salida de cada paso en directo y reintento automático de fallos transitorios",
+          "Pasos de solo lectura blindados por el sandbox de macOS"
         ],
         "en": [
           "Full Run across the four runtimes with review and evidence",
           "Free chat with native per-chat permissions across the four runtimes",
           "Several workflows at once, each in its own worktree, with integrate or undo",
           "Workflow library with verification and steps that answer questions",
-          "Workflow runs and free chats in Aqorin's macOS sandbox",
-          "@aqorin/cli 0.2.0 published on npm under MIT"
+          "Live output per step and automatic retry of transient failures",
+          "Read-only steps enforced by Aqorin's macOS sandbox"
         ]
       },
       "doing": {
@@ -397,6 +407,50 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-16",
+          "prs": [
+            162
+          ],
+          "es": "La salida de cada paso se lee en directo, sin límite de tamaño",
+          "en": "Each step's output is read live, with no size limit"
+        },
+        {
+          "date": "2026-10-15",
+          "prs": [
+            150,
+            152
+          ],
+          "es": "Pasos de solo lectura que el sandbox de macOS mantiene sin escribir nada",
+          "en": "Read-only steps that Aqorin's macOS sandbox keeps from writing anything"
+        },
+        {
+          "date": "2026-10-15",
+          "prs": [
+            156
+          ],
+          "es": "Los pasos de OpenCode usan tu proveedor global, como el chat",
+          "en": "OpenCode steps use your global provider, just like the chat"
+        },
+        {
+          "date": "2026-10-15",
+          "prs": [
+            158
+          ],
+          "es": "Reintento automático de fallos transitorios, dos veces",
+          "en": "Automatic retry of transient failures, up to twice"
+        },
+        {
+          "date": "2026-10-15",
+          "prs": [
+            154,
+            159,
+            160,
+            161
+          ],
+          "es": "La TUI: preguntas con respuestas propuestas, tokens del Run y vista más legible",
+          "en": "The TUI: questions with proposed answers, Run tokens and a clearer view"
+        },
         {
           "date": "2026-10-15",
           "prs": [
@@ -608,63 +662,20 @@
           ],
           "es": "La TUI lanza, supervisa y cancela Runs, con chat libre, aprobaciones, replan y reanudación",
           "en": "The TUI launches, supervises and cancels Runs, with free chat, approvals, replan and resume"
-        },
-        {
-          "date": "2026-10-10",
-          "prs": [
-            106
-          ],
-          "es": "Conexiones de runtime y modelos propios, con credenciales por referencia y preflight",
-          "en": "Aqorin-owned runtime connections and models, with credential references and preflight"
-        },
-        {
-          "date": "2026-10-10",
-          "prs": [
-            107,
-            108
-          ],
-          "es": "Aceptación como usuario nuevo superada, con elección de instalación y guía de uso",
-          "en": "Acceptance as a new user passed, with installation choice and a user guide"
-        },
-        {
-          "date": "2026-10-10",
-          "prs": [
-            100,
-            101
-          ],
-          "es": "Primer Run completo en los cuatro runtimes, con revisión y evidencia",
-          "en": "First full Run across the four runtimes, with review and evidence"
-        },
-        {
-          "date": "2026-10-10",
-          "prs": [
-            102,
-            103
-          ],
-          "es": "TA10 cerrada: editores de agentes y workflows en la TUI con preflight",
-          "en": "TA10 closed: agent and workflow editors in the TUI with preflight"
-        },
-        {
-          "date": "2026-10-09",
-          "prs": [
-            96
-          ],
-          "es": "Agentes y workflows con esquema v2, verbos CLI y errores con línea y columna",
-          "en": "Agents and workflows with schema v2, CLI verbs and line-and-column errors"
         }
       ],
-      "checkedUntil": "2026-10-15T10:18:28Z"
+      "checkedUntil": "2026-10-16T10:06:35Z"
     },
     "norma": {
       "now": {
-        "es": "Recién publicado como open source (v0.21.0)",
-        "en": "Just released as open source (v0.21.0)"
+        "es": "v0.22.1: land fusiona tus PRs al ponerse verde la CI",
+        "en": "v0.22.1: land merges your PRs once their CI is green"
       },
       "done": {
         "es": [
           "Publicado como open source con licencia MIT (v0.21.0)",
           "Instalable con Homebrew o script en una línea",
-          "install, upgrade, doctor y start",
+          "install, upgrade, doctor, start y land",
           "auto-run-task: fases completas sin supervisión",
           "Verificación en runtime con evidencia",
           "16 perfiles de stack (Flutter, Swift, Go, Rust, Next, Django...)"
@@ -672,7 +683,7 @@
         "en": [
           "Released as open source under MIT (v0.21.0)",
           "Installable with Homebrew or a one-line script",
-          "install, upgrade, doctor and start",
+          "install, upgrade, doctor, start and land",
           "auto-run-task: whole phases unsupervised",
           "Runtime verification with evidence",
           "16 stack profiles (Flutter, Swift, Go, Rust, Next, Django...)"
@@ -687,6 +698,27 @@
         "en": []
       },
       "changelog": [
+        {
+          "date": "2026-10-15",
+          "prs": [
+            5,
+            6,
+            7
+          ],
+          "url": "https://github.com/jcarlosrodicio/norma/pull/5",
+          "es": "land: fusiona un PR cuando su CI está verde; el proyecto decide si lo hace el owner o el agente",
+          "en": "land: merges a PR once its CI is green; the project decides whether owner or agent does it"
+        },
+        {
+          "date": "2026-10-15",
+          "prs": [
+            8,
+            10
+          ],
+          "url": "https://github.com/jcarlosrodicio/norma/pull/8",
+          "es": "land: actualiza ramas atrasadas y reconoce ramas y PRs que GitHub ya movió solo",
+          "en": "land: brings stale branches up to date and accepts branches and PRs GitHub already moved"
+        },
         {
           "date": "2026-10-09",
           "prs": [
@@ -749,7 +781,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-15T10:18:28Z"
+      "checkedUntil": "2026-10-16T10:06:35Z"
     },
     "oak": {
       "now": {
@@ -813,29 +845,29 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-15T10:18:28Z"
+      "checkedUntil": "2026-10-16T10:06:35Z"
     },
     "grodar": {
       "now": {
-        "es": "34 de 44 fases hechas, en producción",
-        "en": "34 of 44 phases done, in production"
+        "es": "37 de 44 fases hechas, en producción",
+        "en": "37 of 44 phases done, in production"
       },
       "done": {
         "es": [
-          "Despliegue v1 en producción",
-          "CLI, API REST y dashboard con login",
+          "Despliegue v1 en producción con CLI, API REST y dashboard con login",
           "Señales, oportunidades y recolección automática",
           "Experimentos y learnings de extremo a extremo",
           "IA en servidor y MCP con escritura acotada",
-          "Fases 30-35 desplegadas: fichas, ASO, competidores, SERP, GEO y reseñas"
+          "Fases 30-35: fichas, ASO, competidores, SERP, GEO y reseñas",
+          "Fases 36-38: indexación y backlinks, analítica web y directorios"
         ],
         "en": [
-          "v1 deployment to production",
-          "CLI, REST API and web dashboard with login",
+          "v1 deployment to production with CLI, REST API and web dashboard with login",
           "Signals, opportunities and automated collection",
           "End-to-end experiments and learnings",
           "Server-side AI and MCP with bounded writes",
-          "Phases 30-35 deployed: listings, ASO, web competitors, SERP, GEO and reviews"
+          "Phases 30-35: listings, ASO, web competitors, SERP, GEO and reviews",
+          "Phases 36-38: indexation and backlinks, web analytics and directories"
         ]
       },
       "doing": {
@@ -844,17 +876,42 @@
       },
       "next": {
         "es": [
-          "Indexación y backlinks",
-          "Analítica web",
-          "Directorios"
+          "Fases 39-44"
         ],
         "en": [
-          "Indexing and backlinks",
-          "Web analytics",
-          "Directories"
+          "Phases 39-44"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-16",
+          "prs": [
+            97,
+            98,
+            99
+          ],
+          "es": "Fase 38: presencia en directorios con matriz de competidores y señales",
+          "en": "Phase 38: directory presence with a competitor matrix and signals"
+        },
+        {
+          "date": "2026-10-15",
+          "prs": [
+            91,
+            92
+          ],
+          "es": "Fase 36: indexación y backlinks con inspección de URLs, sitemaps y enlaces entrantes",
+          "en": "Phase 36: indexation and backlinks with URL inspection, sitemaps and inbound links"
+        },
+        {
+          "date": "2026-10-15",
+          "prs": [
+            93,
+            95,
+            96
+          ],
+          "es": "Fase 37: analítica web con GA4, Plausible y PostHog, con conversión de landing",
+          "en": "Phase 37: web analytics with GA4, Plausible and PostHog, with landing conversion"
+        },
         {
           "date": "2026-10-14",
           "prs": [
@@ -1062,7 +1119,7 @@
           "en": "Phase 4: credentials encrypted at rest and source connections with CLI."
         }
       ],
-      "checkedUntil": "2026-10-15T10:18:28Z"
+      "checkedUntil": "2026-10-16T10:06:35Z"
     },
     "obs": {
       "now": {
@@ -1269,7 +1326,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-15T10:18:28Z"
+      "checkedUntil": "2026-10-16T10:06:35Z"
     },
     "cinepedia": {
       "done": {
