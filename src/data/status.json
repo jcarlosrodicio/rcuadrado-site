@@ -3,8 +3,8 @@
   "projects": {
     "tally": {
       "now": {
-        "es": "2.8.0 en beta con recordatorios locales y arranque más rápido",
-        "en": "2.8.0 in beta with local reminders and faster launch"
+        "es": "2.8.0 subida a las tiendas, pendiente de revisión",
+        "en": "2.8.0 uploaded to the stores, awaiting review"
       },
       "done": {
         "es": [
@@ -13,7 +13,6 @@
           "Multi-cuenta, 45 divisas, metas y estadísticas",
           "Importación de extractos y Norma 43 (PRO)",
           "Cuentas compartidas cifradas y captura de pagos (PRO)",
-          "Ficha de tienda renovada: capturas, icono azul y gráfico destacado",
           "Arranque instantáneo con datos locales, incluso sin conexión"
         ],
         "en": [
@@ -22,16 +21,15 @@
           "Multiple accounts, 45 currencies, goals and statistics",
           "Bank statement and Norma 43 import (PRO)",
           "Encrypted shared accounts and payment capture (PRO)",
-          "Renewed store listing: screenshots, blue icon and feature graphic",
           "Instant launch with local data, even offline"
         ]
       },
       "doing": {
         "es": [
-          "Pruebas de la 2.8.0 en beta"
+          "Envío de la 2.8.0 a revisión en App Store y Google Play"
         ],
         "en": [
-          "Testing the 2.8.0 beta"
+          "Submitting 2.8.0 for review on the App Store and Google Play"
         ]
       },
       "next": {
@@ -45,6 +43,22 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-17",
+          "prs": [
+            133
+          ],
+          "es": "Web renovada con nuevo diseño y demo interactiva de captura de movimientos",
+          "en": "Site redesigned with a new look and an interactive capture demo"
+        },
+        {
+          "date": "2026-10-16",
+          "prs": [
+            129
+          ],
+          "es": "2.8.0 (build 107) subida a App Store y Play, pendiente de enviar a revisión",
+          "en": "2.8.0 (build 107) uploaded to the App Store and Play, pending review"
+        },
         {
           "date": "2026-10-15",
           "prs": [
@@ -191,7 +205,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-16T10:06:35Z"
+      "checkedUntil": "2026-10-17T09:41:05Z"
     },
     "grapit": {
       "now": {
@@ -266,7 +280,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-16T10:06:35Z"
+      "checkedUntil": "2026-10-17T09:41:05Z"
     },
     "intriga": {
       "now": {
@@ -365,29 +379,29 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-16T10:06:35Z"
+      "checkedUntil": "2026-10-17T09:41:05Z"
     },
     "aqorin": {
       "now": {
-        "es": "Salida en directo, reintentos automáticos y rediseño de la TUI Post-Alpha",
-        "en": "Live output, automatic retries and the Post-Alpha TUI redesign"
+        "es": "Flujo animado del Run en la pestaña Flow y entrega como pull request",
+        "en": "Animated Run flow in the Flow tab and delivery as a pull request"
       },
       "done": {
         "es": [
-          "Run completo en los cuatro runtimes con revisión y evidencia",
-          "Chat libre con permisos nativos por chat en los cuatro runtimes",
+          "Run completo en los cuatro runtimes con revisión, evidencia y sandbox de macOS",
+          "Chat libre con permisos nativos por chat en los cuatro runtimes y OpenCode sobre conexiones propias",
           "Varios flujos en paralelo, cada uno en su worktree, con integrar o deshacer",
           "Biblioteca de flujos con verificación y pasos que responden preguntas",
-          "Salida de cada paso en directo y reintento automático de fallos transitorios",
-          "Pasos de solo lectura blindados por el sandbox de macOS"
+          "Texto en directo mientras el modelo escribe y reintento de fallos transitorios",
+          "Pestaña Flow con el flujo animado del Run y entrega como commit y pull request"
         ],
         "en": [
-          "Full Run across the four runtimes with review and evidence",
-          "Free chat with native per-chat permissions across the four runtimes",
+          "Full Run across the four runtimes with review, evidence and the macOS sandbox",
+          "Free chat with native per-chat permissions across the four runtimes and OpenCode on Aqorin's connections",
           "Several workflows at once, each in its own worktree, with integrate or undo",
           "Workflow library with verification and steps that answer questions",
-          "Live output per step and automatic retry of transient failures",
-          "Read-only steps enforced by Aqorin's macOS sandbox"
+          "Live text as the model writes it and automatic retry of transient failures",
+          "Flow tab with the Run's animated workflow and delivery as commit and pull request"
         ]
       },
       "doing": {
@@ -407,6 +421,56 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-16",
+          "prs": [
+            165
+          ],
+          "es": "El texto del agente se muestra en directo mientras el modelo lo escribe",
+          "en": "The agent's text shows live as the model writes it"
+        },
+        {
+          "date": "2026-10-16",
+          "prs": [
+            167,
+            168
+          ],
+          "es": "OpenCode usa solo las conexiones de Aqorin, con su modelo por defecto a mano",
+          "en": "OpenCode runs only on Aqorin's connections, its default model easy to reach"
+        },
+        {
+          "date": "2026-10-16",
+          "prs": [
+            166,
+            169
+          ],
+          "es": "La TUI distingue a los hablantes del chat y reordena pie y veredictos del Run",
+          "en": "The TUI tells chat speakers apart and tidies the Run's footer and verdicts"
+        },
+        {
+          "date": "2026-10-16",
+          "prs": [
+            170
+          ],
+          "es": "Nueva pestaña Flow: el flujo del Run dibujado y animado, con bucles y avance",
+          "en": "New Flow tab: the Run's workflow drawn and animated, loops and progress"
+        },
+        {
+          "date": "2026-10-16",
+          "prs": [
+            171
+          ],
+          "es": "Un Run terminado se entrega como commit y pull request, con borrador y confirmación",
+          "en": "A finished Run is delivered as a commit and pull request, with draft and confirmation"
+        },
+        {
+          "date": "2026-10-16",
+          "prs": [
+            163
+          ],
+          "es": "Las respuestas de la persona a un paso llegan a todos los pasos posteriores del Run",
+          "en": "A person's answers to one step reach every later step of the Run"
+        },
         {
           "date": "2026-10-16",
           "prs": [
@@ -609,67 +673,14 @@
           ],
           "es": "Ajustes tras la primera prueba con uso real: credenciales, chat, tareas y planes rechazados.",
           "en": "Fixes after the first real-world hands-on: credentials, chat, tasks and refused plans."
-        },
-        {
-          "date": "2026-10-11",
-          "prs": [
-            120,
-            121
-          ],
-          "es": "El chat libre actúa como el runtime nativo: permisos por chat (Ask o acceso completo) en los cuatro runtimes.",
-          "en": "Free chat behaves as its runtime does natively: per-chat permissions (Ask or full access) on all four runtimes."
-        },
-        {
-          "date": "2026-10-11",
-          "prs": [
-            109
-          ],
-          "es": "Nuevo tramo Post-Alpha UX: investigación, arquitectura de información y lenguaje visual",
-          "en": "New Post-Alpha UX track: research, information architecture and visual language"
-        },
-        {
-          "date": "2026-10-11",
-          "prs": [
-            110,
-            111
-          ],
-          "es": "Rediseño de la TUI: lenguaje visual, Home, onboarding y pantallas de runtimes y conexiones",
-          "en": "TUI redesign: visual language, Home, onboarding and runtime and connection screens"
-        },
-        {
-          "date": "2026-10-11",
-          "prs": [
-            112,
-            113
-          ],
-          "es": "Agentes, workflows, skills y servidores MCP con formularios e inspectores en la TUI",
-          "en": "Agents, workflows, skills and MCP servers with forms and inspectors in the TUI"
-        },
-        {
-          "date": "2026-10-11",
-          "prs": [
-            114,
-            115
-          ],
-          "es": "Nueva tarea como un solo formulario y chat con el estado del turno en vivo",
-          "en": "New task as a single form, and chat with the live turn state"
-        },
-        {
-          "date": "2026-10-10",
-          "prs": [
-            104,
-            105
-          ],
-          "es": "La TUI lanza, supervisa y cancela Runs, con chat libre, aprobaciones, replan y reanudación",
-          "en": "The TUI launches, supervises and cancels Runs, with free chat, approvals, replan and resume"
         }
       ],
-      "checkedUntil": "2026-10-16T10:06:35Z"
+      "checkedUntil": "2026-10-17T09:41:05Z"
     },
     "norma": {
       "now": {
-        "es": "v0.22.1: land fusiona tus PRs al ponerse verde la CI",
-        "en": "v0.22.1: land merges your PRs once their CI is green"
+        "es": "land fusiona tus PRs respetando las reglas de cada repositorio",
+        "en": "land merges your PRs respecting each repository's rules"
       },
       "done": {
         "es": [
@@ -698,6 +709,15 @@
         "en": []
       },
       "changelog": [
+        {
+          "date": "2026-10-16",
+          "prs": [
+            12
+          ],
+          "url": "https://github.com/jcarlosrodicio/norma/pull/12",
+          "es": "land respeta el método de merge de cada repositorio y no confunde «sin checks» con CI roja",
+          "en": "land respects each repository's merge method and no longer reads \"no checks\" as red CI"
+        },
         {
           "date": "2026-10-15",
           "prs": [
@@ -781,7 +801,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-16T10:06:35Z"
+      "checkedUntil": "2026-10-17T09:41:05Z"
     },
     "oak": {
       "now": {
@@ -845,29 +865,29 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-16T10:06:35Z"
+      "checkedUntil": "2026-10-17T09:41:05Z"
     },
     "grodar": {
       "now": {
-        "es": "37 de 44 fases hechas, en producción",
-        "en": "37 of 44 phases done, in production"
+        "es": "Fase 39 cerrada; alertas y observabilidad (40) en producción",
+        "en": "Phase 39 closed; alerts and observability (40) in production"
       },
       "done": {
         "es": [
           "Despliegue v1 en producción con CLI, API REST y dashboard con login",
           "Señales, oportunidades y recolección automática",
-          "Experimentos y learnings de extremo a extremo",
           "IA en servidor y MCP con escritura acotada",
-          "Fases 30-35: fichas, ASO, competidores, SERP, GEO y reseñas",
-          "Fases 36-38: indexación y backlinks, analítica web y directorios"
+          "Fases 30-38: fichas, ASO, competidores, SERP, GEO, reseñas, indexación, backlinks y directorios",
+          "Fase 39: historial, retención, series mensuales y particionado",
+          "Fases 40a-40c: alertas por Telegram, panel de scheduler y Sentry"
         ],
         "en": [
           "v1 deployment to production with CLI, REST API and web dashboard with login",
           "Signals, opportunities and automated collection",
-          "End-to-end experiments and learnings",
           "Server-side AI and MCP with bounded writes",
-          "Phases 30-35: listings, ASO, web competitors, SERP, GEO and reviews",
-          "Phases 36-38: indexation and backlinks, web analytics and directories"
+          "Phases 30-38: listings, ASO, competitors, SERP, GEO, reviews, indexation, backlinks and directories",
+          "Phase 39: history, retention, monthly series and partitioning",
+          "Phases 40a-40c: Telegram alerts, scheduler block and Sentry"
         ]
       },
       "doing": {
@@ -876,13 +896,60 @@
       },
       "next": {
         "es": [
-          "Fases 39-44"
+          "Fase 40d y fases 41-44"
         ],
         "en": [
-          "Phases 39-44"
+          "Phase 40d and phases 41-44"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-17",
+          "prs": [
+            111,
+            112,
+            113
+          ],
+          "es": "Fase 40c: errores y trabajos en Sentry, diagnóstico de salud y latido del worker.",
+          "en": "Phase 40c: errors and jobs in Sentry, health diagnostics and worker heartbeat."
+        },
+        {
+          "date": "2026-10-16",
+          "prs": [
+            101,
+            104
+          ],
+          "es": "Fase 39: historial de proyecto (actividad, señales, briefs, precisión) y serie mensual de 16 meses.",
+          "en": "Phase 39: project history (activity, signals, briefs, precision) and a 16-month series."
+        },
+        {
+          "date": "2026-10-16",
+          "prs": [
+            103,
+            105,
+            106
+          ],
+          "es": "Fase 39: retención nocturna de datos antiguos y particionado preparado; aceptada en producción.",
+          "en": "Phase 39: nightly retention of old data and partitioning prepared; accepted in production."
+        },
+        {
+          "date": "2026-10-16",
+          "prs": [
+            107,
+            108
+          ],
+          "es": "Fase 40a: alertas operativas por Telegram (fuentes caídas, presupuestos, Daily Run).",
+          "en": "Phase 40a: operational alerts over Telegram (broken sources, budgets, Daily Run)."
+        },
+        {
+          "date": "2026-10-16",
+          "prs": [
+            109,
+            110
+          ],
+          "es": "Fase 40b: bloque de scheduler en Fuentes con colas, fallos en cola y reintento.",
+          "en": "Phase 40b: scheduler block in Sources with queues, dead letters and retry."
+        },
         {
           "date": "2026-10-16",
           "prs": [
@@ -1100,26 +1167,9 @@
           ],
           "es": "Fase 7: API REST v1 con 12 rutas y claves de API con scopes.",
           "en": "Phase 7: REST API v1 with 12 routes and scoped API keys."
-        },
-        {
-          "date": "2026-09-09",
-          "prs": [
-            2,
-            3
-          ],
-          "es": "Fase 5-6: collectors con Google Search Console, backfill de 478 días y consultas por ventanas (hito H1).",
-          "en": "Phases 5-6: Google Search Console collectors, 478-day backfill and window queries (milestone H1)."
-        },
-        {
-          "date": "2026-09-08",
-          "prs": [
-            1
-          ],
-          "es": "Fase 4: credenciales cifradas en reposo y conexiones de fuentes con CLI.",
-          "en": "Phase 4: credentials encrypted at rest and source connections with CLI."
         }
       ],
-      "checkedUntil": "2026-10-16T10:06:35Z"
+      "checkedUntil": "2026-10-17T09:41:05Z"
     },
     "obs": {
       "now": {
@@ -1326,7 +1376,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-16T10:06:35Z"
+      "checkedUntil": "2026-10-17T09:41:05Z"
     },
     "cinepedia": {
       "done": {
