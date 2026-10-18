@@ -205,7 +205,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-17T09:41:05Z"
+      "checkedUntil": "2026-10-18T09:53:33Z"
     },
     "grapit": {
       "now": {
@@ -280,29 +280,29 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-17T09:41:05Z"
+      "checkedUntil": "2026-10-18T09:53:33Z"
     },
     "intriga": {
       "now": {
-        "es": "Revisando el caso gratuito tras el playtest",
-        "en": "Reworking the free case after the playtest"
+        "es": "Trabajando en los casos de pago",
+        "en": "Working on the paid cases"
       },
       "done": {
         "es": [
-          "Formato de caso y validador (case validate)",
           "Móvil del caso: mensajes, galería, notas, calendario, llamadas",
           "Skill de autoría con Solver y Critic",
           "Playtest con personas reales (hito 1)",
           "Caso gratuito revisado tras el playtest (0.9.0)",
-          "Catálogo remoto de casos: publicar, descargar y jugar sin actualizar la app"
+          "Catálogo remoto de casos: publicar, descargar y jugar sin actualizar la app",
+          "Primer caso de pago: La noche antes del estreno"
         ],
         "en": [
-          "Case format and validator (case validate)",
           "The case phone: messages, gallery, notes, calendar, calls",
           "Authoring skill with Solver and Critic",
           "Playtest with real people (milestone 1)",
           "Free case rewritten after the playtest (0.9.0)",
-          "Remote case catalogue: publish, download and play without updating the app"
+          "Remote case catalogue: publish, download and play without updating the app",
+          "First paid case: La noche antes del estreno"
         ]
       },
       "doing": {
@@ -324,6 +324,14 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-17",
+          "prs": [
+            27
+          ],
+          "es": "Primer caso de pago listo: La noche antes del estreno",
+          "en": "First paid case ready: La noche antes del estreno"
+        },
         {
           "date": "2026-10-09",
           "prs": [
@@ -379,36 +387,38 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-17T09:41:05Z"
+      "checkedUntil": "2026-10-18T09:53:33Z"
     },
     "aqorin": {
       "now": {
-        "es": "Flujo animado del Run en la pestaña Flow y entrega como pull request",
-        "en": "Animated Run flow in the Flow tab and delivery as a pull request"
+        "es": "Mejoras del chat tras las pruebas manuales Post-Alpha",
+        "en": "Chat improvements after the Post-Alpha hands-on sessions"
       },
       "done": {
         "es": [
           "Run completo en los cuatro runtimes con revisión, evidencia y sandbox de macOS",
           "Chat libre con permisos nativos por chat en los cuatro runtimes y OpenCode sobre conexiones propias",
-          "Varios flujos en paralelo, cada uno en su worktree, con integrar o deshacer",
-          "Biblioteca de flujos con verificación y pasos que responden preguntas",
-          "Texto en directo mientras el modelo escribe y reintento de fallos transitorios",
-          "Pestaña Flow con el flujo animado del Run y entrega como commit y pull request"
+          "Varios flujos en paralelo con biblioteca, integrar o deshacer",
+          "Pestaña Flow con el flujo animado del Run y entrega como pull request",
+          "Mensaje en cola o dentro del turno mientras el agente trabaja",
+          "Esfuerzo del modelo por chat y por agente, y respuestas en Markdown"
         ],
         "en": [
           "Full Run across the four runtimes with review, evidence and the macOS sandbox",
           "Free chat with native per-chat permissions across the four runtimes and OpenCode on Aqorin's connections",
-          "Several workflows at once, each in its own worktree, with integrate or undo",
-          "Workflow library with verification and steps that answer questions",
-          "Live text as the model writes it and automatic retry of transient failures",
-          "Flow tab with the Run's animated workflow and delivery as commit and pull request"
+          "Several workflows at once with a library, integrate or undo",
+          "Flow tab with the Run's animated workflow and delivery as a pull request",
+          "A message queued or sent into the turn while the agent works",
+          "The model's effort per chat and per agent, with Markdown in replies"
         ]
       },
       "doing": {
         "es": [
+          "Subagentes y uso del ratón en el chat",
           "Ajustes de la TUI tras las pruebas manuales Post-Alpha"
         ],
         "en": [
+          "Subagents and mouse support in the chat",
           "TUI tweaks after the Post-Alpha hands-on sessions"
         ]
       },
@@ -421,6 +431,58 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-17",
+          "prs": [
+            172
+          ],
+          "es": "Cada flujo incorporado se puede copiar, editar u ocultar en tu proyecto",
+          "en": "Any built-in workflow can be copied, edited or hidden in your project"
+        },
+        {
+          "date": "2026-10-17",
+          "prs": [
+            173
+          ],
+          "es": "Puedes escribir mientras el agente trabaja: el mensaje entra en el turno o espera en cola",
+          "en": "You can type while the agent works: the message joins the turn or waits in the queue"
+        },
+        {
+          "date": "2026-10-17",
+          "prs": [
+            174
+          ],
+          "es": "Comandos del chat listados con «/» y cancelación de la conversación en marcha",
+          "en": "The chat's commands listed with «/» and cancellation of the running conversation"
+        },
+        {
+          "date": "2026-10-17",
+          "prs": [
+            175,
+            176,
+            180
+          ],
+          "es": "El esfuerzo del modelo se elige en el chat y por defecto en cada agente",
+          "en": "The model's effort is chosen in the chat and as each agent's default"
+        },
+        {
+          "date": "2026-10-17",
+          "prs": [
+            177,
+            179,
+            182
+          ],
+          "es": "Las respuestas se leen en orden, con enlaces legibles y texto con formato Markdown",
+          "en": "Replies read in order, with readable links and Markdown-formatted text"
+        },
+        {
+          "date": "2026-10-17",
+          "prs": [
+            178
+          ],
+          "es": "Un turno abandonado se cierra como fallido y el chat vuelve a responder",
+          "en": "An abandoned turn is closed as failed and the chat answers again"
+        },
         {
           "date": "2026-10-16",
           "prs": [
@@ -622,60 +684,9 @@
           ],
           "es": "Ajustes de la TUI: campo de credencial más claro, plan rechazado plegado y Nueva asignación con w",
           "en": "TUI tweaks: a clearer credential field, the refused plan folded, and New assignment with w"
-        },
-        {
-          "date": "2026-10-13",
-          "prs": [
-            125,
-            129
-          ],
-          "es": "Rol restringido en Claude Code y restricciones avisando: cualquier agente en cualquier nodo",
-          "en": "A restricted role on Claude Code and advisory restrictions: any agent on any node"
-        },
-        {
-          "date": "2026-10-13",
-          "prs": [
-            130
-          ],
-          "es": "Nueva versión mayor admitida con aviso; el primer intento completado la da por verificada",
-          "en": "A new major version admitted with notice; its first completed attempt marks it verified"
-        },
-        {
-          "date": "2026-10-13",
-          "prs": [
-            128
-          ],
-          "es": "Los modelos de Claude Code y Codex aparecen para elegir en asignaciones, tareas y chat libre",
-          "en": "Claude Code and Codex models are offered to pick from in assignments, tasks and free chat"
-        },
-        {
-          "date": "2026-10-12",
-          "prs": [
-            122
-          ],
-          "es": "Identidad visual propia: marca de rombo en la TUI, colores por runtime y horas en el reloj local.",
-          "en": "Our own visual identity: a diamond mark in the TUI, per-runtime colours and times on the local clock."
-        },
-        {
-          "date": "2026-10-11",
-          "prs": [
-            116,
-            117,
-            118
-          ],
-          "es": "La TUI muestra el Run como panel con su Result, trazas de tres niveles, bandeja de atención, paleta y filtros.",
-          "en": "The TUI shows the Run as a dashboard with its Result, three-level trace, attention inbox, palette and filters."
-        },
-        {
-          "date": "2026-10-11",
-          "prs": [
-            119
-          ],
-          "es": "Ajustes tras la primera prueba con uso real: credenciales, chat, tareas y planes rechazados.",
-          "en": "Fixes after the first real-world hands-on: credentials, chat, tasks and refused plans."
         }
       ],
-      "checkedUntil": "2026-10-17T09:41:05Z"
+      "checkedUntil": "2026-10-18T09:53:33Z"
     },
     "norma": {
       "now": {
@@ -801,7 +812,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-17T09:41:05Z"
+      "checkedUntil": "2026-10-18T09:53:33Z"
     },
     "oak": {
       "now": {
@@ -865,29 +876,29 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-17T09:41:05Z"
+      "checkedUntil": "2026-10-18T09:53:33Z"
     },
     "grodar": {
       "now": {
-        "es": "Fase 39 cerrada; alertas y observabilidad (40) en producción",
-        "en": "Phase 39 closed; alerts and observability (40) in production"
+        "es": "Fases 41 y 42 cerradas: seguridad y pulido de UX en producción",
+        "en": "Phases 41 and 42 closed: security and UX polish in production"
       },
       "done": {
         "es": [
           "Despliegue v1 en producción con CLI, API REST y dashboard con login",
           "Señales, oportunidades y recolección automática",
           "IA en servidor y MCP con escritura acotada",
-          "Fases 30-38: fichas, ASO, competidores, SERP, GEO, reseñas, indexación, backlinks y directorios",
-          "Fase 39: historial, retención, series mensuales y particionado",
-          "Fases 40a-40c: alertas por Telegram, panel de scheduler y Sentry"
+          "Fases 30-40: fichas, ASO, competidores, SERP, GEO, reseñas, indexación, backlinks, historial y alertas",
+          "Fase 41: límites de peticiones, passkeys, sesiones y modelo de amenazas",
+          "Fase 42: móvil, ⌘K, ajustes, paginación y accesibilidad"
         ],
         "en": [
           "v1 deployment to production with CLI, REST API and web dashboard with login",
           "Signals, opportunities and automated collection",
           "Server-side AI and MCP with bounded writes",
-          "Phases 30-38: listings, ASO, competitors, SERP, GEO, reviews, indexation, backlinks and directories",
-          "Phase 39: history, retention, monthly series and partitioning",
-          "Phases 40a-40c: Telegram alerts, scheduler block and Sentry"
+          "Phases 30-40: listings, ASO, competitors, SERP, GEO, reviews, indexation, backlinks, history and alerts",
+          "Phase 41: rate limits, passkeys, sessions and threat model",
+          "Phase 42: mobile, ⌘K, settings, pagination and accessibility"
         ]
       },
       "doing": {
@@ -896,13 +907,72 @@
       },
       "next": {
         "es": [
-          "Fase 40d y fases 41-44"
+          "Fases 43-44"
         ],
         "en": [
-          "Phase 40d and phases 41-44"
+          "Phases 43-44"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-17",
+          "prs": [
+            114
+          ],
+          "es": "Fase 40 cerrada: redacción de secretos en logs con test de fuga",
+          "en": "Phase 40 closed: secret redaction in logs with a leak test"
+        },
+        {
+          "date": "2026-10-17",
+          "prs": [
+            116,
+            117,
+            119,
+            122
+          ],
+          "es": "Fase 41: límites de peticiones, cabeceras de seguridad, passkeys y gestión de sesiones",
+          "en": "Phase 41: rate limits, security headers, passkeys and session management"
+        },
+        {
+          "date": "2026-10-17",
+          "prs": [
+            123
+          ],
+          "es": "Presupuestos de coste: techo diario de IA y presupuesto global de proveedores con alerta",
+          "en": "Cost budgets: default daily AI ceiling and global provider budget with alert"
+        },
+        {
+          "date": "2026-10-17",
+          "prs": [
+            125
+          ],
+          "es": "Fase 42: uso móvil con navegación inferior, tarjetas y filtros",
+          "en": "Phase 42: mobile use with bottom nav, cards and filter sheets"
+        },
+        {
+          "date": "2026-10-17",
+          "prs": [
+            126
+          ],
+          "es": "Paleta ⌘K, teclas de triage en la bandeja y definiciones de métricas",
+          "en": "⌘K palette, inbox triage keys and metric definitions"
+        },
+        {
+          "date": "2026-10-17",
+          "prs": [
+            127
+          ],
+          "es": "Ajustes de scoring, umbrales de detección y notificaciones editables",
+          "en": "Editable scoring, detection thresholds and notification settings"
+        },
+        {
+          "date": "2026-10-17",
+          "prs": [
+            128
+          ],
+          "es": "Fase 42 cerrada: paginación por cursor, tablas windowed y accesibilidad",
+          "en": "Phase 42 closed: cursor pagination, table windowing and accessibility"
+        },
         {
           "date": "2026-10-17",
           "prs": [
@@ -1105,71 +1175,9 @@
           ],
           "es": "Fase 16 cerrada: despliegue v1 verificado en producción y roadmap alineado (0–22 hechos).",
           "en": "Phase 16 closed: v1 deployment verified in production and roadmap aligned (0–22 done)."
-        },
-        {
-          "date": "2026-09-22",
-          "prs": [
-            43
-          ],
-          "es": "Fase 20: lectura normalizada de Stores con API, cockpit web y señales ASO.",
-          "en": "Phase 20: normalized Stores read with API, web cockpit and ASO signals."
-        },
-        {
-          "date": "2026-09-21",
-          "prs": [
-            40,
-            41,
-            42
-          ],
-          "es": "App Store Connect Analytics en vivo: descubrimiento y descargas verificados.",
-          "en": "Live App Store Connect Analytics: discovery and downloads verified."
-        },
-        {
-          "date": "2026-09-17",
-          "prs": [
-            35,
-            37
-          ],
-          "es": "Google Play Console: instalaciones, valoraciones y rendimiento de tienda en métricas.",
-          "en": "Google Play Console: installs, ratings and store performance as metrics."
-        },
-        {
-          "date": "2026-09-15",
-          "prs": [
-            28,
-            33
-          ],
-          "es": "Bing Webmaster como segundo buscador, con backlinks verificados en producción.",
-          "en": "Bing Webmaster as a second search engine, with backlinks verified in production."
-        },
-        {
-          "date": "2026-09-11",
-          "prs": [
-            7,
-            8,
-            9
-          ],
-          "es": "Fase 9-11: 9 detectores de señales y motor de oportunidades en CLI, API y web.",
-          "en": "Phases 9-11: 9 signal detectors and an opportunity engine in CLI, API and web."
-        },
-        {
-          "date": "2026-09-09",
-          "prs": [
-            6
-          ],
-          "es": "Fase 8: dashboard web con login, proyectos y métricas de búsqueda.",
-          "en": "Phase 8: web dashboard with login, projects and search metrics."
-        },
-        {
-          "date": "2026-09-09",
-          "prs": [
-            4
-          ],
-          "es": "Fase 7: API REST v1 con 12 rutas y claves de API con scopes.",
-          "en": "Phase 7: REST API v1 with 12 routes and scoped API keys."
         }
       ],
-      "checkedUntil": "2026-10-17T09:41:05Z"
+      "checkedUntil": "2026-10-18T09:53:33Z"
     },
     "obs": {
       "now": {
@@ -1376,7 +1384,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-17T09:41:05Z"
+      "checkedUntil": "2026-10-18T09:53:33Z"
     },
     "cinepedia": {
       "done": {
