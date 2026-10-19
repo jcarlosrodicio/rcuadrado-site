@@ -205,7 +205,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-18T09:53:33Z"
+      "checkedUntil": "2026-10-19T11:16:35Z"
     },
     "grapit": {
       "now": {
@@ -280,7 +280,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-18T09:53:33Z"
+      "checkedUntil": "2026-10-19T11:16:35Z"
     },
     "intriga": {
       "now": {
@@ -387,38 +387,36 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-18T09:53:33Z"
+      "checkedUntil": "2026-10-19T11:16:35Z"
     },
     "aqorin": {
       "now": {
-        "es": "Mejoras del chat tras las pruebas manuales Post-Alpha",
-        "en": "Chat improvements after the Post-Alpha hands-on sessions"
+        "es": "0.3.0 publicado y el chat con subagentes y ratón",
+        "en": "0.3.0 published, with subagents and mouse in the chat"
       },
       "done": {
         "es": [
+          "Aqorin 0.3.0 preparado y publicado en npm",
+          "Subagentes con sus herramientas anidadas y ratón en el chat",
           "Run completo en los cuatro runtimes con revisión, evidencia y sandbox de macOS",
           "Chat libre con permisos nativos por chat en los cuatro runtimes y OpenCode sobre conexiones propias",
           "Varios flujos en paralelo con biblioteca, integrar o deshacer",
-          "Pestaña Flow con el flujo animado del Run y entrega como pull request",
-          "Mensaje en cola o dentro del turno mientras el agente trabaja",
-          "Esfuerzo del modelo por chat y por agente, y respuestas en Markdown"
+          "Pestaña Flow con el flujo animado del Run y entrega como pull request"
         ],
         "en": [
+          "Aqorin 0.3.0 prepared and published on npm",
+          "Subagents with their tools nested and mouse in the chat",
           "Full Run across the four runtimes with review, evidence and the macOS sandbox",
           "Free chat with native per-chat permissions across the four runtimes and OpenCode on Aqorin's connections",
           "Several workflows at once with a library, integrate or undo",
-          "Flow tab with the Run's animated workflow and delivery as a pull request",
-          "A message queued or sent into the turn while the agent works",
-          "The model's effort per chat and per agent, with Markdown in replies"
+          "Flow tab with the Run's animated workflow and delivery as a pull request"
         ]
       },
       "doing": {
         "es": [
-          "Subagentes y uso del ratón en el chat",
           "Ajustes de la TUI tras las pruebas manuales Post-Alpha"
         ],
         "en": [
-          "Subagents and mouse support in the chat",
           "TUI tweaks after the Post-Alpha hands-on sessions"
         ]
       },
@@ -431,6 +429,41 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-18",
+          "prs": [
+            183,
+            184
+          ],
+          "es": "Subagentes con sus herramientas anidadas y uso del ratón en el chat",
+          "en": "Subagents with their tools nested and mouse support in the chat"
+        },
+        {
+          "date": "2026-10-18",
+          "prs": [
+            185
+          ],
+          "es": "doctor con lectura para personas, por grupos y en color",
+          "en": "doctor with a human reading, grouped and in colour"
+        },
+        {
+          "date": "2026-10-18",
+          "prs": [
+            186,
+            187
+          ],
+          "es": "Menos ruido: teclas del compositor y avisos fuera del camino",
+          "en": "Less noise: composer keys and hints out of the way"
+        },
+        {
+          "date": "2026-10-18",
+          "prs": [
+            188,
+            189
+          ],
+          "es": "Aqorin 0.3.0 preparado y publicado en npm",
+          "en": "Aqorin 0.3.0 prepared and published on npm"
+        },
         {
           "date": "2026-10-17",
           "prs": [
@@ -651,42 +684,9 @@
           ],
           "es": "El agente de Claude Code puede ejecutar comandos Bash con permiso",
           "en": "Claude Code's agent can run Bash commands with permission"
-        },
-        {
-          "date": "2026-10-13",
-          "prs": [
-            134
-          ],
-          "es": "La Run enseña los checks en vivo y la columna de detalle se simplifica",
-          "en": "The Run shows its checks live and the details pane is trimmed"
-        },
-        {
-          "date": "2026-10-13",
-          "prs": [
-            135
-          ],
-          "es": "El check del agente es opcional por tarea y apagado por defecto",
-          "en": "The agent's check is optional per task and off by default"
-        },
-        {
-          "date": "2026-10-13",
-          "prs": [
-            123
-          ],
-          "es": "Ayuda contextual con ? que abre la documentación de la pantalla y la referencia de la CLI en help",
-          "en": "Contextual help with ? opening the docs for the screen you are on and the CLI reference in help"
-        },
-        {
-          "date": "2026-10-13",
-          "prs": [
-            124,
-            127
-          ],
-          "es": "Ajustes de la TUI: campo de credencial más claro, plan rechazado plegado y Nueva asignación con w",
-          "en": "TUI tweaks: a clearer credential field, the refused plan folded, and New assignment with w"
         }
       ],
-      "checkedUntil": "2026-10-18T09:53:33Z"
+      "checkedUntil": "2026-10-19T11:16:35Z"
     },
     "norma": {
       "now": {
@@ -812,7 +812,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-18T09:53:33Z"
+      "checkedUntil": "2026-10-19T11:16:35Z"
     },
     "oak": {
       "now": {
@@ -876,7 +876,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-18T09:53:33Z"
+      "checkedUntil": "2026-10-19T11:16:35Z"
     },
     "grodar": {
       "now": {
@@ -1177,7 +1177,7 @@
           "en": "Phase 16 closed: v1 deployment verified in production and roadmap aligned (0–22 done)."
         }
       ],
-      "checkedUntil": "2026-10-18T09:53:33Z"
+      "checkedUntil": "2026-10-19T11:16:35Z"
     },
     "obs": {
       "now": {
@@ -1384,7 +1384,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-18T09:53:33Z"
+      "checkedUntil": "2026-10-19T11:16:35Z"
     },
     "cinepedia": {
       "done": {
