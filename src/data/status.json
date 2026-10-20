@@ -205,7 +205,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-19T11:16:35Z"
+      "checkedUntil": "2026-10-20T10:25:29Z"
     },
     "grapit": {
       "now": {
@@ -280,29 +280,29 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-19T11:16:35Z"
+      "checkedUntil": "2026-10-20T10:25:29Z"
     },
     "intriga": {
       "now": {
-        "es": "Trabajando en los casos de pago",
-        "en": "Working on the paid cases"
+        "es": "Tres casos de pago listos; a por el primer arranque",
+        "en": "Three paid cases ready; on to the first run"
       },
       "done": {
         "es": [
           "Móvil del caso: mensajes, galería, notas, calendario, llamadas",
           "Skill de autoría con Solver y Critic",
-          "Playtest con personas reales (hito 1)",
-          "Caso gratuito revisado tras el playtest (0.9.0)",
+          "Playtest con personas reales y caso gratuito revisado (0.9.0)",
           "Catálogo remoto de casos: publicar, descargar y jugar sin actualizar la app",
-          "Primer caso de pago: La noche antes del estreno"
+          "Ubicaciones y Navegador en el móvil del caso",
+          "Tres casos de pago: La noche antes del estreno, Catorce minutos, Antes de las ocho"
         ],
         "en": [
           "The case phone: messages, gallery, notes, calendar, calls",
           "Authoring skill with Solver and Critic",
-          "Playtest with real people (milestone 1)",
-          "Free case rewritten after the playtest (0.9.0)",
+          "Playtest with real people and free case rewritten (0.9.0)",
           "Remote case catalogue: publish, download and play without updating the app",
-          "First paid case: La noche antes del estreno"
+          "Locations and Browser on the case phone",
+          "Three paid cases: La noche antes del estreno, Catorce minutos, Antes de las ocho"
         ]
       },
       "doing": {
@@ -312,18 +312,41 @@
       "next": {
         "es": [
           "Primer arranque, estados vacíos y ajustes",
-          "Tres casos de pago",
           "Bloqueado: pistas, compras y analítica (cuentas externas pendientes)",
           "Lanzamiento en las dos tiendas"
         ],
         "en": [
           "First run, empty states and settings",
-          "Three paid cases",
           "Blocked: hints, purchases and analytics (pending external accounts)",
           "Launch on both stores"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-19",
+          "prs": [
+            28
+          ],
+          "es": "Ubicaciones en el móvil del caso: mapa de sitios conocidos y casos que se actualizan solos",
+          "en": "Locations on the case phone: map of known places and cases that update themselves"
+        },
+        {
+          "date": "2026-10-19",
+          "prs": [
+            31
+          ],
+          "es": "Navegador en el móvil del caso: el historial de búsqueda del dueño, con sus horas",
+          "en": "Browser on the case phone: the owner's search history, with timestamps"
+        },
+        {
+          "date": "2026-10-19",
+          "prs": [
+            29,
+            33
+          ],
+          "es": "Segundo y tercer caso de pago: «Catorce minutos» y «Antes de las ocho»",
+          "en": "Second and third paid cases: \"Catorce minutos\" and \"Antes de las ocho\""
+        },
         {
           "date": "2026-10-17",
           "prs": [
@@ -387,29 +410,29 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-19T11:16:35Z"
+      "checkedUntil": "2026-10-20T10:25:29Z"
     },
     "aqorin": {
       "now": {
-        "es": "0.3.0 publicado y el chat con subagentes y ratón",
-        "en": "0.3.0 published, with subagents and mouse in the chat"
+        "es": "0.4.0 publicado, Aqorin en macOS y Linux",
+        "en": "0.4.0 published, Aqorin on macOS and Linux"
       },
       "done": {
         "es": [
-          "Aqorin 0.3.0 preparado y publicado en npm",
+          "Aqorin 0.4.0 publicado en npm con soporte de Linux (bubblewrap)",
+          "Diez recorridos en vivo aprobados en Ubuntu, de arranque a entrega como PR",
           "Subagentes con sus herramientas anidadas y ratón en el chat",
           "Run completo en los cuatro runtimes con revisión, evidencia y sandbox de macOS",
           "Chat libre con permisos nativos por chat en los cuatro runtimes y OpenCode sobre conexiones propias",
-          "Varios flujos en paralelo con biblioteca, integrar o deshacer",
-          "Pestaña Flow con el flujo animado del Run y entrega como pull request"
+          "Varios flujos en paralelo con biblioteca, integrar o deshacer"
         ],
         "en": [
-          "Aqorin 0.3.0 prepared and published on npm",
+          "Aqorin 0.4.0 published on npm with Linux support (bubblewrap)",
+          "Ten live journeys passed on Ubuntu, from startup to delivery as a pull request",
           "Subagents with their tools nested and mouse in the chat",
           "Full Run across the four runtimes with review, evidence and the macOS sandbox",
           "Free chat with native per-chat permissions across the four runtimes and OpenCode on Aqorin's connections",
-          "Several workflows at once with a library, integrate or undo",
-          "Flow tab with the Run's animated workflow and delivery as a pull request"
+          "Several workflows at once with a library, integrate or undo"
         ]
       },
       "doing": {
@@ -429,6 +452,45 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-20",
+          "prs": [
+            199,
+            200
+          ],
+          "es": "La TUI tras las pruebas: Runs en columnas, chats en orden y salida limpia de la terminal",
+          "en": "The TUI after hands-on testing: Runs in columns, chats in order, clean terminal exit"
+        },
+        {
+          "date": "2026-10-19",
+          "prs": [
+            190,
+            191,
+            192
+          ],
+          "es": "Aqorin ya funciona en Linux: sandbox con bubblewrap y soporte aceptado en Ubuntu",
+          "en": "Aqorin now runs on Linux: bubblewrap sandbox, support accepted on Ubuntu"
+        },
+        {
+          "date": "2026-10-19",
+          "prs": [
+            196,
+            197,
+            198
+          ],
+          "es": "Aqorin 0.4.0 publicado en npm y con su release etiquetada",
+          "en": "Aqorin 0.4.0 published on npm with its tagged release"
+        },
+        {
+          "date": "2026-10-19",
+          "prs": [
+            193,
+            194,
+            195
+          ],
+          "es": "Correcciones antes de 0.4.0: claves ocultas en el chat y estado de los runtimes",
+          "en": "Fixes before 0.4.0: keys hidden in the chat, runtime status told correctly"
+        },
         {
           "date": "2026-10-18",
           "prs": [
@@ -651,42 +713,9 @@
           ],
           "es": "Aviso del Home tras !, listas de modelos filtrables y claves de configuración heredadas",
           "en": "Home's notice behind !, searchable model lists and inherited configuration variables"
-        },
-        {
-          "date": "2026-10-14",
-          "prs": [
-            131,
-            138
-          ],
-          "es": "Modelos del runtime para elegir en la conexión y en el agente; una clave reutilizable",
-          "en": "Runtime's models to pick in the connection and the agent; a key reusable"
-        },
-        {
-          "date": "2026-10-14",
-          "prs": [
-            138
-          ],
-          "es": "Un paso fallido dice el porqué, toda Run espera una decisión y se ve el consumo",
-          "en": "A failed step says why, any Run waits for a decision and usage is visible"
-        },
-        {
-          "date": "2026-10-14",
-          "prs": [
-            139
-          ],
-          "es": "La Run terminada pasa a su Resultado; el plan, un flujo; avisos bajo !",
-          "en": "A finished Run moves to its Result; the plan as a flow; notices on !"
-        },
-        {
-          "date": "2026-10-13",
-          "prs": [
-            132
-          ],
-          "es": "El agente de Claude Code puede ejecutar comandos Bash con permiso",
-          "en": "Claude Code's agent can run Bash commands with permission"
         }
       ],
-      "checkedUntil": "2026-10-19T11:16:35Z"
+      "checkedUntil": "2026-10-20T10:25:29Z"
     },
     "norma": {
       "now": {
@@ -812,7 +841,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-19T11:16:35Z"
+      "checkedUntil": "2026-10-20T10:25:29Z"
     },
     "oak": {
       "now": {
@@ -876,7 +905,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-19T11:16:35Z"
+      "checkedUntil": "2026-10-20T10:25:29Z"
     },
     "grodar": {
       "now": {
@@ -1177,7 +1206,7 @@
           "en": "Phase 16 closed: v1 deployment verified in production and roadmap aligned (0–22 done)."
         }
       ],
-      "checkedUntil": "2026-10-19T11:16:35Z"
+      "checkedUntil": "2026-10-20T10:25:29Z"
     },
     "obs": {
       "now": {
@@ -1384,7 +1413,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-19T11:16:35Z"
+      "checkedUntil": "2026-10-20T10:25:29Z"
     },
     "cinepedia": {
       "done": {
