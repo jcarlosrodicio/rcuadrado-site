@@ -44,6 +44,22 @@
       },
       "changelog": [
         {
+          "date": "2026-10-21",
+          "prs": [
+            135
+          ],
+          "es": "Las cuentas compartidas vuelven solas tras reinstalar; compartir, más simple",
+          "en": "Shared accounts return automatically after reinstall; simpler sharing"
+        },
+        {
+          "date": "2026-10-20",
+          "prs": [
+            134
+          ],
+          "es": "App más ligera y más rápida tras la auditoría de rendimiento",
+          "en": "Lighter and faster app after the performance audit"
+        },
+        {
           "date": "2026-10-17",
           "prs": [
             133
@@ -205,7 +221,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-20T10:25:29Z"
+      "checkedUntil": "2026-10-21T10:36:03Z"
     },
     "grapit": {
       "now": {
@@ -280,29 +296,29 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-20T10:25:29Z"
+      "checkedUntil": "2026-10-21T10:36:03Z"
     },
     "intriga": {
       "now": {
-        "es": "Tres casos de pago listos; a por el primer arranque",
-        "en": "Three paid cases ready; on to the first run"
+        "es": "Web publicada y ficha en las tiendas; a por el primer arranque",
+        "en": "Website live and store listings up; on to the first run"
       },
       "done": {
         "es": [
           "Móvil del caso: mensajes, galería, notas, calendario, llamadas",
-          "Skill de autoría con Solver y Critic",
-          "Playtest con personas reales y caso gratuito revisado (0.9.0)",
           "Catálogo remoto de casos: publicar, descargar y jugar sin actualizar la app",
-          "Ubicaciones y Navegador en el móvil del caso",
-          "Tres casos de pago: La noche antes del estreno, Catorce minutos, Antes de las ocho"
+          "Tres casos de pago: La noche antes del estreno, Catorce minutos, Antes de las ocho",
+          "Web de Intriga publicada en español e inglés",
+          "Ficha en las dos tiendas con el nombre definitivo y textos legales",
+          "Pistas con anuncio con recompensa, verificadas en móvil real"
         ],
         "en": [
           "The case phone: messages, gallery, notes, calendar, calls",
-          "Authoring skill with Solver and Critic",
-          "Playtest with real people and free case rewritten (0.9.0)",
           "Remote case catalogue: publish, download and play without updating the app",
-          "Locations and Browser on the case phone",
-          "Three paid cases: La noche antes del estreno, Catorce minutos, Antes de las ocho"
+          "Three paid cases: La noche antes del estreno, Catorce minutos, Antes de las ocho",
+          "Intriga website live in Spanish and English",
+          "Store listings on both stores under the final name, with legal texts",
+          "Hints with rewarded ads, verified on real phones"
         ]
       },
       "doing": {
@@ -312,16 +328,43 @@
       "next": {
         "es": [
           "Primer arranque, estados vacíos y ajustes",
-          "Bloqueado: pistas, compras y analítica (cuentas externas pendientes)",
+          "Capturas de tienda y productos de compra en las tiendas",
           "Lanzamiento en las dos tiendas"
         ],
         "en": [
           "First run, empty states and settings",
-          "Blocked: hints, purchases and analytics (pending external accounts)",
+          "Store screenshots and purchase products on the stores",
           "Launch on both stores"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-20",
+          "prs": [
+            36,
+            37
+          ],
+          "es": "Web de Intriga publicada en español e inglés: casos, cómo se juega y legales",
+          "en": "Intriga website live in Spanish and English: cases, how to play and legal pages"
+        },
+        {
+          "date": "2026-10-20",
+          "prs": [
+            35,
+            37,
+            38
+          ],
+          "es": "Ficha de tienda subida a App Store y Google Play con el nombre definitivo",
+          "en": "Store listing uploaded to App Store and Google Play under the final name"
+        },
+        {
+          "date": "2026-10-20",
+          "prs": [
+            41
+          ],
+          "es": "Pistas: un anuncio con recompensa revela las pistas, con consentimiento previo",
+          "en": "Hints: a rewarded ad reveals hints, with prior consent"
+        },
         {
           "date": "2026-10-19",
           "prs": [
@@ -410,28 +453,28 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-20T10:25:29Z"
+      "checkedUntil": "2026-10-21T10:36:03Z"
     },
     "aqorin": {
       "now": {
-        "es": "0.4.0 publicado, Aqorin en macOS y Linux",
-        "en": "0.4.0 published, Aqorin on macOS and Linux"
+        "es": "0.5.0 publicado, Aqorin sobre varios proyectos",
+        "en": "0.5.0 published, Aqorin across several projects"
       },
       "done": {
         "es": [
-          "Aqorin 0.4.0 publicado en npm con soporte de Linux (bubblewrap)",
+          "Aqorin 0.5.0 publicado en npm con soporte de Linux (bubblewrap)",
+          "Un Aqorin sobre varios proyectos: lista, aislamiento, vista Global y aceptación en vivo en Ubuntu",
           "Diez recorridos en vivo aprobados en Ubuntu, de arranque a entrega como PR",
-          "Subagentes con sus herramientas anidadas y ratón en el chat",
           "Run completo en los cuatro runtimes con revisión, evidencia y sandbox de macOS",
-          "Chat libre con permisos nativos por chat en los cuatro runtimes y OpenCode sobre conexiones propias",
+          "Chat libre con permisos nativos por chat, git de acceso completo y OpenCode sobre conexiones propias",
           "Varios flujos en paralelo con biblioteca, integrar o deshacer"
         ],
         "en": [
-          "Aqorin 0.4.0 published on npm with Linux support (bubblewrap)",
+          "Aqorin 0.5.0 published on npm with Linux support (bubblewrap)",
+          "One Aqorin over several projects: list, isolation, Global view and live acceptance on Ubuntu",
           "Ten live journeys passed on Ubuntu, from startup to delivery as a pull request",
-          "Subagents with their tools nested and mouse in the chat",
           "Full Run across the four runtimes with review, evidence and the macOS sandbox",
-          "Free chat with native per-chat permissions across the four runtimes and OpenCode on Aqorin's connections",
+          "Free chat with native per-chat permissions, git in Full access chats and OpenCode on Aqorin's connections",
           "Several workflows at once with a library, integrate or undo"
         ]
       },
@@ -452,6 +495,35 @@
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-20",
+          "prs": [
+            201
+          ],
+          "es": "Git en un chat libre con acceso completo: ramas, commits y worktrees",
+          "en": "Git in a Full access Free chat: branches, commits and worktrees"
+        },
+        {
+          "date": "2026-10-20",
+          "prs": [
+            202,
+            203
+          ],
+          "es": "Aqorin 0.5.0 publicado en npm",
+          "en": "Aqorin 0.5.0 published on npm"
+        },
+        {
+          "date": "2026-10-20",
+          "prs": [
+            205,
+            206,
+            207,
+            208,
+            209
+          ],
+          "es": "Un Aqorin sobre varios proyectos: lista, aislamiento, vista Global y once casos en vivo en Ubuntu",
+          "en": "One Aqorin over several projects: list, isolation, Global view and eleven live cases on Ubuntu"
+        },
         {
           "date": "2026-10-20",
           "prs": [
@@ -689,33 +761,9 @@
           ],
           "es": "Varios flujos a la vez: cada uno en su propio worktree de git, con integrar, descartar o deshacer",
           "en": "Several workflows at once: each in its own git worktree, with integrate, discard or undo"
-        },
-        {
-          "date": "2026-10-14",
-          "prs": [
-            144
-          ],
-          "es": "Biblioteca de flujos de desarrollo: cambio de ingeniería y cinco más, con verificación y pasos que preguntan",
-          "en": "Built-in developer workflows: engineering-change and five more, with verification and steps that ask"
-        },
-        {
-          "date": "2026-10-14",
-          "prs": [
-            141
-          ],
-          "es": "Los chats libres conviven con un Run y un turno fallido deja seguir; chats de Pi en conexión",
-          "en": "Free chats live beside a Run and a failed turn lets you continue; Pi chats on a connection"
-        },
-        {
-          "date": "2026-10-14",
-          "prs": [
-            140
-          ],
-          "es": "Aviso del Home tras !, listas de modelos filtrables y claves de configuración heredadas",
-          "en": "Home's notice behind !, searchable model lists and inherited configuration variables"
         }
       ],
-      "checkedUntil": "2026-10-20T10:25:29Z"
+      "checkedUntil": "2026-10-21T10:36:03Z"
     },
     "norma": {
       "now": {
@@ -749,6 +797,15 @@
         "en": []
       },
       "changelog": [
+        {
+          "date": "2026-10-21",
+          "prs": [
+            15
+          ],
+          "url": "https://github.com/jcarlosrodicio/norma/pull/15",
+          "es": "land lee sus ajustes de la rama principal: una PR ya no puede esquivar la espera de CI",
+          "en": "land reads its settings from the default branch: a PR can no longer skip CI waiting"
+        },
         {
           "date": "2026-10-16",
           "prs": [
@@ -841,7 +898,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-20T10:25:29Z"
+      "checkedUntil": "2026-10-21T10:36:03Z"
     },
     "oak": {
       "now": {
@@ -905,7 +962,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-20T10:25:29Z"
+      "checkedUntil": "2026-10-21T10:36:03Z"
     },
     "grodar": {
       "now": {
@@ -1206,7 +1263,7 @@
           "en": "Phase 16 closed: v1 deployment verified in production and roadmap aligned (0–22 done)."
         }
       ],
-      "checkedUntil": "2026-10-20T10:25:29Z"
+      "checkedUntil": "2026-10-21T10:36:03Z"
     },
     "obs": {
       "now": {
@@ -1413,7 +1470,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-20T10:25:29Z"
+      "checkedUntil": "2026-10-21T10:36:03Z"
     },
     "cinepedia": {
       "done": {
