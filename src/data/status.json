@@ -221,7 +221,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-22T10:39:15Z"
+      "checkedUntil": "2026-10-23T10:31:31Z"
     },
     "grapit": {
       "now": {
@@ -296,7 +296,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-22T10:39:15Z"
+      "checkedUntil": "2026-10-23T10:31:31Z"
     },
     "intriga": {
       "now": {
@@ -453,52 +453,80 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-22T10:39:15Z"
+      "checkedUntil": "2026-10-23T10:31:31Z"
     },
     "aqorin": {
       "now": {
-        "es": "Una sola configuración para todos los proyectos, en marcha",
-        "en": "One configuration for every project, underway"
+        "es": "Aqorin 0.6.0 publicado en npm con una sola configuración",
+        "en": "Aqorin 0.6.0 on npm with a single configuration"
       },
       "done": {
         "es": [
-          "Aqorin 0.5.0 publicado en npm con soporte de Linux (bubblewrap)",
-          "Un Aqorin sobre varios proyectos: lista, aislamiento, vista Global y aceptación en vivo en Ubuntu y macOS",
-          "MP4 aceptado en vivo en macOS en varios proyectos, también tras un reinicio",
+          "Aqorin 0.6.0 publicado en npm con soporte de Linux (bubblewrap)",
+          "Una sola app sobre todos los proyectos: Home, Projects y elección, aceptada en vivo en macOS",
           "Configuración única: biblioteca y ajustes globales, proyectos como carpetas registradas",
           "Chat libre con permisos nativos por chat, git de acceso completo y OpenCode sobre conexiones propias",
-          "Run completo en los cuatro runtimes con revisión, evidencia y sandbox de macOS"
+          "Run completo en los cuatro runtimes con revisión, evidencia y sandbox de macOS",
+          "MP4 aceptado en vivo en macOS en varios proyectos, también tras un reinicio"
         ],
         "en": [
-          "Aqorin 0.5.0 published on npm with Linux support (bubblewrap)",
-          "One Aqorin over several projects: list, isolation, Global view and live acceptance on Ubuntu and macOS",
-          "MP4 accepted live on macOS across several projects, after a reboot too",
+          "Aqorin 0.6.0 published on npm with Linux support (bubblewrap)",
+          "One app over every project: Home, Projects and project choice, accepted live on macOS",
           "Single configuration: one library and global settings, projects as registered folders",
           "Free chat with native per-chat permissions, git in Full access chats and OpenCode on Aqorin's connections",
-          "Full Run across the four runtimes with review, evidence and the macOS sandbox"
+          "Full Run across the four runtimes with review, evidence and the macOS sandbox",
+          "MP4 accepted live on macOS across several projects, after a reboot too"
         ]
       },
       "doing": {
         "es": [
-          "Ajustes de la TUI tras las pruebas manuales Post-Alpha",
-          "Siguientes fases de la configuración única (GC3 a GC6)"
+          "Prueba propia en su Mac de una sola configuración, una sola app",
+          "Ajustes de la TUI tras las pruebas manuales Post-Alpha"
         ],
         "en": [
-          "TUI tweaks after the Post-Alpha hands-on sessions",
-          "Next phases of the single configuration (GC3 to GC6)"
+          "Trying one configuration, one app on their own Mac",
+          "TUI tweaks after the Post-Alpha hands-on sessions"
         ]
       },
       "next": {
         "es": [
-          "Completar el rediseño Post-Alpha de la TUI",
-          "Aceptación en macOS de la configuración única"
+          "Completar el rediseño Post-Alpha de la TUI"
         ],
         "en": [
-          "Finishing the Post-Alpha TUI redesign",
-          "macOS acceptance of the single configuration"
+          "Finishing the Post-Alpha TUI redesign"
         ]
       },
       "changelog": [
+        {
+          "date": "2026-10-23",
+          "prs": [
+            225
+          ],
+          "es": "Importar solo si la carpeta trae algo; vista previa legible en palabras",
+          "en": "Import only when a folder brings something; preview readable in words"
+        },
+        {
+          "date": "2026-10-23",
+          "prs": [
+            226,
+            227
+          ],
+          "es": "Aqorin 0.6.0 publicado en npm con la configuración única",
+          "en": "Aqorin 0.6.0 published on npm with the single configuration"
+        },
+        {
+          "date": "2026-10-22",
+          "prs": [
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ],
+          "es": "Una sola app sobre todos los proyectos: Home, Projects y elección, aceptada en vivo",
+          "en": "One app over every project: Home, Projects and project choice, accepted live"
+        },
         {
           "date": "2026-10-22",
           "prs": [
@@ -737,34 +765,9 @@
           ],
           "es": "Un Run terminado se entrega como commit y pull request, con borrador y confirmación",
           "en": "A finished Run is delivered as a commit and pull request, with draft and confirmation"
-        },
-        {
-          "date": "2026-10-16",
-          "prs": [
-            163
-          ],
-          "es": "Las respuestas de la persona a un paso llegan a todos los pasos posteriores del Run",
-          "en": "A person's answers to one step reach every later step of the Run"
-        },
-        {
-          "date": "2026-10-16",
-          "prs": [
-            162
-          ],
-          "es": "La salida de cada paso se lee en directo, sin límite de tamaño",
-          "en": "Each step's output is read live, with no size limit"
-        },
-        {
-          "date": "2026-10-15",
-          "prs": [
-            150,
-            152
-          ],
-          "es": "Pasos de solo lectura que el sandbox de macOS mantiene sin escribir nada",
-          "en": "Read-only steps that Aqorin's macOS sandbox keeps from writing anything"
         }
       ],
-      "checkedUntil": "2026-10-22T10:39:15Z"
+      "checkedUntil": "2026-10-23T10:31:31Z"
     },
     "norma": {
       "now": {
@@ -936,7 +939,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-22T10:39:15Z"
+      "checkedUntil": "2026-10-23T10:31:31Z"
     },
     "oak": {
       "now": {
@@ -1000,7 +1003,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-22T10:39:15Z"
+      "checkedUntil": "2026-10-23T10:31:31Z"
     },
     "grodar": {
       "now": {
@@ -1301,7 +1304,7 @@
           "en": "Phase 16 closed: v1 deployment verified in production and roadmap aligned (0–22 done)."
         }
       ],
-      "checkedUntil": "2026-10-22T10:39:15Z"
+      "checkedUntil": "2026-10-23T10:31:31Z"
     },
     "obs": {
       "now": {
@@ -1508,7 +1511,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-22T10:39:15Z"
+      "checkedUntil": "2026-10-23T10:31:31Z"
     },
     "cinepedia": {
       "done": {
