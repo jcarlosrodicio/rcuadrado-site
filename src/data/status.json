@@ -221,7 +221,7 @@
           "en": "The site now explains that no bank doesn't mean typing everything by hand: review is the differentiator"
         }
       ],
-      "checkedUntil": "2026-10-23T10:31:31Z"
+      "checkedUntil": "2026-10-24T09:47:49Z"
     },
     "grapit": {
       "now": {
@@ -296,7 +296,7 @@
           "en": "Home screen with recent documents and a tools bar"
         }
       ],
-      "checkedUntil": "2026-10-23T10:31:31Z"
+      "checkedUntil": "2026-10-24T09:47:49Z"
     },
     "intriga": {
       "now": {
@@ -453,7 +453,7 @@
           "en": "Case format with a validator and authoring checked by Solver and Critic agents"
         }
       ],
-      "checkedUntil": "2026-10-23T10:31:31Z"
+      "checkedUntil": "2026-10-24T09:47:49Z"
     },
     "aqorin": {
       "now": {
@@ -767,7 +767,7 @@
           "en": "A finished Run is delivered as a commit and pull request, with draft and confirmation"
         }
       ],
-      "checkedUntil": "2026-10-23T10:31:31Z"
+      "checkedUntil": "2026-10-24T09:47:49Z"
     },
     "norma": {
       "now": {
@@ -939,7 +939,7 @@
           "en": "Runtime verification with its own procedure and evidence shaped per surface"
         }
       ],
-      "checkedUntil": "2026-10-23T10:31:31Z"
+      "checkedUntil": "2026-10-24T09:47:49Z"
     },
     "oak": {
       "now": {
@@ -1003,7 +1003,7 @@
           "en": "Windows compatibility improvements in installation and checks"
         }
       ],
-      "checkedUntil": "2026-10-23T10:31:31Z"
+      "checkedUntil": "2026-10-24T09:47:49Z"
     },
     "grodar": {
       "now": {
@@ -1304,7 +1304,7 @@
           "en": "Phase 16 closed: v1 deployment verified in production and roadmap aligned (0–22 done)."
         }
       ],
-      "checkedUntil": "2026-10-23T10:31:31Z"
+      "checkedUntil": "2026-10-24T09:47:49Z"
     },
     "obs": {
       "now": {
@@ -1511,7 +1511,7 @@
           "en": "Phases 8–10: async jobs and MCP, sessions scored in Langfuse, sampling and privacy"
         }
       ],
-      "checkedUntil": "2026-10-23T10:31:31Z"
+      "checkedUntil": "2026-10-24T09:47:49Z"
     },
     "cinepedia": {
       "done": {
